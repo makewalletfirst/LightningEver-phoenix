@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.PhoenixAndroid" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="colorPrimary">@color/azur</item>
+    </style>
+
+    <style name="Theme.PhoenixAndroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

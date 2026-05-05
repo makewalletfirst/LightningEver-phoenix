@@ -1,0 +1,1749 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "AED" : {
+      "comment" : "United Arab Emirates Dirham",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dírham de los Emiratos Árabes Unidos"
+          }
+        }
+      }
+    },
+    "AFN" : {
+      "comment" : "Afghan Afghani",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afgani de Afganistán"
+          }
+        }
+      }
+    },
+    "ALL" : {
+      "comment" : "Albanian Lek",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lek albanés"
+          }
+        }
+      }
+    },
+    "AMD" : {
+      "comment" : "Armenian Dram",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dram armenio"
+          }
+        }
+      }
+    },
+    "AOA" : {
+      "comment" : "Angolan Kwanza",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwanza angoleño"
+          }
+        }
+      }
+    },
+    "ARS" : {
+      "comment" : "Argentine Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso argentino"
+          }
+        }
+      }
+    },
+    "AUD" : {
+      "comment" : "Australian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolar Australiano"
+          }
+        }
+      }
+    },
+    "AWG" : {
+      "comment" : "Aruban Florin",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Florín de Aruba"
+          }
+        }
+      }
+    },
+    "AZN" : {
+      "comment" : "Azerbaijani Manat",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manat azerbaiyano"
+          }
+        }
+      }
+    },
+    "BAM" : {
+      "comment" : "Bosnia-Herzegovina Convertible Mark",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marco bosnioherzegovino de Bosnia-Herzegovina"
+          }
+        }
+      }
+    },
+    "BBD" : {
+      "comment" : "Barbadian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Barbados"
+          }
+        }
+      }
+    },
+    "BDT" : {
+      "comment" : "Bangladeshi Taka",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taka bangladesí"
+          }
+        }
+      }
+    },
+    "BGN" : {
+      "comment" : "Bulgarian Lev",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lev búlgaro"
+          }
+        }
+      }
+    },
+    "BHD" : {
+      "comment" : "Bahraini Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar bahreiní"
+          }
+        }
+      }
+    },
+    "BIF" : {
+      "comment" : "Burundian Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco burundés"
+          }
+        }
+      }
+    },
+    "black market" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mercado negro"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "marché libre"
+          }
+        }
+      }
+    },
+    "blue market" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mercado azul"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "marché libre"
+          }
+        }
+      }
+    },
+    "BMD" : {
+      "comment" : "Bermudan Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de las Bermudas"
+          }
+        }
+      }
+    },
+    "BND" : {
+      "comment" : "Brunei Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Brunei"
+          }
+        }
+      }
+    },
+    "BOB" : {
+      "comment" : "Bolivian Boliviano",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boliviano de Bolivia"
+          }
+        }
+      }
+    },
+    "BRL" : {
+      "comment" : "Brazilian Real",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Real brasileño"
+          }
+        }
+      }
+    },
+    "BSD" : {
+      "comment" : "Bahamian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de las Bahamas"
+          }
+        }
+      }
+    },
+    "BTN" : {
+      "comment" : "Bhutanese Ngultrum",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ngultrum butanés"
+          }
+        }
+      }
+    },
+    "BWP" : {
+      "comment" : "Botswanan Pula",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pula de Botsuana"
+          }
+        }
+      }
+    },
+    "BZD" : {
+      "comment" : "Belize Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar beliceño"
+          }
+        }
+      }
+    },
+    "CAD" : {
+      "comment" : "Canadian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar canadiense"
+          }
+        }
+      }
+    },
+    "CDF" : {
+      "comment" : "Congolese Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco congoleño"
+          }
+        }
+      }
+    },
+    "CHF" : {
+      "comment" : "Swiss Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco suizo"
+          }
+        }
+      }
+    },
+    "CLP" : {
+      "comment" : "Chilean Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso Chileno"
+          }
+        }
+      }
+    },
+    "CNH" : {
+      "comment" : "Chinese Yuan (offshore)",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yuan Chino"
+          }
+        }
+      }
+    },
+    "CNY" : {
+      "comment" : "Chinese Yuan (onshore)",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yuan Chino"
+          }
+        }
+      }
+    },
+    "COP" : {
+      "comment" : "Colombian Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso colombiano"
+          }
+        }
+      }
+    },
+    "CRC" : {
+      "comment" : "Costa Rican Colón",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colón costarricense"
+          }
+        }
+      }
+    },
+    "CUP" : {
+      "comment" : "Cuban Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso cubano"
+          }
+        }
+      }
+    },
+    "CVE" : {
+      "comment" : "Cape Verdean Escudo",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escudo caboverdiano"
+          }
+        }
+      }
+    },
+    "CZK" : {
+      "comment" : "Czech Koruna",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona checa"
+          }
+        }
+      }
+    },
+    "DJF" : {
+      "comment" : "Djiboutian Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco de Yibuti"
+          }
+        }
+      }
+    },
+    "DKK" : {
+      "comment" : "Danish Krone",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona Danesa"
+          }
+        }
+      }
+    },
+    "DOP" : {
+      "comment" : "Dominican Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso dominicano"
+          }
+        }
+      }
+    },
+    "DZD" : {
+      "comment" : "Algerian Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar argelino"
+          }
+        }
+      }
+    },
+    "EGP" : {
+      "comment" : "Egyptian Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra egipcia"
+          }
+        }
+      }
+    },
+    "ERN" : {
+      "comment" : "Eritrean Nakfa",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nafka de Eritrea"
+          }
+        }
+      }
+    },
+    "ETB" : {
+      "comment" : "Ethiopian Birr",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birr etíope"
+          }
+        }
+      }
+    },
+    "EUR" : {
+      "comment" : "Euro",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Euro"
+          }
+        }
+      }
+    },
+    "FJD" : {
+      "comment" : "Fijian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar fiyiano"
+          }
+        }
+      }
+    },
+    "FKP" : {
+      "comment" : "Falkland Islands Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra de las Islas Malvinas"
+          }
+        }
+      }
+    },
+    "free market" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mercado libre"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "marché libre"
+          }
+        }
+      }
+    },
+    "GBP" : {
+      "comment" : "Great British Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra esterlina"
+          }
+        }
+      }
+    },
+    "GEL" : {
+      "comment" : "Georgian Lari",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lari georgiano"
+          }
+        }
+      }
+    },
+    "GHS" : {
+      "comment" : "Ghanaian Cedi",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cedi de Ghana"
+          }
+        }
+      }
+    },
+    "GIP" : {
+      "comment" : "Gibraltar Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra gibraltareña"
+          }
+        }
+      }
+    },
+    "GMD" : {
+      "comment" : "Gambian Dalasi",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalasi de Gambia"
+          }
+        }
+      }
+    },
+    "GNF" : {
+      "comment" : "Guinean Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco guineano"
+          }
+        }
+      }
+    },
+    "GTQ" : {
+      "comment" : "Guatemalan Quetzal",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quetzal guatemalteco"
+          }
+        }
+      }
+    },
+    "GYD" : {
+      "comment" : "Guyanaese Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Guyana"
+          }
+        }
+      }
+    },
+    "HKD" : {
+      "comment" : "Hong Kong Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Hong Kong"
+          }
+        }
+      }
+    },
+    "HNL" : {
+      "comment" : "Honduran Lempira",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lempira hondureña"
+          }
+        }
+      }
+    },
+    "HRK" : {
+      "comment" : "Croatian Kuna",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuna croata"
+          }
+        }
+      }
+    },
+    "HTG" : {
+      "comment" : "Haitian Gourde",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gourde haitiano"
+          }
+        }
+      }
+    },
+    "HUF" : {
+      "comment" : "Hungarian Forint",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Florín húngaro"
+          }
+        }
+      }
+    },
+    "IDR" : {
+      "comment" : "Indonesian Rupiah",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia de Indonesia"
+          }
+        }
+      }
+    },
+    "ILS" : {
+      "comment" : "Israeli New Sheqel",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo sheqel israelí"
+          }
+        }
+      }
+    },
+    "INR" : {
+      "comment" : "Indian Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia india"
+          }
+        }
+      }
+    },
+    "IQD" : {
+      "comment" : "Iraqi Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar iraquí"
+          }
+        }
+      }
+    },
+    "IRR" : {
+      "comment" : "Iranian Rial",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rial iraní"
+          }
+        }
+      }
+    },
+    "ISK" : {
+      "comment" : "Icelandic Króna",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona islandesa"
+          }
+        }
+      }
+    },
+    "JEP" : {
+      "comment" : "Jersey Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra de Jersey"
+          }
+        }
+      }
+    },
+    "JMD" : {
+      "comment" : "Jamaican Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar jamaiquino"
+          }
+        }
+      }
+    },
+    "JOD" : {
+      "comment" : "Jordanian Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar jordano"
+          }
+        }
+      }
+    },
+    "JPY" : {
+      "comment" : "Japanese Yen",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yen japonés"
+          }
+        }
+      }
+    },
+    "KES" : {
+      "comment" : "Kenyan Shilling",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chelín keniano"
+          }
+        }
+      }
+    },
+    "KGS" : {
+      "comment" : "Kyrgystani Som",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som kirguís"
+          }
+        }
+      }
+    },
+    "KHR" : {
+      "comment" : "Cambodian Riel",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riel camboyano"
+          }
+        }
+      }
+    },
+    "KMF" : {
+      "comment" : "Comorian Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco comorano"
+          }
+        }
+      }
+    },
+    "KPW" : {
+      "comment" : "North Korean Won",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Won norcoreano"
+          }
+        }
+      }
+    },
+    "KRW" : {
+      "comment" : "South Korean Won",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Won surcoreano"
+          }
+        }
+      }
+    },
+    "KWD" : {
+      "comment" : "Kuwaiti Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar kuwaití"
+          }
+        }
+      }
+    },
+    "KYD" : {
+      "comment" : "Cayman Islands Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de las Islas Caimán"
+          }
+        }
+      }
+    },
+    "KZT" : {
+      "comment" : "Kazakhstani Tenge",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tenge de Kazajstaán"
+          }
+        }
+      }
+    },
+    "LAK" : {
+      "comment" : "Laotian Kip",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kip de Laos"
+          }
+        }
+      }
+    },
+    "LBP" : {
+      "comment" : "Lebanese Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra libanesa"
+          }
+        }
+      }
+    },
+    "LKR" : {
+      "comment" : "Sri Lankan Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia de Sri Lanka"
+          }
+        }
+      }
+    },
+    "LRD" : {
+      "comment" : "Liberian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar liberiano"
+          }
+        }
+      }
+    },
+    "LSL" : {
+      "comment" : "Lesotho Loti",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loti de Lesoto"
+          }
+        }
+      }
+    },
+    "LYD" : {
+      "comment" : "Libyan Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar libio"
+          }
+        }
+      }
+    },
+    "MAD" : {
+      "comment" : "Moroccan Dirham",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dirham marroqu"
+          }
+        }
+      }
+    },
+    "MDL" : {
+      "comment" : "Moldovan Leu",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leu moldavo"
+          }
+        }
+      }
+    },
+    "MGA" : {
+      "comment" : "Malagasy Ariary",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ariary malgache"
+          }
+        }
+      }
+    },
+    "MKD" : {
+      "comment" : "Macedonian Denar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Denar macedonio"
+          }
+        }
+      }
+    },
+    "MMK" : {
+      "comment" : "Myanmar Kyat",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kyat de Myanmar"
+          }
+        }
+      }
+    },
+    "MNT" : {
+      "comment" : "Mongolian Tugrik",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tugrik mongol"
+          }
+        }
+      }
+    },
+    "MOP" : {
+      "comment" : "Macanese Pataca",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pataca de Macao"
+          }
+        }
+      }
+    },
+    "MTL" : {
+      "comment" : "Maltese Lira",
+      "extractionState" : "manual",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lira maltesa"
+          }
+        }
+      }
+    },
+    "MUR" : {
+      "comment" : "Mauritian Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia de Republica de Mauricio"
+          }
+        }
+      }
+    },
+    "MVR" : {
+      "comment" : "Maldivian Rufiyaa",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rufiyaa de Maldivas"
+          }
+        }
+      }
+    },
+    "MWK" : {
+      "comment" : "Malawian Kwacha",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwacha malauí"
+          }
+        }
+      }
+    },
+    "MXN" : {
+      "comment" : "Mexican Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso mexicano"
+          }
+        }
+      }
+    },
+    "MYR" : {
+      "comment" : "Malaysian Ringgit",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ringgit malayo"
+          }
+        }
+      }
+    },
+    "MZN" : {
+      "comment" : "Mozambican Metical",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Metical mozambiqueño"
+          }
+        }
+      }
+    },
+    "NAD" : {
+      "comment" : "Namibian Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Namibia"
+          }
+        }
+      }
+    },
+    "NGN" : {
+      "comment" : "Nigerian Naira",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Naira nigeriano"
+          }
+        }
+      }
+    },
+    "NIO" : {
+      "comment" : "Nicaraguan Córdoba",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Córdoba nicaragüense"
+          }
+        }
+      }
+    },
+    "NOK" : {
+      "comment" : "Norwegian Krone",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona noruega"
+          }
+        }
+      }
+    },
+    "NPR" : {
+      "comment" : "Nepalese Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia nepalí"
+          }
+        }
+      }
+    },
+    "NZD" : {
+      "comment" : "New Zealand Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Nueva Zelanda"
+          }
+        }
+      }
+    },
+    "official rate" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tarifa oficial"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taux officiel"
+          }
+        }
+      }
+    },
+    "OMR" : {
+      "comment" : "Omani Rial",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rial omaní"
+          }
+        }
+      }
+    },
+    "PAB" : {
+      "comment" : "Panamanian Balboa",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balboa panameño"
+          }
+        }
+      }
+    },
+    "PEN" : {
+      "comment" : "Peruvian Sol",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sol peruano"
+          }
+        }
+      }
+    },
+    "PGK" : {
+      "comment" : "Papua New Guinean Kina",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kina de Papúa Nueva Guinea"
+          }
+        }
+      }
+    },
+    "PHP" : {
+      "comment" : "Philippine Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso filipino"
+          }
+        }
+      }
+    },
+    "PKR" : {
+      "comment" : "Pakistani Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rupia pakistaní"
+          }
+        }
+      }
+    },
+    "PLN" : {
+      "comment" : "Polish Zloty",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zloty polaco"
+          }
+        }
+      }
+    },
+    "PYG" : {
+      "comment" : "Paraguayan Guarani",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guaraní paraguayo"
+          }
+        }
+      }
+    },
+    "QAR" : {
+      "comment" : "Qatari Rial",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rial de Qatar"
+          }
+        }
+      }
+    },
+    "RON" : {
+      "comment" : "Romanian Leu",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leu romano"
+          }
+        }
+      }
+    },
+    "RSD" : {
+      "comment" : "Serbian Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar serbio"
+          }
+        }
+      }
+    },
+    "RUB" : {
+      "comment" : "Russian Ruble",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rublo ruso"
+          }
+        }
+      }
+    },
+    "RWF" : {
+      "comment" : "Rwandan Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco ruandés"
+          }
+        }
+      }
+    },
+    "SAR" : {
+      "comment" : "Saudi Riyal",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riyal saudí"
+          }
+        }
+      }
+    },
+    "SBD" : {
+      "comment" : "Solomon Islands Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de las Islas Salomón"
+          }
+        }
+      }
+    },
+    "SCR" : {
+      "comment" : "Seychellois Rupee",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seychellois Rupee"
+          }
+        }
+      }
+    },
+    "SDG" : {
+      "comment" : "Sudanese Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra sudanesa"
+          }
+        }
+      }
+    },
+    "SEK" : {
+      "comment" : "Swedish Krona",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Corona sueca"
+          }
+        }
+      }
+    },
+    "SGD" : {
+      "comment" : "Singapore Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Singapur"
+          }
+        }
+      }
+    },
+    "SHP" : {
+      "comment" : "Saint Helena Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra de Santa Elena"
+          }
+        }
+      }
+    },
+    "SLL" : {
+      "comment" : "Sierra Leonean Leone",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leone de Sierra Leona"
+          }
+        }
+      }
+    },
+    "SOS" : {
+      "comment" : "Somali Shilling",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chelín somalí"
+          }
+        }
+      }
+    },
+    "SRD" : {
+      "comment" : "Surinamese Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar surinamés"
+          }
+        }
+      }
+    },
+    "SYP" : {
+      "comment" : "Syrian Pound",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libra siria"
+          }
+        }
+      }
+    },
+    "SZL" : {
+      "comment" : "Swazi Lilangeni",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lilangeni de Suazilandia"
+          }
+        }
+      }
+    },
+    "THB" : {
+      "comment" : "Thai Baht",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baht tailandés"
+          }
+        }
+      }
+    },
+    "TJS" : {
+      "comment" : "Tajikistani Somoni",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somoni de Tayikistán"
+          }
+        }
+      }
+    },
+    "TMT" : {
+      "comment" : "Turkmenistani Manat",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manat de Turkmenistán"
+          }
+        }
+      }
+    },
+    "TND" : {
+      "comment" : "Tunisian Dinar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinar tunecino"
+          }
+        }
+      }
+    },
+    "TOP" : {
+      "comment" : "Tongan Paʻanga",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paʻanga de Tonga"
+          }
+        }
+      }
+    },
+    "TRY" : {
+      "comment" : "Turkish Lira",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lira turca"
+          }
+        }
+      }
+    },
+    "TTD" : {
+      "comment" : "Trinidad and Tobago Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de Trinidad y Tobago"
+          }
+        }
+      }
+    },
+    "TWD" : {
+      "comment" : "Taiwan Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar taiwanés"
+          }
+        }
+      }
+    },
+    "TZS" : {
+      "comment" : "Tanzanian Shilling",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chelín de Tanzania"
+          }
+        }
+      }
+    },
+    "UAH" : {
+      "comment" : "Ukrainian Hryvnia",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hryvnia ucraniano"
+          }
+        }
+      }
+    },
+    "UGX" : {
+      "comment" : "Ugandan Shilling",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chelín ugandés"
+          }
+        }
+      }
+    },
+    "USD" : {
+      "comment" : "United States Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar de los Estados Unidos"
+          }
+        }
+      }
+    },
+    "UYU" : {
+      "comment" : "Uruguayan Peso",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso uruguayo"
+          }
+        }
+      }
+    },
+    "UZS" : {
+      "comment" : "Uzbekistan Som",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Som uzbeko"
+          }
+        }
+      }
+    },
+    "VND" : {
+      "comment" : "Vietnamese Dong",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dong vietnamita"
+          }
+        }
+      }
+    },
+    "VUV" : {
+      "comment" : "Vanuatu Vatu",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vatu de Vanuatu"
+          }
+        }
+      }
+    },
+    "WST" : {
+      "comment" : "Samoan Tala",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tala de Samoa"
+          }
+        }
+      }
+    },
+    "XAF" : {
+      "comment" : "CFA Franc BEAC",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco CFA de África Central"
+          }
+        }
+      }
+    },
+    "XCD" : {
+      "comment" : "East Caribbean Dollar",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dólar del Caribe Oriental"
+          }
+        }
+      }
+    },
+    "XCG" : {
+      "comment" : "Caribbean Guilder",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Florín caribeño"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Florin caraïbe"
+          }
+        }
+      }
+    },
+    "XOF" : {
+      "comment" : "CFA Franc BCEAO",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco CFA de África Occidental"
+          }
+        }
+      }
+    },
+    "XPF" : {
+      "comment" : "CFP Franc",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Franco CFP"
+          }
+        }
+      }
+    },
+    "YER" : {
+      "comment" : "Yemeni Rial",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rial yemení"
+          }
+        }
+      }
+    },
+    "ZAR" : {
+      "comment" : "South African Rand",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rand sudafricano"
+          }
+        }
+      }
+    },
+    "ZMW" : {
+      "comment" : "Zambian Kwacha",
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwacha zambiano"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

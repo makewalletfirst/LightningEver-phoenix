@@ -1,0 +1,979 @@
+<!--
+  ~ Copyright 2019 ACINQ SAS
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name">Phoenix Testnet</string>
+
+    <!-- system notification channels -->
+
+    <string name="notification_channels_watcher_title">Sledovač kanálů</string>
+    <string name="notification_channels_watcher_desc">Zobrazí se, když bude potřeba spustit Phoenix.</string>
+
+    <string name="notification_pending_settlement_title">Dokončení platby</string>
+    <string name="notification_pending_settlement_desc">Informuje vás, když je potřeba spustit Phoenix k vyrovnání probíhající platby.</string>
+
+    <string name="notification_missed_payment_title">Platba zamítnuta</string>
+    <string name="notification_missed_payment_desc">Zobrazí se, když Phoenix nemůže přijmout platbu kvůli problému s likviditou.</string>
+
+    <string name="notification_received_payment_title">Platba obdržena</string>
+    <string name="notification_received_payment_desc">Zobrazí se při přijetí platby, když je aplikace na pozadí.</string>
+
+    <string name="notification_headless_title">Spuštěno na pozadí</string>
+    <string name="notification_headless_desc">Informuje vás o spuštění Phoenix na pozadí.</string>
+
+    <string name="notification_swap_timeout_title">Platnost swapu</string>
+    <string name="notification_swap_timeout_desc">Ukazuje, kdy platnost swapu vyprší.</string>
+
+    <!-- init wallet / automated wallet creation -->
+
+    <string name="autocreate_generating">Vytváření peněženky…</string>
+    <string name="autocreate_error">Vytváření peněženky selhalo</string>
+
+    <string name="restore_title">Obnovit moji peněženku</string>
+    <string name="restore_disclaimer_next">Další</string>
+    <string name="restore_in_progress">Obnovování vaší peněženky…</string>
+
+    <!-- utils: placeholders -->
+
+    <string name="lipsum_short" translatable="false">Etiam porttitor egestas faucibus. Curabitur condimentum eros non ipsum elementum egestas.</string>
+    <string name="lipsum" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut facilisis lectus. Integer massa tellus, suscipit sit amet felis vitae, blandit consectetur dolor. Fusce volutpat id magna id vestibulum. Integer a erat lacinia, placerat risus a, fermentum justo. Etiam euismod tincidunt dolor vel posuere. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur non euismod dui. Morbi enim dui, blandit sed erat sit amet, porta pulvinar odio. Cras metus felis, vestibulum eu consequat vitae, consectetur quis nulla. Fusce vulputate, elit et luctus sodales, metus metus elementum sem, eget commodo nunc nunc in ex. Sed aliquam eros nibh, ac volutpat turpis accumsan vitae. Cras suscipit ipsum accumsan aliquam interdum.</string>
+    <string name="lipsum_long" translatable="false">
+    Praesent ut nisi fringilla, pharetra dui sit amet, ornare urna. Donec at ultrices nunc. Fusce gravida metus vitae viverra egestas. In hac habitasse platea dictumst. Proin consequat fringilla felis, vehicula vehicula turpis ullamcorper nec. Pellentesque urna massa, blandit cursus metus et, ultrices consectetur neque. Suspendisse hendrerit venenatis mi ac tincidunt. Morbi hendrerit orci vitae erat luctus, at dignissim turpis accumsan. Integer elementum est eu tincidunt ullamcorper. Phasellus varius porttitor vestibulum. Maecenas faucibus ullamcorper diam, ac commodo dui fringilla sed. Aliquam arcu velit, porta eu sem vel, rhoncus bibendum dolor.
+    \nEtiam porttitor egestas faucibus. Curabitur condimentum eros non ipsum elementum egestas. Nam tempor euismod erat eget scelerisque. Integer sit amet laoreet erat. Duis enim turpis, vehicula eu justo vitae, dapibus auctor mauris. Aenean euismod eleifend dui a aliquet. Aliquam eleifend malesuada tortor ornare volutpat. In augue tortor, gravida et volutpat elementum, iaculis non sapien. Etiam dolor nisi, pulvinar a rhoncus ac, eleifend ac libero. In lobortis enim vitae ultricies viverra. Maecenas accumsan elementum sem, nec pharetra urna maximus maximus.
+    \nIn sit amet volutpat ligula, ac pretium dolor. Phasellus posuere rhoncus magna quis fermentum. Ut risus turpis, fermentum facilisis mollis in, porttitor eget erat. Donec luctus egestas ligula et interdum. Phasellus vitae hendrerit sem, at vehicula nulla. Curabitur mollis risus quis metus euismod ullamcorper. Nam eu aliquet mi. Duis id urna ac urna iaculis blandit. Morbi eros dui, congue a posuere efficitur, imperdiet a nisi. Morbi non orci non lorem aliquet tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pulvinar, mi vitae sollicitudin dignissim, nunc urna facilisis massa, ut scelerisque mi felis in sapien.
+    \nNam felis felix, tristique commodo odio eget, imperdiet viverra erat. Donec venenatis magna pulvinar, finibus leo id, gravida augue. Integer ante leo, bibendum ac nibh quis, auctor commodo quam. Sed luctus vitae quam vel condimentum. Mauris eu rhoncus mauris. Fusce enim diam, consequat a odio sit amet, accumsan cursus nisl. Etiam lectus nunc, lacinia id purus sit amet, pulvinar auctor odio. Maecenas vitae arcu sit amet est cursus maximus. Nullam ac sapien non nibh tempor rhoncus. Mauris dignissim cursus libero quis egestas.
+    </string>
+
+    <!-- Lock prompt -->
+
+    <string name="lockprompt_title">Pro pokračování odemkněte</string>
+    <string name="lockprompt_pin_button">PIN kód</string>
+    <string name="lockprompt_biometrics_button">Systémové ověření</string>
+
+    <!-- Startup -->
+
+    <string name="startup_init">Inicializace…</string>
+    <string name="startup_preparing">Příprava peněženky…</string>
+    <string name="startup_loading_seed">Popsáno…</string>
+    <string name="startup_starting">Spouštění peněženky…</string>
+    <string name="startup_started">Otevírání peněženky…</string>
+    <string name="startup_selector_title">Vybrat peněženku</string>
+
+    <string name="startup_error_start_business">Nelze spustit peněženku</string>
+    <string name="startup_error_generic">Nelze číst data peněženky.</string>
+    <string name="startup_error_try_again">Zkuste to znovu</string>
+    <string name="startup_error_decryption_general">Chyba dešifrování:\n%1$s</string>
+    <string name="startup_error_recovery_button">Zadejte obnovovací frázi</string>
+
+    <!-- Startup wallet recovery -->
+
+    <string name="startup_recovery_title">Obnova peněženky</string>
+    <string name="startup_recovery_instructions">Tato obrazovka vám umožňuje ručně obnovit jednu peněženku zadáním její 12slovné obnovovací fráze.\n\nSlova musí být zadána ve správném pořadí a oddělena jednou mezerou.</string>
+    <string name="startup_recovery_input_label">Zadejte slovo #%1$d</string>
+    <string name="startup_recovery_input_label_error">Ne více než 12 slov!</string>
+    <string name="startup_recovery_invalid">Toto seed není platné</string>
+
+    <string name="startup_recovery_import_button">Importovat seed</string>
+    <string name="startup_recovery_reset_button">Zkuste to znovu</string>
+    <string name="startup_recovery_checking">Kontrola seed…</string>
+
+    <string name="startup_recovery_error_default">Došlo k chybě.</string>
+    <string name="startup_recovery_error_incorrect_seed">Toto seed se neshoduje s žádnými existujícími daty peněženky.</string>
+    <string name="startup_recovery_success_match">Obnovení peněženky…</string>
+
+    <!-- Payment line -->
+
+    <string name="paymentline_prefix_sent">-</string>
+    <string name="paymentline_prefix_received">+</string>
+    <string name="paymentline_desc_pending_onchain">Čekání na potvrzení</string>
+    <string name="paymentline_desc_pending_offchain">Platba probíhá</string>
+    <string name="paymentline_desc_success_onchain">Platba potvrzena</string>
+    <string name="paymentline_desc_success_offchain">Platba dokončena</string>
+    <string name="paymentline_desc_failed">Platba selhala</string>
+
+    <!-- Receive screen -->
+
+    <string name="receive_help_qr">QR kód faktury/adresy</string>
+
+    <string name="receive_bitcoin_address_label">Adresa</string>
+    <string name="receive_bitcoin_generating">Synchronizování adresy…</string>
+    <string name="receive_bitcoin_share_title">Bitcoinová adresa</string>
+    <string name="receive_bitcoin_share_subject">Sdílet tuto Bitcoinovou adresu s…</string>
+
+    <string name="receive_lightning_generating">Vytváření…</string>
+    <string name="receive_lightning_switch_bolt11">Jednorázová</string>
+    <string name="receive_lightning_switch_bolt11_desc">Bolt11</string>
+    <string name="receive_lightning_switch_bolt12">Opakotavelná</string>
+    <string name="receive_lightning_switch_bolt12_desc">Bolt12</string>
+    <string name="receive_lightning_amount_label">Částka</string>
+    <string name="receive_lightning_desc_label">Popis</string>
+    <string name="receive_lightning_error">Nepodařilo se vygenerovat fakturu</string>
+    <string name="receive_lightning_share_subject">Lightningová faktura</string>
+    <string name="receive_lightning_share_title">Sdílet tuto Lightningovou fakturu s…</string>
+
+    <string name="receive_label_bitcoin">Bitcoinová adresa</string>
+    <string name="receive_label_bitcoin_help">Tento QR kód je klasická Bitcoinová adresa. \n\nDokáže jej přečíst skoro každá Bitcoinová služba/peněženka, ale přijímání plateb bude trvat déle.</string>
+    <string name="receive_label_bip353">Lightningová adresa</string>
+    <string name="receive_label_lightning">Lightning</string>
+    <string name="receive_label_lightning_help">Tento QR kód je Lightningová faktura.\n\nLightningové platby jsou velmi rychlé a obvykle levnější, ale některé peněženky a služby je nemusí zatím podporovat.\n\nV tom případě přejeďte prstem doleva pro zobrazení běžné Bitcoinové adresy.</string>
+    <string name="receive_label_bolt11">Lightning Bolt11</string>
+    <string name="receive_label_bolt12">Lightning Bolt12</string>
+    <string name="receive_label_bip21">Bitcoin URI</string>
+
+    <string name="receive_bip353_title">Co je tohle?</string>
+    <string name="receive_bip353_info">Tato Lightningová adresa používá moderní Bip353 standard, který pracuje s žádostmi o platbu Bolt12.\n\nPoskytuje více soukromí než Lightningová adresa založená na LNURL a dokonce si ji můžete i hostovat sami.\n\nKaždopádně je to nejnovější technologie; některé peněženky či služby tomuto formátu zatím nerozumí a nebudou schopny vám odeslat peníze.</string>
+    <string name="receive_bip353_link">Více informací</string>
+
+    <string name="receive_lightning_edit_title_bolt11">Upravení této Bolt11 faktury</string>
+    <string name="receive_lightning_edit_title_bolt12">Upravení této Bolt12 faktury</string>
+    <string name="receive_lightning_edit_amount_label">Částka (volitelné)</string>
+    <string name="receive_lightning_edit_amount_placeholder">Částka k obdržení</string>
+    <string name="receive_lightning_edit_desc_label">Popis (volitelné)</string>
+    <string name="receive_lightning_edit_desc_placeholder">Zadejte popis pro tuto fakturu</string>
+    <string name="receive_lightning_edit_generate_button">Vytvořit fakturu</string>
+
+    <!-- send -->
+
+    <string name="send_balance_prefix">Zůstatek</string>
+    <string name="send_error_amount_too_large">Částka je příliš vysoká.</string>
+    <string name="send_error_amount_negative">Částka nemůže být záporná.</string>
+    <string name="send_error_amount_invalid">Tato částka není platná.</string>
+    <string name="send_error_amount_over_balance">Tato částka přesahuje váš zůstatek.</string>
+    <string name="send_error_amount_overpaying">Nelze zaplatit více než %1$s.</string>
+    <string name="send_error_amount_below_requested">Tato částka je nižší než požadovaná: %1$s.</string>
+    <string name="send_destination_label">Poslat na</string>
+    <string name="send_description_label">Popis</string>
+    <string name="send_trampoline_fee_label">Poplatek</string>
+    <string name="send_trampoline_fee_no_amount">N/A</string>
+    <string name="send_trampoline_fee_loading">Načítání poplatku…</string>
+    <string name="send_connecting_button">Připojování…</string>
+    <string name="send_pay_button">Zaplatit</string>
+    <string name="send_confirm_pay_button">Potvrdit &amp; Zaplatit</string>
+    <string name="send_pay_retry_button">Zkusit znovu</string>
+
+    <string name="send_offer_payer_note_label">Zpráva</string>
+    <string name="send_offer_payer_note_placeholder">Klikněte pro přidání zprávy…</string>
+    <string name="send_offer_payer_note_dialog_title">Přidat vlastní zprávu</string>
+    <string name="send_offer_payer_note_dialog_subtitle">Příjemce uvidí tuto zprávu</string>
+    <string name="send_offer_payer_note_dialog_placeholder">Zadejte zprávu…</string>
+    <string name="send_offer_fetching">Získávání podrobností o platbě…</string>
+    <string name="send_offer_failure_title">Platba selhala</string>
+    <string name="send_offer_failure_timeout">Nepodařilo se získat údaje o platbě v přiměřené době.\n\nPříjemce může být offline nebo nedostupný.</string>
+
+    <string name="send_paymentmode_onchain">Zaplatit on-chain</string>
+    <string name="send_paymentmode_onchain_desc">On-chain transakce jsou obvykle pomalejší a nejvhodnější pro velké platby.</string>
+    <string name="send_paymentmode_lightning">Zaplatit Lightningem</string>
+    <string name="send_paymentmode_lightning_desc">Lightningové platby jsou rychlé a nejvhodnější pro malé platby.</string>
+
+    <string name="send_spliceout_address_label">Adresa</string>
+    <string name="send_spliceout_feerate_label">Výše poplatku</string>
+    <string name="send_spliceout_feerate_waiting_for_value">Získávání aktuální velikosti poplatků…</string>
+
+    <string name="send_spliceout_error_invalid_feerate">Prosím zadejte platnou velikost poplatku.</string>
+    <string name="send_spliceout_error_cannot_afford_fees">Celková částka přesahuje váš zůstatek</string>
+    <string name="send_spliceout_error_failure">Platba selhala</string>
+
+    <string name="send_spliceout_prepare_button">Připravit transakci</string>
+    <string name="send_spliceout_prepare_in_progress">Připravování transakce…</string>
+    <string name="send_spliceout_execute_in_progress">Spouštění splicu…</string>
+    <string name="send_spliceout_complete_recap_fee">Poplatek těžařovi</string>
+    <string name="send_spliceout_complete_recap_fee_details">Používá efektivní velikost poplatku %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_total">Celkem</string>
+
+    <!-- scan -->
+
+    <string name="scan_request_camera_access">Klepnutím udělíte přístup k fotoaparátu</string>
+    <string name="scan_request_camera_access_denied">Přístup k fotoaparátu byl zamítnut</string>
+    <string name="scan_help">Pro zaostření přibližte nebo poklepejte na QR kód</string>
+
+    <!-- prepare send payment -->
+
+    <string name="preparesend_title">Poslat</string>
+    <string name="preparesend_contacts_none">Zatím bez kontaktů…</string>
+    <string name="preparesend_contacts_no_matches">Nenalezena žádná shoda…</string>
+    <string name="preparesend_manual_input_hint" translatable="false">satoshi@doména, bc1q..., lnbc...</string>
+
+    <string name="preparesend_paste_button">Vložit</string>
+    <string name="preparesend_scan_button">Naskenovat QR kód</string>
+    <string name="preparesend_imagepicker_button">Vybrat obrázek</string>
+    <string name="preparesend_imagepicker_error">Nepodařilo se zpracovat obrázek.</string>
+    <string name="preparesend_imagepicker_not_found">V obrázku nebyl nalezen QR kód.</string>
+    <string name="preparesend_parsing">Čtení vstupu…</string>
+    <string name="preparesend_lnurl_fetching">Získávání dat ze služby…</string>
+    <string name="preparesend_bip353_resolving">Zpracovávání žádosti o platbu přes DNS…</string>
+
+    <!-- utils: misc strings -->
+
+    <string name="utils_rounded">≈</string>
+    <string name="utils_converted_amount">≈ %1$s</string>
+    <string name="utils_unknown_amount" translatable="false">!?</string>
+    <string name="utils_no_conversion">Směnný kurz není dostupný</string>
+
+    <string name="utils_date_just_now">Právě teď</string>
+    <string name="utils_unknown">N/A</string>
+    <string name="utils_processing_data">Zpracovávání dat…</string>
+    <string name="utils_loading_data">Načítání dat…</string>
+    <string name="utils_loading_prefs">Načítání preferencí…</string>
+    <string name="utils_copied">Zkopírováno do schránky!</string>
+
+    <string name="utils_bip353_with_prefix" translatable="false">₿%1$s</string>
+
+    <string name="accessibility_link">Otevřít odkaz v prohlížeči</string>
+    <string name="accessibility_explorer_link">Otevřít transakci v průzkumníku</string>
+    <string name="accessibility_address_explorer_link">Otevřít adresu v průzkumníku</string>
+    <string name="validation_empty">Toto pole nemůže být prázdné</string>
+    <string name="validation_invalid_amount">Zadejte prosím platnou částku</string>
+    <string name="validation_invalid_number">Zadejte prosím platné číslo</string>
+    <string name="validation_no_decimal">V tomto poli musí být celé číslo</string>
+
+    <string name="btn_back">Zpět</string>
+    <string name="btn_next">Další</string>
+    <string name="btn_copy">Kopírovat</string>
+    <string name="btn_share">Sdílet</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_save">Uložit</string>
+    <string name="btn_delete">Smazat</string>
+    <string name="btn_confirm">Potvrdit</string>
+    <string name="btn_cancel">Zrušit</string>
+    <string name="btn_close">Zavřít</string>
+
+    <!-- mutual close -->
+
+    <string name="mutualclose_title">Vyprázdnit peněženku</string>
+    <string name="mutualclose_loading">Načítání…</string>
+    <string name="mutualclose_checking_balance">Kontroluji zůstatek…</string>
+    <string name="mutualclose_balance">Zůstatek: <b>%1$s</b> (≈ %2$s)</string>
+    <string name="mutualclose_no_channels">Peněženka nemá žádné kanály, které by bylo možné uzavřít.</string>
+    <string name="mutualclose_button">Zhodnotit uzavření</string>
+    <string name="mutualclose_error_chain_mismatch">Tato adresa používá jiný blockchain</string>
+    <string name="mutualclose_error_chain_reqparams">Tato adresa používá nepodporované funkce</string>
+    <string name="mutualclose_error_chain_generic">Tato adresa není podporována</string>
+    <string name="mutualclose_done">Uzavření bylo zahájeno. Uzavírací transakce je ve vašem seznamu transakcí.</string>
+
+    <string name="forceclose_no_channels">Žádné kanály k uzavření.</string>
+
+    <!-- channels view -->
+
+    <string name="channelsview_title">Platební kanály</string>
+    <string name="channelsview_menu_spend_channel_balance">Utratit z adresy kanálu</string>
+    <string name="channelsview_header">Přehled</string>
+    <string name="channelsview_balance">Zůstatek</string>
+    <string name="channelsview_balance_about"><b>Zůstatek</b>: Toto je souhrnný zůstatek vašich aktivních kanálů. Tolik můžete utratit přes Lightning.</string>
+    <string name="channelsview_inbound">Příchozí likvidita</string>
+    <string name="channelsview_inbound_about"><b>Příchozí likvidita</b> je to, co mohou vaše kanály přijmout přes Lightning, aniž by musely přejít na on-chain a platit poplatky.</string>
+    <string name="channelsview_loading_channels">Načítání údajů o kanálech…</string>
+    <string name="channelsview_no_channels">Zatím nemáte žádné kanály.\n\nNový platební kanál se otevře automaticky, když bude potřeba.</string>
+
+    <!-- channels details -->
+
+    <string name="channeldetails_title">Podrobnosti kanálu</string>
+    <string name="channeldetails_not_found">Pro tento identifikátor neexistuje žádný aktivní kanál.</string>
+    <string name="channeldetails_channel_id">ID kanálu</string>
+    <string name="channeldetails_state">Stav</string>
+    <string name="channeldetails_spendable">Zůstatek</string>
+    <string name="channeldetails_receivable">Příchozí likvidita</string>
+
+    <string name="channeldetails_commitments">Aktivní závazky</string>
+    <string name="channeldetails_inactive_commitments">Neaktivní závazky</string>
+    <string name="channeldetails_commitment_funding_tx_id">Financující tx:</string>
+    <string name="channeldetails_commitment_balance">Zůstatek:</string>
+    <string name="channeldetails_commitment_funding_capacity">Kapacita:</string>
+    <string name="channeldetails_commitment_linked_payments">Vyvoláno:</string>
+
+    <string name="channeldetails_json">Zobrazit holá data</string>
+    <string name="channeldetails_share">Sdílet</string>
+    <string name="channeldetails_share_subject">Data kanálů</string>
+    <string name="channeldetails_share_title">Sdílet data kanálu</string>
+
+    <!-- spend from channel address -->
+
+    <string name="spendchanneladdress_title">Utratit z adresy kanálu</string>
+    <string name="spendchanneladdress_instructions">Tato obrazovka slouží jako debugovací nástroj, který pomáhá obnovit prostředky, které byly omylem zaslány na výstup kanálu.</string>
+    <string name="spendchanneladdress_amount">Částka</string>
+    <string name="spendchanneladdress_unsigned_tx">Nepodepsaná transakce</string>
+    <string name="spendchanneladdress_sign_button">Podepsat</string>
+    <string name="spendchanneladdress_signing">Podepisování…</string>
+
+    <string name="spendchanneladdress_success_header">Podpis úspěšně vytvořen.</string>
+    <string name="spendchanneladdress_success_pubkey">Veřejný klíč</string>
+    <string name="spendchanneladdress_success_signature">Podpis</string>
+
+    <!-- home: balance section & misc -->
+
+    <string name="home_balance_loading">Načítání…</string>
+    <string name="home_onchain_incoming">+%1$s</string>
+
+    <string name="home_faq_button">FAQ</string>
+    <string name="home_payments_none">Pomocí tlačítek Přijmout a Odeslat v dolní části této obrazovky můžete začít!</string>
+    <string name="home_payments_more_button">Zobrazit všechny platby…</string>
+    <string name="home_connection_electrum_late">Desync!</string>
+    <string name="home_connection_bad_cert">Certifikát</string>
+    <string name="home_connection_onion">Neplatná adresa</string>
+    <string name="home_connection_connecting">Připojuji…</string>
+    <string name="home_connection_tor_active">Tor</string>
+    <string name="home_request_liquidity">Zažádat o likviditu</string>
+    <string name="home_inflight_payments">Právě máte %1$d probíhajících plateb ve vaší peněžence.\n\nPonechte aplikaci otevřenou, aby se platby bez chyb vypořádaly.</string>
+
+    <!-- in-app notifications -->
+
+    <string name="inappnotif_title">Oznámení</string>
+    <string name="inappnotif_notices_title">Důležité zprávy</string>
+    <string name="inappnotif_payments_title">Nedávná aktivita</string>
+    <string name="inappnotif_empty">Zatím žádná oznámení</string>
+
+    <!-- settings: display seed -->
+
+    <string name="displayseed_title">Obnovovací fráze</string>
+    <string name="displayseed_loading">Odemykám seed…</string>
+    <string name="displayseed_error_details">Nepodařilo se odemknout seed</string>
+    <string name="displayseed_derivation_path">Seed BIP39 se standardní odvozovací cestou BIP84</string>
+    <string name="displayseed_loading_prefs">Načítání preferencí…</string>
+    <string name="displayseed_backup_title">Potvrzení zálohy</string>
+
+    <!-- settings: logs -->
+
+    <string name="troubleshooting_title">Diagnostika a logy</string>
+    <string name="troubleshooting_diagnostics_copy_button">Kopírování diagnostiky aplikace</string>
+    <string name="troubleshooting_logs_exporting">Exportování logů…</string>
+    <string name="troubleshooting_logs_failed">Chyba: logy se nepodařilo exportovat</string>
+    <string name="troubleshooting_logs_view_button">Zobrazit logy…</string>
+    <string name="troubleshooting_logs_view_with">Otevřít logy s…</string>
+    <string name="troubleshooting_logs_share_button">Sdílet logy…</string>
+    <string name="troubleshooting_logs_share_subject">Logy aplikace Phoenix</string>
+    <string name="troubleshooting_logs_share_title">Sdílet logy Phoenixu…</string>
+
+    <!-- payment details -->
+
+    <string name="paymentdetails_loading">Načítání podrobností platby…</string>
+    <string name="paymentdetails_error">Nepodařilo se najít podrobnosti o platbě</string>
+
+    <string name="paymentdetails_status_inbound_liquidity_success"><b>LIKVIDITA PŘIDÁNA</b> %1$s</string>
+    <string name="paymentdetails_status_inbound_liquidity_auto_success"><b>SPRÁVA KANÁLŮ</b> %1$s</string>
+    <string name="paymentdetails_status_channelclose_confirmed"><b>HOTOVO</b> %1$s</string>
+    <string name="paymentdetails_status_sent_successful"><b>POSLÁNO</b> %1$s</string>
+    <string name="paymentdetails_status_sent_pending">Probíhá…</string>
+    <string name="paymentdetails_status_sent_failed"><b>CHYBA</b>\nNeposlaly se žádné peníze.</string>
+
+    <string name="paymentdetails_status_received_pending">Ještě neobdrženo.</string>
+    <string name="paymentdetails_status_received_paytoopen_pending">Čekání na otevření kanálu</string>
+    <string name="paymentdetails_status_received_successful"><b>PŘIJATO</b> %1$s</string>
+
+    <string name="paymentdetails_status_unconfirmed">Čekání na potvrzení</string>
+    <string name="paymentdetails_status_unconfirmed_fetching">Zjišťování stavu…</string>
+    <string name="paymentdetails_status_unconfirmed_zero">0 potvrzení</string>
+    <string name="paymentdetails_status_unconfirmed_zero_bump">Klepnutím zrychlíte</string>
+    <string name="paymentdetails_status_unconfirmed_default">%1$d potvrzení</string>
+    <string name="paymentdetails_status_confirmed">Potrvzeno on-chain</string>
+
+    <string name="paymentdetails_offer_note_label">Zpráva</string>
+    <string name="paymentdetails_offer_sender_label">Poslal(a)</string>
+    <string name="paymentdetails_offer_sender_unknown">Neznámý</string>
+    <string name="paymentdetails_offer_sender_unknown_details">Se zprávy od neznámých zdrojů buďte opatrní</string>
+
+    <string name="paymentdetails_lnurlpay_service">Zpracovává</string>
+    <string name="paymentdetails_lnurlpay_action_message_label">Zpráva</string>
+    <string name="paymentdetails_lnurlpay_action_url_label">Odkaz</string>
+    <string name="paymentdetails_lnurlpay_action_url_button">Otevřít odkaz</string>
+    <string name="paymentdetails_lnurlpay_action_aes_label">Zpráva</string>
+    <string name="paymentdetails_lnurlpay_action_aes_decrypting">Dešifrování zprávy…</string>
+
+    <string name="paymentdetails_desc_label">Popis</string>
+    <string name="paymentdetails_note_label">Poznámka</string>
+    <string name="paymentdetails_destination_label">Odesláno</string>
+    <string name="paymentdetails_destination_cpfp_value">Bitcoinoví těžaři</string>
+    <string name="paymentdetails_fees_label">Poplatky</string>
+    <string name="paymentdetails_error_label">Chyba</string>
+    <string name="paymentdetails_no_description">Žádný popis</string>
+    <string name="paymentdetails_info_uniclose">K této platbě došlo po konfliktu v kanálu.</string>
+
+    <string name="paymentdetails_desc_splice_out">On-chain platba</string>
+    <string name="paymentdetails_desc_closing_channel">Zavírání kanálu</string>
+    <string name="paymentdetails_desc_legacy_migration">Migrace ze staré aplikace</string>
+    <string name="paymentdetails_desc_cpfp">Postrčit transakci</string>
+    <string name="paymentdetails_desc_liquidity_manual">Manuální likvidita (+%1$s)</string>
+    <string name="paymentdetails_desc_liquidity_automated">Správa kanálů</string>
+    <string name="paymentdetails_desc_swapout">Swap-out do %1$s</string>
+    <string name="paymentdetails_desc_swapin">On-chain vklad</string>
+
+    <string name="paymentdetails_desc_to">pro %1$s</string>
+    <string name="paymentdetails_desc_from">od %1$s</string>
+
+    <string name="paymentdetails_edit_dialog_title">Přidat vlastní popis k této platbě</string>
+    <string name="paymentdetails_edit_dialog_input_label">Popis</string>
+    <string name="paymentdetails_attach_desc_button">Přidat poznámku</string>
+    <string name="paymentdetails_edit_desc_button">Upravit poznámku</string>
+    <string name="paymentdetails_details_button">Technické detaily</string>
+
+    <!-- payment details: technicals data -->
+
+    <string name="paymentdetails_technical_title">Technické detaily</string>
+    <string name="paymentdetails_payment_type_label">Typ platby</string>
+    <string name="paymentdetails_type_outgoing_close">Platba uzavírající kanál</string>
+    <string name="paymentdetails_type_incoming_onchain_splice">Příchozí on-chain platba (splice)</string>
+    <string name="paymentdetails_type_incoming_onchain_newchannel">Příchozí on-chain platba (nový kanál)</string>
+    <string name="paymentdetails_type_incoming_legacy_paytopen">Příchozí platba (legacy pay-to-open)</string>
+    <string name="paymentdetails_type_incoming_legacy_swapin">Příchozí on-chain platba (legacy swap-in)</string>
+    <string name="paymentdetails_type_outgoing_bolt11">Odchozí Lightning platba (bolt11)</string>
+    <string name="paymentdetails_type_outgoing_bolt12">Odchozí Lightning platba (bolt12)</string>
+    <string name="paymentdetails_type_incoming_bolt11">Příchozí Lightning platba (bolt11)</string>
+    <string name="paymentdetails_type_incoming_bolt12">Příchozí Lightning platba (bolt12)</string>
+    <string name="paymentdetails_type_outgoing_splice">Odchozí on-chain platba (splice)</string>
+    <string name="paymentdetails_type_outgoing_swapout">Outgoing on-chain payment (legacy swap)</string>
+    <string name="paymentdetails_type_outgoing_splice_cpfp">Zrychlení on-chain transakcí</string>
+    <string name="paymentdetails_type_outgoing_liquidity_manual">Vyžádat příchozí likviditu (ručně)</string>
+    <string name="paymentdetails_type_outgoing_liquidity_auto">Vyžádat příchozí likviditu (auto)</string>
+
+    <string name="paymentdetails_swapin_address_label">Adresa vkladu</string>
+    <string name="paymentdetails_bitcoin_address_label">Bitcoinová adresa</string>
+
+    <string name="paymentdetails_splice_out_channel_label">Spliced kanál</string>
+
+    <string name="paymentdetails_liquidity_amount_label">Likvidita vyžádána</string>
+
+    <string name="paymentdetails_closing_type_label">Uzavírací typ</string>
+    <string name="paymentdetails_closing_type_mutual">Vzájemný</string>
+    <string name="paymentdetails_closing_type_local">Lokální</string>
+    <string name="paymentdetails_closing_type_remote">Vzdálený</string>
+    <string name="paymentdetails_closing_type_revoked">Zrušeno</string>
+    <string name="paymentdetails_closing_type_other">Ostatní</string>
+
+    <string name="paymentdetails_pubkey_label">Cílový veřejný klíč</string>
+    <string name="paymentdetails_payment_hash_label">Hash platby</string>
+    <string name="paymentdetails_preimage_label">Předobraz</string>
+    <string name="paymentdetails_preimage_help">Kryptografický důkaz o úspěšném přijetí platby příjemcem.</string>
+    <string name="paymentdetails_bolt11_label">Bolt11 faktura</string>
+    <string name="paymentdetails_bolt11_description_label">Popis faktury</string>
+    <string name="paymentdetails_bolt12_label">Bolt12 faktura</string>
+    <string name="paymentdetails_offer_label">Nabídka</string>
+    <string name="paymentdetails_offer_metadata_label">Metadata</string>
+    <string name="paymentdetails_payerkey_label">Plátcův klíč</string>
+    <string name="paymentdetails_payerkey_is_mine">Váš klíč nabídky</string>
+    <string name="paymentdetails_liquidity_purchase_type">Typ nákupu</string>
+
+    <string name="paymentdetails_status_label">Stav platby</string>
+    <string name="paymentdetails_status_success">Úspěšná</string>
+    <string name="paymentdetails_status_confirming">Potvrzování</string>
+    <string name="paymentdetails_status_pending">Čeká na vyřízení</string>
+    <string name="paymentdetails_status_failed">Selhala</string>
+
+    <string name="paymentdetails_parts_label">Části platby (%1$d)</string>
+    <string name="paymentdetails_part_label">Část</string>
+    <string name="paymentdetails_part_hops_label">Skoky</string>
+
+    <string name="paymentdetails_received_with_label">Přijato přes</string>
+    <string name="paymentdetails_received_with_legacy_onchain">Kanálová operace (nový nebo splice-in)</string>
+    <string name="paymentdetails_received_with_lightning">Lightningová platba</string>
+    <string name="paymentdetails_received_with_fee_credit">Poplatkový kredit</string>
+    <string name="paymentdetails_channel_id_label">ID kanálu</string>
+    <string name="paymentdetails_tx_id_label">Transakce</string>
+
+    <string name="paymentdetails_created_at_label">Vytvořeno v</string>
+    <string name="paymentdetails_completed_at_label">Dokončeno v</string>
+    <string name="paymentdetails_elapsed_label">Uběhlo</string>
+    <string name="paymentdetails_elapsed">%1$s ms</string>
+
+    <string name="paymentdetails_invoice_requested_label">Požadovaná částka</string>
+    <string name="paymentdetails_amount_sent_label">Poslaná částka (včetně poplatků)</string>
+    <string name="paymentdetails_amount_received_label">Přijatá částka</string>
+    <string name="paymentdetails_amount_fee_credit_label">Nahromazený poplatkový kredit </string>
+    <string name="paymentdetails_amount_added_to_fee_credit_label">Částka přidána do poplatkového kreditu</string>
+    <string name="paymentdetails_amount_rate_now">≈ %1$s (nyní)</string>
+    <string name="paymentdetails_amount_rate_then">≈ %1$s (předtím)</string>
+
+    <!-- offer contact -->
+
+    <string name="contact_add_contact_button">Přidat kontakt</string>
+    <string name="contact_pay_button">Odeslat platbu</string>
+
+    <string name="contact_attach_offer_new">Vytvořit nový kontakt…</string>
+
+    <string name="contact_error_name_empty">Jméno nemůže být prázdné</string>
+    <string name="contact_error_offer_invalid">Neplatný Bolt12 kód</string>
+    <string name="contact_error_offer_known">Kód již byl přidělen k %1$s</string>
+    <string name="contact_error_address_invalid">Neplatná Lightningová adresa</string>
+    <string name="contact_error_address_known">Adresa již byla přidělena k \"%1$s\"</string>
+    <string name="contact_error_invalid">Tento kód nebo adresa jsou neplatné</string>
+
+    <string name="contact_codedialog_title_generic">Přidat adresu pro tento kontakt</string>
+    <string name="contact_codedialog_title_offer">Upravit Bolt12 kód</string>
+    <string name="contact_codedialog_title_address">Upravit Lightningovou adresu pro tento kontakt.</string>
+
+    <string name="contact_codedialog_label_label">Štítek (volitelné)</string>
+    <string name="contact_codedialog_label_generic">Bolt12 kód nebo Lightningová adresa</string>
+    <string name="contact_codedialog_label_address">Lightningová adresa</string>
+    <string name="contact_codedialog_label_offer">Bolt12 kód nabídky</string>
+
+    <string name="contact_delete_code_confirm">Chcete smazat tuto adresu?</string>
+    <string name="contact_delete_contact_confirm">Chcete smazat tento kontakt?</string>
+
+    <string name="contact_add_title">Přidělit kontakt k BOLT12 nabídce</string>
+    <string name="contact_name_label">Jméno</string>
+    <string name="contact_name_hint">Zadejte jméno</string>
+    <string name="contact_offer_key_title">Zaplatit svým Bolt12 klíčem</string>
+    <string name="contact_offer_key_enabled">Pokud zná váš vlastní platební kód Bolt12, bude schopen zjistit, kdy platby přicházejí od vás.</string>
+    <string name="contact_offer_key_disabled">Při placení tomuto kontaktu používat zahoditelné id.</string>
+    <string name="contact_codes_list">Adresa</string>
+    <string name="contact_codes_add_new">Přidat Bolt12 kód nebo platební adresu…</string>
+    <string name="contact_codes_add_new_short">Přidat nový…</string>
+
+    <string name="contact_search_name">Hledat podle jména</string>
+    <string name="contact_none">Nenalezeny žádné kontakty…</string>
+
+    <string name="contact_photo_open_camera">Vyfotit</string>
+    <string name="contact_photo_open_gallery">Procházet obrázky</string>
+    <string name="contact_photo_remove">Smazat obrázek</string>
+
+    <!-- settings: access control -->
+
+    <string name="accessctrl_title">Přístup k aplikaci</string>
+
+    <string name="accessctrl_auth_error_header">Zámek obrazovky nelze povolit</string>
+    <string name="accessctrl_auth_error_no_hw">V tomto zařízení není vhodný ověřovací hardware.</string>
+    <string name="accessctrl_auth_error_hw_unavailable">Biometrický hardware není dostupný. Zkuste to znovu později.</string>
+    <string name="accessctrl_auth_error_none_enrolled">Nejdříve zadejte PIN/Gesto/Otisk prstu v systému Androidu.</string>
+    <string name="accessctrl_auth_error_update_required">Hardware je nezabezpečený. Je vyžadována bezpečnostní aktualizace Androidu.</string>
+    <string name="accessctrl_auth_error_unsupported">Není podporováno touto verzí systému Android.</string>
+    <string name="accessctrl_auth_error_lockout">Příliš mnoho pokusů, zkuste to znovu později.</string>
+    <string name="accessctrl_auth_error_vendor">Neošetřená chyba výrobce hardwaru</string>
+    <string name="accessctrl_auth_error_timeout">Čas na ověření vypršel</string>
+    <string name="accessctrl_auth_error_cancelled">Ověření bylo zrušeno</string>
+    <string name="accessctrl_auth_error_too_old">Tato verze systému Android není kompatibilní.</string>
+    <string name="accessctrl_auth_error_unhandled">Neošetřená chyba: %1$d</string>
+
+    <string name="accessctrl_screenlock_header">Přístup k aplikaci</string>
+    <string name="accessctrl_screenlock_biometrics_label">Systémové ověření</string>
+    <string name="accessctrl_screenlock_biometrics_desc">Zabezpečuje přístup k aplikaci pomocí přihlašovacích údajů Androidu.</string>
+    <string name="accessctrl_screenlock_pin_label">Zamykací PIN</string>
+    <string name="accessctrl_screenlock_pin_desc">Zabezpečuje přístup k aplikaci pomocí šestimístného PIN kódu.</string>
+
+    <string name="accessctrl_autolock_label">Časový limit uzamčení</string>
+    <string name="accessctrl_autolock_desc">Po %1$s minutách nečinnosti</string>
+    <string name="accessctrl_autolock_desc_never">Nikdy</string>
+
+    <string name="accessctrl_spendlock_header">Odesílání plateb</string>
+    <string name="accessctrl_spendlock_pin_label">Odesílací PIN</string>
+    <string name="accessctrl_spendlock_pin_desc">Pokud je tato možnost povolena, je pro posílání finančních prostředků z Phoenixu vyžadován PIN.</string>
+
+    <string name="accessctrl_misc_header">Různé</string>
+    <string name="accessctrl_shuffle_pin">Náhodně promíchávat klávesnici PINu</string>
+
+    <!-- lnurl-auth -->
+
+    <string name="lnurl_auth_legacy_notice">Legacy mód</string>
+    <string name="lnurl_auth_help">Klikněte zde pro více informací</string>
+    <string name="lnurl_auth_help_dialog_title">Jak to funguje?</string>
+    <string name="lnurl_auth_help_dialog_general_details">Phoenix se ověřuje pomocí klíče jedinečného pro <b>%1$s</b>. Tento jedinečný klíč se stane vaším heslem k účtu.</string>
+    <string name="lnurl_auth_help_dialog_privacy_title">Soukromí</string>
+    <string name="lnurl_auth_help_dialog_privacy_details">Služba nebude mít přístup k vaší peněžence. Nevidí váš zůstatek, platby ani klíče.</string>
+    <string name="lnurl_auth_help_dialog_compat_title">Legacy mód</string>
+    <string name="lnurl_auth_help_dialog_compat_details">Phoenix u této službě používá nestandardní schéma, aby zůstal kompatibilní se staršími verzemi aplikace. Přidružený účet nebude přenosný do jiných peněženek.</string>
+    <string name="lnurl_auth_help_dialog_compat_button">Změnit schéma</string>
+    <string name="lnurl_auth_button">Přihlásit se</string>
+    <string name="lnurl_auth_try_again_button">Zkuste to znovu</string>
+    <string name="lnurl_auth_in_progress">Přihlašování do\n<b>%1$s</b></string>
+    <string name="lnurl_auth_success">Ověření bylo úspěšné.</string>
+    <string name="lnurl_auth_failure">Ověření bylo neúspěšné:</string>
+    <string name="lnurl_auth_error_network">Chyba sítě. Zkontrolujte připojení k internetu a zkuste to znovu.</string>
+    <string name="lnurl_auth_error_other">Vyskytla se neznámá chyba. Zkuste to znovu.</string>
+
+    <!-- lnurl-auth settings: scheme types -->
+
+    <string name="lnurl_auth_scheme_default">Výchozí</string>
+    <string name="lnurl_auth_scheme_default_desc">Používat standardní schéma v souladu s LNURL specifikacemi. Jedná se o doporučenou možnost pro nové peněženky a aplikaci Phoenix na iOS.</string>
+    <string name="lnurl_auth_scheme_legacy">Android Legacy</string>
+    <string name="lnurl_auth_scheme_legacy_desc">Používat legacy schéma pro připojení k účtům vytvořených pomocí starých Android verzí aplikace Phoenix.</string>
+
+    <!-- lnurl-withdraw -->
+
+    <string name="lnurl_withdraw_confirm_button">Vybrat</string>
+    <string name="lnurl_withdraw_wait">Získávání prostředků…</string>
+    <string name="lnurl_withdraw_amount_below_min">Částka musí být alespoň %1$s.</string>
+    <string name="lnurl_withdraw_amount_above_max">Částka nemůže přesáhnout %1$s.</string>
+    <string name="lnurl_withdraw_error_header">Výběr selhal:</string>
+
+    <!-- lnurl: common remote error messages -->
+
+    <string name="lnurl_error_remote_details">Služba <b>%1$s</b> vrátila chybu. V případě potřeby kontaktujte jejich podporu.\n\nPodrobnosti zprávy služby: \"<i>%2$s</i>\"</string>
+    <string name="lnurl_error_remote_code">Služba <b>%1$s</b> vrátila HTTP chybu (%2$s).\n\nV případě potřeby kontaktujte jejich podporu.</string>
+    <string name="lnurl_error_remote_unreadable">Služba <b>%1$s</b> vrátila chybnou zprávu.</string>
+    <string name="lnurl_error_remote_connection">Nepodařilo se připojit ke službě <b>%1$s</b>.</string>
+    <string name="lnurl_error_remote_is_website">Toto vypadá jako webová stránka (ne jako Lightning faktura):\n\n<i>%1$s</i></string>
+    <string name="lnurl_error_remote_unknown_lnaddress">Služba %1$s nepodporuje Lightningové adresy nebo nezná tohoto uživatele.</string>
+
+    <!-- lnurl-pay -->
+
+    <string name="lnurl_pay_domain">Obsluhuje</string>
+    <string name="lnurl_pay_meta_description">Popis</string>
+    <string name="lnurl_pay_comment_add_button">Připojit zprávu</string>
+    <string name="lnurl_pay_comment_label">Moje zpráva</string>
+    <string name="lnurl_pay_comment_instructions">K platbě můžete připojit zprávu. Tato zpráva bude odeslána příjemci.</string>
+    <string name="lnurl_pay_pay_button">Zaplatit</string>
+    <string name="lnurl_pay_requesting_invoice">Získávání faktury…</string>
+    <string name="lnurl_pay_paying_invoice">Placení faktury…</string>
+
+    <string name="lnurl_pay_amount_below_min">Částka musí být alespoň %1$s</string>
+    <string name="lnurl_pay_amount_above_max">Částka musí být nejvýše %1$s</string>
+
+    <string name="lnurl_pay_error_header">Platba selhala.</string>
+    <string name="lnurl_pay_error_invalid_chain">Faktura vrácená <b>%1$s</b> nepoužívá stený blockchain jako vaše peněženka.</string>
+    <string name="lnurl_pay_error_payment_pending">Faktura vrácena od <b>%1$s</b> se již zpracovává.</string>
+    <string name="lnurl_pay_error_already_paid">Faktura vrácená <b>%1$s</b> již byla zaplacena.</string>
+    <string name="lnurl_pay_error_invalid_amount">Faktura vrácená <b>%1$s</b> obsahuje neplatnou částku.</string>
+    <string name="lnurl_pay_error_invalid_malformed">Faktura vrácená <b>%1$s</b> je chybná.</string>
+
+    <!-- settings: display preferences -->
+
+    <string name="prefs_display_title">Zobrazit možnosti</string>
+    <string name="prefs_filter_name">Filtrovat podle jména</string>
+    <string name="prefs_display_coin_label">Jednotka Bitcoinu</string>
+    <string name="prefs_display_coin_sat_label">Satoshi</string>
+    <string name="prefs_display_coin_sat_desc">1 sat je 0.00000001 btc</string>
+    <string name="prefs_display_coin_bit_label">Bit</string>
+    <string name="prefs_display_coin_bit_desc">1 bit je 0.000001 btc</string>
+    <string name="prefs_display_coin_mbtc_label">Milli-Bitcoin</string>
+    <string name="prefs_display_coin_mbtc_desc">1 mbtc je 0.001 btc</string>
+    <string name="prefs_display_coin_btc_label">Bitcoin</string>
+    <string name="prefs_display_fiat_label">Fiat měna</string>
+    <string name="prefs_display_theme_label">Motiv aplikace</string>
+    <string name="prefs_display_theme_dark_label">Tmavý motiv</string>
+    <string name="prefs_display_theme_light_label">Světlý motiv</string>
+    <string name="prefs_display_theme_system_label">Podle systému</string>
+    <string name="prefs_locale_label">Jazyk aplikace</string>
+
+    <!-- settings: electrum server -->
+
+    <string name="electrum_title">Electrum server</string>
+    <string name="electrum_about">K zabezpečení vašich platebních kanálů Phoenix monitoruje Bitcoinový blockchain skrz Electrum servery.\n\nVe výchozím nastavení se používají náhodné servery. Phoenix můžete také nakonfigurovat tak, aby se připojoval pouze k vašemu vlastnímu serveru.</string>
+    <string name="electrum_block_height_label">Výška bloku</string>
+    <string name="electrum_connection_dialog_tls_port">Použít TLS port (výchozí 50002).</string>
+    <string name="electrum_connection_dialog_onion_port">Pro onion služby použít TCP port, ne TLS.</string>
+    <string name="electrum_connection_dialog_tor_enabled_warning">Když už máte povolený Tor, měli byste pro tento server použít onion adresu.</string>
+    <string name="electrum_connection_dialog_tor_enabled_ignore_box">Ne, nechci použít onion adresu.</string>
+
+    <string name="electrum_connection_closed_with_random">Odpojeno od Electrum</string>
+    <string name="electrum_connection_closed_with_custom">Odpojeno od %1$s</string>
+    <string name="electrum_connection_connecting_to_random">Připojování k (náhodnému) %1$s</string>
+    <string name="electrum_connection_connecting_to_custom">Připojování k %1$s</string>
+    <string name="electrum_connection_connected">Připojeno k %1$s</string>
+
+    <string name="electrum_description_custom">Používáte vlastní server</string>
+    <string name="electrum_description_bad_certificate">Tento server poskytl neznámý certifikát. Připojení bylo odmítnuto.</string>
+    <string name="electrum_description_not_onion">Tor je povolen. Tento server by měl používat onion adresu.</string>
+
+    <string name="electrum_dialog_checkbox">Použít vlastní server</string>
+    <string name="electrum_dialog_input">Adresa serveru (host:port)</string>
+    <string name="electrum_dialog_invalid_input">Tato adresa je neplatná.</string>
+    <string name="electrum_dialog_cert_check_button">Připojit</string>
+    <string name="electrum_dialog_cert_checking">Kontrola certifikátu…</string>
+    <string name="electrum_dialog_cert_failure">Nepodařilo se připojit</string>
+    <string name="electrum_dialog_cert_unresolved">Adresu se nepodařilo přeložit.</string>
+    <string name="electrum_dialog_cert_header">Nedůvěryhodný certifikát</string>
+    <string name="electrum_dialog_cert_sha1">SHA1 Fingerprint</string>
+    <string name="electrum_dialog_cert_sha256">SHA256 Fingerprint</string>
+    <string name="electrum_dialog_cert_issuer">Vydavatel</string>
+    <string name="electrum_dialog_cert_subject">Předmět</string>
+    <string name="electrum_dialog_cert_expiration">Platný do</string>
+    <string name="electrum_dialog_cert_copy">Kopírovat certifikát</string>
+    <string name="electrum_dialog_cert_accept">Důvěřovat certifikátu</string>
+
+    <!-- settings: Tor -->
+
+    <string name="tor_settings_title">Tor</string>
+    <string name="tor_settings_switch_label">Povolit Tor</string>
+    <string name="tor_settings_instructions_title">Jak to funguje</string>
+
+    <!-- home: connectivity dialog -->
+
+    <string name="conndialog_title">Stav připojení</string>
+    <string name="conndialog_summary_not_ok">Aplikace nebude správně fungovat, dokud nebudou navázána všechna připojení.</string>
+    <string name="conndialog_network">Vaše zařízení nemá připojení k internetu. Aplikace nebude fungovat správně.\n\nZkontrolujte prosím nastavení vašeho zařízení.</string>
+    <string name="conndialog_electrum">Electrum</string>
+    <string name="conndialog_lightning">Peer</string>
+    <string name="conndialog_accessibility_desc">Spravovat připojení pro %1$s</string>
+    <string name="conndialog_connecting">Připojování…</string>
+    <string name="conndialog_connected">Připojeno</string>
+    <string name="conndialog_closed">Odpojeno</string>
+    <string name="conndialog_closed_bad_cert">Špatný certifikát</string>
+    <string name="conndialog_electrum_not_onion">Neplatná adresa!</string>
+    <string name="conndialog_tor_disclaimer_title">Tor je povolen!</string>
+    <string name="conndialog_tor_disclaimer_body">Ujistěte se, že vaše Tor VPN je aktivní a běží.</string>
+
+    <!-- settings: about -->
+
+    <string name="about_title">O Phoenixu</string>
+    <string name="about_version">Verze Phoenix: <b>%1$s</b></string>
+    <string name="about_faq_link">Máte otázky? Podívejte se na časté dotazy</string>
+    <string name="about_support_link">Podpora</string>
+    <string name="about_privacy_link">Soukromí</string>
+    <string name="about_terms_link">Podmínky</string>
+
+    <!-- settings: options for payments -->
+
+    <string name="paymentsettings_title">Nastavení &amp; poplatky</string>
+
+    <string name="paymentsettings_category_incoming">Příchozí platby</string>
+    <string name="paymentsettings_category_outgoing">Odchozí platby</string>
+    <string name="paymentsettings_category_lnurl">LNURL</string>
+
+    <string name="paymentsettings_defaultdesc_title">Popis faktury</string>
+    <string name="paymentsettings_defaultdesc_none">Není nastaven žádný popis…</string>
+    <string name="paymentsettings_defaultdesc_dialog_title">Výchozí popis</string>
+    <string name="paymentsettings_defaultdesc_dialog_description">Vaše faktury budou ve výchozím nastavení používat tento popis. V jednotlivých případech jej můžete přepsat.</string>
+    <string name="paymentsettings_defaultdesc_dialog_label">Popis faktury</string>
+
+    <string name="paymentsettings_expiry_title">Platnost faktury</string>
+    <string name="paymentsettings_expiry_dialog_title">Platnost faktury</string>
+    <string name="paymentsettings_expiry_dialog_description">Vytvořené faktury jsou po této prodlevě neaktuální. Výchozí hodnota je 1 týden.</string>
+    <string name="paymentsettings_expiry_one_hour">1 hodina</string>
+    <string name="paymentsettings_expiry_one_day">1 den</string>
+    <string name="paymentsettings_expiry_one_week">1 týden (výchozí)</string>
+    <string name="paymentsettings_expiry_two_weeks">2 týdny</string>
+    <string name="paymentsettings_expiry_three_weeks">3 týdny</string>
+    <string name="paymentsettings_expiry_value">%1$s sekund</string>
+
+    <string name="paymentsettings_lnurlauth_scheme_title">LNURL ověřovací schéma</string>
+
+    <string name="paymentsettings_swap_format_title">Formát Bitcoinové adresy</string>
+    <string name="paymentsettings_swap_format_legacy_title">Legacy</string>
+    <string name="paymentsettings_swap_format_legacy_desc">Méně efektivní a méně soukromý formát, který nemá rotující adresy, ale je kompatibilní skoro se všemi službami a peněženkami.</string>
+    <string name="paymentsettings_swap_format_taproot_title">Taproot (doporučený)</string>
+    <string name="paymentsettings_swap_format_taproot_desc">Výchozí formát s lepším soukromím, levnějšími poplatky a rotací adres, ale některé služby a peněženky nerozumí tomuto formátu.</string>
+
+    <string name="paymentsettings_overpayment_title">Povolit přeplacení</string>
+    <string name="paymentsettings_overpayment_enabled">Budete moci přeplatit Lightning fakturu dvakrát o požadovanou částku. Užitečné na nastavení dýška nebo pro ochranu soukromí.</string>
+    <string name="paymentsettings_overpayment_disabled">Vypnuté (výchozí)</string>
+
+    <!-- settings: currencies -->
+
+    <string name="currency_ars_official">Argentinské Peso (oficiální kurz)</string>
+    <string name="currency_ars_bm">Argentinské Peso</string>
+    <string name="currency_cup_official">Kubánské Peso (oficiální kurz)</string>
+    <string name="currency_cup_fm">Kubánské Peso</string>
+    <string name="currency_lbp_official">Libanonská Libra (oficiální kurz)</string>
+    <string name="currency_lbp_bm">Libanonská Libra</string>
+
+    <!-- payments history -->
+
+    <string name="payments_history_title">Místní platby</string>
+    <string name="payments_history_export_button">Exportovat</string>
+    <string name="payments_history_empty">Zatím žádné platby…</string>
+    <string name="payments_history_today">Dnes</string>
+    <string name="payments_history_yesterday">Včera</string>
+    <string name="payments_history_thisweek">Začátkem týdne</string>
+    <string name="payments_history_lastweek">Poslední týden</string>
+
+    <string name="payments_export_title">Exportovat platby</string>
+    <string name="payments_export_csv_header">CSV export</string>
+    <string name="payments_export_csv_instructions">Exportovat úspěšné místní platby do formátu CSV (hodnoty oddělené čárkou).</string>
+    <string name="payments_export_csv_start_label">Od data</string>
+    <string name="payments_export_csv_end_label">Do data</string>
+    <string name="payments_export_csv_context_label">Zahrnout původ/cíl</string>
+    <string name="payments_export_csv_description_label">Zahrnout popis</string>
+    <string name="payments_export_csv_generate_button">Exportovat</string>
+    <string name="payments_export_csv_no_payments">Zatím žádné úspěšné platby</string>
+    <string name="payments_export_csv_invalid_timestamps">Vyberte prosím platné od/do datum</string>
+    <string name="payments_export_csv_in_progress">Export plateb…</string>
+    <string name="payments_export_csv_copy_button">Zkopírovat data do schránky…</string>
+    <string name="payments_export_csv_share_subject">Phoenix - platby od %1$s do %2$s</string>
+    <string name="payments_export_csv_share_title">Sdílet Phoenix platby…</string>
+    <string name="payments_export_csv_share_button">Sdílet soubor</string>
+    <string name="payments_export_csv_error">Export selhal.</string>
+    <string name="payments_export_csv_no_data">Nenalezeny žádné platby.</string>
+
+    <string name="payments_export_database_header">Exportovat databázi</string>
+    <string name="payments_export_database_instructions">Zašifrovat a exportovat vaší platební databázi. Tohle se dá použít při přesouvání platební historie z jednoho zařízení na druhé.</string>
+    <string name="payments_export_database_button">Exportovat databázi</string>
+    <string name="payments_export_database_failed">Export selhal</string>
+    <string name="payments_export_database_success">Soubor je uložen ve veřejné složce zařízení.</string>
+
+    <!-- components -->
+
+    <string name="component_calendar_inclusive">(včetně)</string>
+
+    <!-- settings: wallet info -->
+
+    <string name="walletinfo_title">Informace o peněžence</string>
+    <string name="walletinfo_descriptor_legacy">Legacy deskriptor</string>
+    <string name="walletinfo_descriptor">Descriptor</string>
+    <string name="walletinfo_swapin_user_pubkey">Uživatelův veřejný klíč</string>
+    <string name="walletinfo_swapin_addresses">Swap adresy</string>
+    <string name="walletinfo_xpub">Hlavní veřejný klíč</string>
+    <string name="walletinfo_path">(Cesta: %1$s)</string>
+
+    <string name="walletinfo_swappable_title">Připraveno na swap</string>
+    <string name="walletinfo_confirming_title">Čekání na %1$d potvrzení</string>
+    <string name="walletinfo_confirming_more">+%1$d dalších…</string>
+    <string name="walletinfo_confirmed_title">Potvrzený zůstatek</string>
+    <string name="walletinfo_unconfirmed_title">Nepotvrzený zůstatek</string>
+    <string name="walletinfo_incoming_balance">Přichází +%1$s</string>
+    <string name="walletinfo_loading_data">Načítání dat peněženky…</string>
+
+    <string name="swapinaddresses_title">Swap-in adresa</string>
+    <string name="swapinaddresses_sync">Synchronizuji…</string>
+    <string name="swapinaddresses_taproot">Taproot</string>
+    <string name="swapinaddresses_legacy">Legacy</string>
+
+    <string name="walletinfo_lightning">Lightning</string>
+    <string name="walletinfo_nodeid">ID Uzlu</string>
+    <string name="walletinfo_legacy_nodeid_toggle">Zobrazit ID legacy uzlu</string>
+    <string name="walletinfo_legacy_nodeid">ID legacy uzlu</string>
+
+    <string name="walletinfo_onchain_final">Konečná peněženka</string>
+    <string name="walletinfo_onchain_final_spend_button">Utratit</string>
+
+    <!-- settings: liquidity policy for channels creation -->
+
+    <string name="liquiditypolicy_title">Správa kanálů</string>
+    <string name="liquiditypolicy_fees_estimation_loading">Získávání sazeb poplatků…</string>
+    <string name="liquiditypolicy_fees_header">Nastavení mých poplatků</string>
+    <string name="liquiditypolicy_advanced_title">Pokročilá správa kanálů</string>
+    <string name="liquiditypolicy_loading">Získávání informací o zásadách…</string>
+
+    <!-- CPFP splices -->
+
+    <string name="cpfp_feerate_label">Poplatky</string>
+    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+
+    <string name="cpfp_prepare_button">Připravit platbu</string>
+    <string name="cpfp_estimating">Odhadování poplatků…</string>
+    <string name="cpfp_estimation">Zaplatíte <b>%1$s</b> těžařům Bitcoinu</string>
+    <string name="cpfp_execute_button">Provést platbu</string>
+    <string name="cpfp_executing">Provádění platby…</string>
+    <string name="cpfp_success">Platba dokončena</string>
+    <string name="cpfp_failure_title">Platba selhala</string>
+    <string name="cpfp_error_title">Nelze pokračovat</string>
+
+    <!-- mempool -->
+
+    <string name="mempool_unknown_feerate_title">Neznámý stav mempoolu</string>
+    <string name="mempool_unknown_feerate_details">Phoenix se nepodařilo získat aktuální stav mempoolu a nemůže odhadnout rychlost vašich transakcí.\n\nZkontrolujte mempool ručně v průzkumníku a použijte adekvátní hodnotu!</string>
+    <string name="mempool_fastest">≈ Další blok</string>
+    <string name="mempool_halfhour">≈ 30 minut</string>
+    <string name="mempool_hour">≈ 1 hodina</string>
+    <string name="mempool_slow">Nízký poplatek</string>
+
+    <!-- splice errors -->
+
+    <string name="splice_error_nochannels">Nemáte žádné kanály</string>
+    <string name="splice_error_aborted_by_peer">Prerušeno peerem [%1$s]</string>
+    <string name="splice_error_cannot_create_commit">Nelze vytvořit nový commitment</string>
+    <string name="splice_error_concurrent_remote">Jiný splice-in již probíhá</string>
+    <string name="splice_error_channel_not_quiescent">Zrušeno kvůli chybě</string>
+    <string name="splice_error_disconnected">Kanál je odpojený</string>
+    <string name="splice_error_funding_error">Financování selhalo [%1$s]</string>
+    <string name="splice_error_insufficient_funds">Nedostatek prostředků</string>
+    <string name="splice_error_cannot_start_session">Nelze zahájit transakční relaci s peerem</string>
+    <string name="splice_error_interactive_session">Interaktivní tx relace selhala [%1$s]</string>
+    <string name="splice_error_invalid_pubkey">Neplatný splice-out pubkey skript</string>
+    <string name="splice_error_splice_in_progress">Splice platba již probíhá</string>
+    <string name="splice_error_invalid_liquidity_ads">Neplatný liquidity-ads požadavek: [%1$s]</string>
+    <string name="splice_error_invalid_channel_params">Neplatné parametry kanálu: [%1$s]</string>
+    <string name="splice_error_unexpected">Neočekávaná chyba: [%1$s]</string>
+
+    <!-- reset wallet -->
+
+    <string name="reset_wallet_title">Odstranění peněženky</string>
+    <string name="reset_wallet_instructions_header">Na této obrazovce můžete tuto peněženku ze svého zařízení odstranit.</string>
+    <string name="reset_wallet_instructions_details">Všechna data této peněženky budou odstraněna. To zahrnuje i historii vašich plateb.</string>
+    <string name="reset_wallet_payments_history_button">Uložit historii plateb</string>
+    <string name="reset_wallet_review_button">Pokračovat</string>
+
+    <string name="reset_wallet_confirm_title">Potvrdit reset</string>
+    <string name="reset_wallet_confirm_header">Peněženka bude kompletně smazána z <b>tohoto zařízení</b>.</string>
+    <string name="reset_wallet_confirm_details">Seed této peněženky a její platební historie budou smazány z disku. Budete vyzváni k použití jiné peněženky nebo k vytvoření nové. </string>
+    <string name="reset_wallet_confirm_details2">Ostatní peněženky, které jste již importovali, nebudou smazány. </string>
+    <string name="reset_wallet_confirm_seed_balance">Neztraťte své prostředky</string>
+    <string name="reset_wallet_confirm_seed_disclaimer">Beru na vědomí, že pokud po smazání peněženky ztratím obnovovací frázi, všechny zbývající prostředky budou trvale ztraceny.</string>
+    <string name="reset_wallet_confirm_button">Odstranění peněženky</string>
+    <string name="reset_wallet_shutting_down">Vypínání…</string>
+    <string name="reset_wallet_deleting_prefs">Mazání předvoleb…</string>
+    <string name="reset_wallet_deleting_seed">Mazání seedu…</string>
+    <string name="reset_wallet_deleting_db">Mazání databáze…</string>
+    <string name="reset_wallet_success">Peněženka byla úspěšně resetována</string>
+    <string name="reset_wallet_failure_title">Reset selhal</string>
+
+    <!-- swap input signer tool -->
+
+    <string name="swapin_signer_title">Swap-in podepisovač</string>
+    <string name="swapin_signer_instructions">Tento debugovací nástroj vás nechá podepsat swap-in vstupy. Používejte pouze pokud víte, co děláte.</string>
+    <string name="swapin_signer_tx">Nepodepsaná transakce</string>
+    <string name="swapin_signer_server_nonce">Nonce serveru</string>
+    <string name="swapin_signer_sign">Podepsat</string>
+    <string name="swapin_signer_signing">Podepisování…</string>
+    <string name="swapin_signer_signed_sig">Uživatelův podpis</string>
+    <string name="swapin_signer_invalid_tx_header">Neplatná nepodepsaná transakce</string>
+    <string name="swapin_signer_invalid_tx_details">Zkontrolujte, že vstup je celý a nechybí žádný znak.</string>
+    <string name="swapin_signer_error_header">Podepisování vstupu selhalo</string>
+
+    <!-- settings: contacts list -->
+
+    <string name="settings_contacts_help">Tato obrazovka umožňuje propojit Bolt12 kód nebo Lightning adresu ke jménu.\n\nData kontaktů jsou konkrétně pro Phoenix a jsou uložena lokálně.</string>
+
+    <!-- experimental -->
+
+    <string name="experimental_title">Experimentální funkce</string>
+
+    <string name="bip353_header">Bip353 DNS adresa</string>
+    <string name="bip353_empty">Zatím bez adresy…</string>
+    <string name="bip353_claim_button">Vyžádat si mou adresu</string>
+    <string name="bip353_claiming">Nárokování adresy…</string>
+    <string name="bip353_error">Vyžádání adresy selhalo</string>
+
+    <!-- PIN code dialog -->
+
+    <string name="pincode_check_screenlock_title">Zadejte PIN pro otevření peněženky</string>
+    <string name="pincode_check_spending_payment_title">Zadejte PIN pro placení</string>
+    <string name="pincode_check_spending_displayseed_title">Zadejte PIN pro zobrazení seedu</string>]
+    <string name="pincode_check_disabling_title">Zadejte PIN pro pokračování</string>
+    <string name="pincode_new_screenlock_title">Vytvořit PIN pro přístup k aplikaci</string>
+    <string name="pincode_new_spending_title">Vytvořit PIN pro odesílání plateb</string>
+    <string name="pincode_confirm_title">Potvrdit PIN</string>
+
+    <string name="pincode_checking_label">Kontrola PINu…</string>
+    <string name="pincode_failure_label">Nesprávný PIN</string>
+    <string name="pincode_locked_label">Uzamčeno na %1$s</string>
+
+    <string name="pincode_error_generic">Došlo k chybě</string>
+    <string name="pincode_error_malformed">Chybný PIN</string>
+    <string name="pincode_error_confirm_do_not_match">PIN se neshoduje!</string>
+    <string name="pincode_error_write">Chyba při ukládání PINu</string>
+
+    <!-- nfc & hce labels -->
+
+    <string name="nfc_hce_service_desc">APDU služba pro Phoenix k emulaci NFC tagu</string>
+    <string name="nfc_hce_aid_desc">AID pro NFC tag je emulováno Phoenixem</string>
+
+    <string name="nfc_err_busy">NFC je zaneprázdněno</string>
+    <string name="nfc_err_not_available">NFC není dostupné</string>
+    <string name="nfc_err_disabled">NFC je vypnuté</string>
+    <string name="nfc_err_hce_not_supported">Emulace tagu není podporována</string>
+
+    <string name="nfc_button">NFC</string>
+    <string name="nfc_hce_emulation_title">Podržte telefon v blízkosti NFC čtečky</string>
+    <string name="nfc_reader_title">Připraveno na scan</string>
+    <string name="nfc_reader_desc">Podržte telefon v blízkosti NFC zařízení</string>
+
+    <!-- Currency converter -->
+
+    <string name="converter_title">Převodník Měn</string>
+    <string name="converter_done_button">Hotovo</string>
+    <string name="converter_placeholder_label">Vložte částku v %1$s</string>
+    <string name="converter_add_new_button">Přidat novou měnu…</string>
+    <string name="unitdropdown_more">Správa měn…</string>
+    <string name="currencypicker_title">Vyberte měnu</string>
+    <string name="currencypicker_no_match">Nebyla nalezena žádná shoda…</string>
+
+</resources>

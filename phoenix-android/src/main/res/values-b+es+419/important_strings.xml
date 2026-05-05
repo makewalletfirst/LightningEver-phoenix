@@ -1,0 +1,490 @@
+<!--
+  ~ Copyright 2023 ACINQ SAS
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  --><!--
+  ~ This file contains string resources related to important messages in the app, and should be translated as a priority.
+  ~ It should be kept as small as possible.
+  ~
+  ~ Most technical resource strings should stay in the default `strings.xml` file.
+--><resources>
+
+    <!-- system notifications -->
+
+    <string name="notif_headless_title_default">Phoenix se está ejecutando en segundo plano</string>
+    <string name="notif_headless_received">%1$s Recibiste %2$s</string>
+
+    <string name="notif_pending_settlement_title">Inicia Phoenix</string>
+    <string name="notif_pending_settlement_message">Un pago entrante está pendiente.</string>
+
+    <string name="notif_inflight_payment_title">Hay un pago pendiente</string>.
+    <string name="notif_inflight_payment_message">Iniciar Phoenix para poder finalizar el pago a su debido tiempo.</string>
+
+    <string name="notif_missed_title">Pasaste por alto un pago entrante</string>
+    <string name="notif_missed_unavailable">No se pudo iniciar Phoenix en segundo plano.</string>
+
+    <string name="notif_rejected_deposit_title">Depósito pendiente en la cadena (+%1$s)</string>
+    <string name="notif_rejected_payment_title">Pago rechazado (+%1$s)</string>
+    <string name="notif_rejected_policy_disabled">La gestión automatizada de canales está desactivada. Toca para obtener más información.</string>
+    <string name="notif_rejected_policy_disabled_timeout">La gestión automatizada de canales está desactivada. Este depósito vencerá el %1$s.</string>
+    <string name="notif_rejected_over_absolute">La comisión fue %1$s, pero el límite máximo se fijó en %2$s. Toca para obtener más información.</string>
+    <string name="notif_rejected_over_absolute_timeout">La comisión fue %1$s, pero el límite máximo se fijó en %2$s. Este depósito vencerá el %3$s.</string>
+    <string name="notif_rejected_over_relative">La comisión fue %1$s, que es más del %2$s%% del importe recibido. Toca para obtener más información.</string>
+    <string name="notif_rejected_over_relative_timeout">La comisión fue %1$s, que es más del %2$s%% del importe recibido. Este depósito vencerá el %3$s.</string>
+    <string name="notif_rejected_amount_too_low">El importe del pago es demasiado bajo.</string>
+    <string name="notif_rejected_generic_error">Se ha producido un error durante la financiación. Vuelva a intentarlo más tarde.</string>
+
+    <string name="notif_watcher_revoked_commit_title">Inicia Phoenix</string>
+    <string name="notif_watcher_revoked_commit_message">Es posible que algunos de los canales se hayan cerrado.</string>
+
+    <!-- settings list -->
+
+    <string name="settings_general_title">General</string>
+    <string name="settings_fees_title">Tarifas</string>
+    <string name="settings_security_title">Privacidad y seguridad</string>
+    <string name="settings_advanced_title">Avanzado</string>
+    <string name="settings_danger_title">Zona peligrosa</string>
+
+    <string name="settings_display_prefs">Visualización</string>
+    <string name="settings_wallet_info">Información de la billetera</string>
+    <string name="settings_liquidity_policy">Gestión de canales</string>
+    <string name="settings_display_seed">Frase de recuperación</string>
+    <string name="settings_access_control">Control de acceso</string>
+    <string name="settings_list_channels">Canales de pago</string>
+    <string name="settings_logs">Registros</string>
+    <string name="settings_electrum">Servidor de Electrum</string>
+    <string name="settings_reset_wallet">Eliminar billetera</string>
+    <string name="settings_mutual_close">Cerrar canales</string>
+    <string name="settings_force_close">Forzar cierre de canales</string>
+    <string name="settings_tor">Tor</string>
+    <string name="settings_about">Información</string>
+    <string name="settings_payment_settings">Opciones de pago</string>
+    <string name="settings_payment_history">Historial de pagos</string>
+    <string name="settings_notifications">Notificaciones</string>
+    <string name="settings_contacts">Contactos</string>
+    <string name="settings_converter">Conversor de divisas</string>
+    <string name="settings_add_liquidity">Añadir liquidez</string>
+
+    <!-- home: swap help -->
+
+    <string name="home_swapin_confirming_title">Confirmando</string>
+    <string name="home_swapin_confirming_desc">Esperando confirmación primero antes de poder intercambiarlos a Lightning.</string>
+
+    <string name="home_swapin_ready_title">Esperando intercambio</string>
+    <string name="home_swapin_ready_desc_auto">Los depósitos se transferirán a Lightning cuando las comisiones de minería sean inferiores a %1$s.</string>
+    <string name="home_swapin_ready_desc_disabled">Los depósitos permanecerán en la cadena porque la gestión automatizada de canales está desactivada.</string>
+    <string name="home_swapin_ready_desc_generic">Se implementarán en Lightning cuando se cumplan las condiciones.</string>
+    <string name="home_swapin_ready_expiring">¡Atención! Algunos fondos vencerán pronto y ya no serán elegibles para un intercambio.</string>
+
+    <string name="home_swapin_expired_title">Vencido</string>
+    <string name="home_swapin_expired_desc">Ya no se pueden intercambiar, después de 4 meses de espera. Estos fondos deben gastarse manualmente.</string>
+
+    <string name="home_final_title">Billetera final</string>
+    <string name="home_final_desc">Estos fondos provienen de canales Lightning cerrados. Deben gastarse manualmente.</string>
+    <string name="home_onchain_balance_only">On-chain saldo</string>
+
+    <string name="home_background_restriction_title">Procesamiento en segundo plano restringido</string>.
+    <string name="home_background_restriction_body_1">Phoenix no podrá recibir pagos cuando esté en segundo plano, o cuando esté cerrado.</string>
+    <string name="home_background_restriction_body_2">Esto ocurre porque:</string>
+    <string name="home_background_restriction_powersaver">El dispositivo está en modo de ahorro de energía</string>
+    <string name="home_background_restriction_fcm">FCM notificaciones no disponibles</string>
+    <string name="home_background_restriction_fcm_details">Si utilizas GrapheneOS o CalyxOS, instala Google Play Services para recibir notificaciones de FCM. Consulta las preguntas frecuentes para obtener más información.</string>
+
+    <!-- home: bottom menu -->
+
+    <string name="menu_settings">Configuración</string>
+    <string name="menu_send">Enviar</string>
+    <string name="menu_receive">Recibir</string>
+
+    <!-- init wallet / automated wallet creation -->
+
+    <string name="initwallet_create">Crear una billetera nueva</string>
+    <string name="initwallet_restore">Restaurar mi billetera</string>
+
+    <string name="restore_disclaimer_message_1_title">Phoenix sólo está en Lightning</string>
+    <string name="restore_disclaimer_message_1_body">Phoenix sólo mostrará los fondos que ya han sido gestionados por Phoenix. Los fondos adjuntos a una semilla generada por otra aplicación no aparecerán aquí (esto incluye los fondos on-chain).</string>
+    <string name="restore_disclaimer_message_2_title">Utilizar la misma semilla en paralelo</string>
+    <string name="restore_disclaimer_message_2_body">No utilices la misma semilla al mismo tiempo en diferentes dispositivos. Esto puede causar conflictos entre las dos instancias de Phoenix, y resultar en el cierre de los canales Lightning.</string>
+    <string name="utils_ack">Entiendo.</string>
+
+    <string name="restore_instructions">La semilla de la billetera es una lista de 12 palabras en inglés. Escribe cada palabra de esta lista en la siguiente casilla.</string>
+    <string name="restore_input_label">Ingresa la palabra #%1$s</string>
+    <string name="restore_input_invalid">Esta no es una palabra válida.</string>
+    <string name="restore_seed_valid">Esta semilla es válida</string>
+    <string name="restore_seed_valid_details">Ya puedes proceder a restaurar la billetera</string>
+    <string name="restore_seed_invalid">Esta semilla no es válida</string>
+    <string name="restore_seed_invalid_details">Comprueba que hayas ingresado las palabras correctas en el orden adecuado.</string>
+
+    <string name="restore_payments_button">Importar historial de pagos</string>
+    <string name="restore_payments_button_details">Opcional. Use este botón para restaurar un archivo de base de datos de pagos desde otro dispositivo.</string>
+    <string name="restore_payments_success">Restaurará el historial de pagos</string>
+    <string name="restore_payments_success_button">Usar otro archivo</string>
+    <string name="restore_payments_error_header">No se pueden restaurar los pagos</string>
+    <string name="restore_payments_error_button">Inténtelo de nuevo</string>
+    <string name="restore_payments_error_encryption">El archivo no se puede descifrar. Asegúrese de usar un archivo de base de datos Phoenix (no un CSV) y de que este coincida con la billetera que está restaurando.</string>
+    <string name="restore_payments_error_open">No se puede abrir este archivo. Inténtalo de nuevo.</string>
+    <string name="restore_payments_error_writing">No se pudo escribir este archivo en la carpeta de datos de la aplicación. Inténtalo de nuevo.</string>
+
+    <string name="restore_import_button">Restaurar</string>
+
+    <!-- upgrade required dialog -->
+
+    <string name="upgraderequired_title">Se requiere una actualización</string>
+    <string name="upgraderequired_message">Esta versión de Phoenix (v%1$s) no es compatible con tu billetera. Actualiza o usa una versión compatible.</string>
+    <string name="upgraderequired_button">Actualizar en Google Play</string>
+
+    <!-- receive view: warning about fee/liquidity -->
+
+    <string name="receive_lightning_warning_title_surefail">El pago no se realizará</string>
+    <string name="receive_lightning_warning_title_fee_expected">Comisión prevista</string>
+
+    <string name="receive_lightning_warning_hint_show_details">Más información</string>
+
+    <string name="receive_lightning_sheet_dismiss">Cerrar</string>
+    <string name="receive_lightning_sheet_button_enable">Activar la gestión automátizada</string>
+    <string name="receive_lightning_sheet_button_configure">Configurar comisiones máximas</string>
+
+    <string name="receive_lightning_warning_message_fee_expected">Probablemente será necesaria una transacción en la cadena para recibir esta cantidad.\n\nLas comisiones serán de aproximadamente %1$s.</string>
+    <string name="receive_lightning_warning_message_fee_expected_unknown">Probablemente será necesaria una transacción en la cadena para recibir esta cantidad.</string>
+
+    <string name="receive_lightning_warning_message_above_limit">Se estima una comisión de %1$s por recibir este importe, y esta comisión excede su límite autorizado de %2$s.\n\nAumenta este límite en los ajustes de gestión de canales.</string>
+    <string name="receive_lightning_warning_message_above_limit_or_liquidity">Se estima una comisión de %1$s por recibir este importe, y esta comisión excede su límite autorizado de %2$s.\n\nAumente este límite o solicite liquidez adicional.</string>
+    <string name="receive_lightning_warning_message_above_limit_percent">Se estiman unas comisiones de %1$s para recibir este importe, y estas comisiones superan el %2$s%% del importe.\n\nAumenta este límite en los ajustes de gestión de canales.</string>
+    <string name="receive_lightning_warning_message_above_limit_percent_or_liquidity">Se estiman unas comisiones de %1$s para recibir este importe, y estas comisiones superan el %2$s%% del importe.\n\nAumente este límite o solicite liquidez adicional.</string>
+
+    <string name="receive_lightning_warning_fee_policy_disabled_insufficient_liquidity">La liquidez entrante es insuficiente y tienes desactivada la gestión automatizada de canales.</string>
+
+    <!-- receive : Tor warnings -->
+
+    <string name="receive_tor_warning_title">Tor está activado</string>
+    <string name="receive_tor_warning_dialog_content_1">Phoenix no puede recibir pagos en segundo plano.</string>
+
+    <!-- scanning errors -->
+
+    <string name="send_error_invoice_expired">Esta factura está vencida.</string>
+    <string name="send_error_payment_pending">Este pago ya se está procesando. Por favor, espere a que se complete.</string>
+    <string name="send_error_already_paid">Este pago ya se realizó.</string>
+    <string name="send_error_invalid_chain">Este pago no usa la misma cadena de bloques de la billetera.</string>
+    <string name="send_error_lnurl_invalid">Error al procesar este enlace LNURL. Comprueba que sea válido.</string>
+    <string name="send_error_lnurl_unsupported">Este tipo de LNURL aún no es compatible.</string>
+    <string name="send_error_invalid_generic">Estos datos usan un formato desconocido por lo que no se pueden procesar.</string>
+    <string name="send_error_bip353_connect">No se pueden recuperar los datos de esta dirección. Es posible que esté experimentando un problema de conectividad.</string>
+    <string name="send_error_bip353_name_not_found">El nombre \"%1$s\" no se encuentra en \"%2$s\".</string>
+    <string name="send_error_bip353_invalid_uri">Esta dirección utiliza un recurso Bip21 no válido.</string>
+    <string name="send_error_bip353_invalid_offer">Esta dirección utiliza una oferta Bolt12 no válida.</string>
+    <string name="send_error_bip353_dnssec">Esta dirección está alojada en un DNS no seguro. DNSSEC debe estar habilitado.</string>
+
+    <!-- validation -->
+
+    <string name="validation_below_min">Debe ser al menos %1$s</string>
+    <string name="validation_above_max">No debe ser superior a %1$s</string>
+
+    <!-- closing channels -->
+
+    <string name="mutualclose_input_label">Dirección de Bitcoin</string>
+    <string name="mutualclose_input_instructions">Enviar todos los fondos a una billetera de Bitcoin. Se cerrarán todos los canales de pago.</string>
+    <string name="mutualclose_confirm_title">Confirmar cierre</string>
+    <string name="mutualclose_confirm_details">Todos los fondos se enviarán a:</string>
+    <string name="mutualclose_confirm_fee">Tarifa estimada:</string>
+    <string name="mutualclose_confirm_fee_unknown">No se pudo estimar el costo de la tarifa.</string>
+
+    <string name="forceclose_title">Forzar el cierre de canales</string>
+    <string name="forceclose_instructions">En esta pantalla, puedes cerrar unilateralmente tus canales.\n\nNo se trata de un botón mágico para \&quot;solucionarlo todo\&quot;: es una medida de seguridad y <b>solo debe usarse en situaciones extremas</b>. Por ejemplo, si tu par (ACINQ) desaparece permanentemente, lo que te impide gastar tu dinero. En los demás casos, <b>si tienes problemas con Phoenix, debes ponerte en contacto con el servicio de asistencia</b>.\n\nForzar el cierre de canales te costará dinero (para cubrir las comisiones en la cadena) y bloqueará tus fondos durante varios días.\n\n<b>No desinstales la aplicación hasta que los canales se hayan cerrado por completo o perderás dinero.</b>\n\n<b>No uses esta función si no entiendes bien para qué sirve.</b></string>
+    <string name="forceclose_address_label">Los fondos se enviarán en última instancia a la billetera final:</string>
+
+    <string name="forceclose_confirm_title">Confirmar cierre forzado</string>
+    <string name="forceclose_confirm_details">Todos los fondos se enviarán a tu billetera final, después de un tiempo de espera.</string>
+    <string name="forceclose_button">Forzar el cierre de todos mis canales</string>
+
+    <!-- in-app notifications -->
+
+    <string name="inappnotif_backup_seed_message">Haz una copia de seguridad de la billetera para evitar la pérdida de tu Bitcoin.</string>
+    <string name="inappnotif_backup_seed_action">Hacer una copia de seguridad de mi billetera</string>
+
+    <string name="inappnotif_notification_permission_message_short">Habilitar notificaciones de Android</string>
+    <string name="inappnotif_notification_permission_message">Las notificaciones están desactivadas en los ajustes de Android. Phoenix no podrá notificarte cuándo se esté procesando un pago.</string>
+    <string name="inappnotif_notification_permission_enable">Activar</string>
+
+    <string name="inappnotif_swapin_timeout_message">Pronto vencerá un depósito.</string>
+    <string name="inappnotif_swapin_timeout_action">Ver detalles</string>
+
+    <string name="inappnotif_watchtower_late_message">Phoenix monitorea regularmente la cadena de bloques cuando está funcionando en segundo plano, pero no ha podido hacerlo en los últimos días.\n\nComprueba que Android no bloquee Phoenix y que la billetera pueda conectarse a Electrum.</string>
+    <string name="inappnotif_watchtower_late_action">Ignorar</string>
+
+    <string name="inappnotif_upgrade_message">Hay una actualización disponible</string>
+    <string name="inappnotif_upgrade_critical_message">Una actualización importante está disponible. Deberías actualizar Phoenix lo antes posible.</string>
+    <string name="inappnotif_upgrade_button">Actualizar en Google Play</string>
+
+    <string name="inappnotif_mempool_full_message">Las comisiones en la cadena son elevadas.</string>
+    <string name="inappnotif_mempool_full_action">Ver cómo afecta a Phoenix</string>
+
+    <string name="inappnotif_tor_disconnected_message">No se puede acceder a la red Tor. Phoenix no funcionará correctamente.</string>
+    <string name="inappnotif_tor_disconnected_action">Solución</string>
+
+    <string name="inappnotif_payment_onchain_pending_title">Fondos pendientes en la cadena (+%1$s)</string>
+    <string name="inappnotif_payments_rejection_overview_one">Recientemente se rechazó un pago entrante</string>
+    <string name="inappnotif_payments_rejection_overview_many">%1$d pagos entrantes rechazados recientemente</string>
+    <string name="inappnotif_payment_rejected_title">Pago rechazado (+%1$s)</string>
+    <string name="inappnotif_payment_rejected_disabled">La gestión automatizada de canales está desactivada.</string>
+    <string name="inappnotif_payment_rejected_over_absolute">La comisión fue %1$s, pero el límite máximo se fijó en %2$s.</string>
+    <string name="inappnotif_payment_rejected_over_relative">La comisión fue %1$s, que es más del %2$s%% del importe.</string>
+    <string name="inappnotif_payment_rejected_tweak_setting">Toca para configurar.</string>
+    <string name="inappnotif_payment_rejected_view_wallet">Ver detalles</string>
+
+    <string name="inappnotif_watchtower_nominal_title">Reporte de torre de vigilancia</string>
+    <string name="inappnotif_watchtower_nominal_description_one">Se comprobó correctamente %1$d canal en %2$s. No se encontraron problemas.</string>
+    <string name="inappnotif_watchtower_nominal_description_many">Se comprobaron correctamente %1$d canales en %2$s. No se encontraron problemas.</string>
+    <string name="inappnotif_watchtower_revokedfound_title">Alerta de torre de vigilancia</string>
+    <string name="inappnotif_watchtower_revokedfound_description">Se encontraron compromisos revocados en %1$s para el/los canal(es): %2$s. Este canal puede estar cerrado.</string>
+
+    <!-- settings: display seed -->
+
+    <string name="displayseed_instructions">La frase de recuperación (denominada en ocasiones \&quot;semilla\&quot;), es una lista de 12 palabras en inglés. Con la semilla, puedes recuperar el acceso total a tus fondos en caso de que sea necesario.\n\n<b>Solo te pertenece a ti, así que guárdala en privado.</b>\n\n<b>No compartas la semilla con nadie.</b>\nTen cuidado con el phishing. Los desarrolladores de Phoenix nunca te pedirán tu semilla.\n\n<b>No pierdas la semilla.</b>\nGuárdala en un lugar seguro (no en este teléfono). Si pierdes la semilla y el teléfono, perderás tus fondos.</string>
+    <string name="displayseed_authenticate_button">Mostrar semilla</string>
+    <string name="displayseed_dialog_header">PROTEGE ESTA SEMILLA.\nNO LA COMPARTAS.</string>
+    <string name="displayseed_backup_notice_header">No has hecho una copia de seguridad de tu frase de recuperación.</string>
+    <string name="displayseed_backup_notice_details">Si no haces una copia de seguridad y pierdes el acceso a Phoenix, perderás tus fondos.</string>
+    <string name="displayseed_backup_checkbox">Guardé mi frase de recuperación en un lugar seguro.</string>
+    <string name="displayseed_loss_disclaimer_checkbox">Entiendo que, si pierdo el teléfono y la frase de recuperación, perderé los fondos de mi billetera.</string>
+
+    <!-- payment details -->
+
+    <string name="paymentdetails_liquidity_purchase_label">Liquidez</string>
+    <string name="paymentdetails_funding_fees_label">Comisiones de minería</string>
+    <string name="paymentdetails_funding_fees_desc">Comisiones pagadas a los mineros de la red Bitcoin para procesar la transacción en la cadena.</string>
+    <string name="paymentdetails_service_fees_label">Comisiones de servicio</string>
+    <string name="paymentdetails_service_fees_desc">Comisiones abonadas por la creación de un nuevo canal de pago. No siempre se requieren.</string>
+    <string name="paymentdetails_liquidity_service_fee_label">Comisiones de servicio</string>.
+    <string name="paymentdetails_liquidity_service_fee_help">Comisiones pagadas por el servicio de liquidez.</string>
+    <string name="paymentdetails_liquidity_miner_fee_label">Comisiones de minería</string>
+    <string name="paymentdetails_liquidity_miner_fee_help">Comisiones pagadas a los mineros de la red Bitcoin para procesar la transacción en la cadena.</string>
+    <string name="paymentdetails_liquidity_caused_by_label">Causado por</string>
+    <string name="paymentdetails_liquidity_caused_by_help">Esta liquidez era necesaria para recibir un pago.</string>
+    <string name="paymentdetails_liquidity_caused_by_help_link">Vea cómo optimizar</string>
+
+    <!-- lnurl -->
+
+    <string name="lnurl_auth_instructions">Puedes iniciar sesión de forma anónima y autorizar una acción en:</string>
+    <string name="lnurl_withdraw_header">Puedes canjear fondos de \n<b>%1$s</b>.</string>
+    <string name="lnurl_withdraw_success">Se envió la solicitud de retiro a <b>%1$s</b>.\n\nPuede pasar algo de tiempo antes de que se envíen los fondos. Entretanto, mantén la aplicación en línea.</string>
+
+    <!-- Tor -->
+
+    <string name="tor_dialog_enable_title_1">Uso de Tor</string>
+    <string name="tor_dialog_enable_details_1">Esto requiere instalar una aplicación Tor Proxy VPN de terceros, como Orbot.</string>
+    <string name="tor_dialog_enable_details_2">Tor puede mejorar la privacidad, pero puede causar problemas de rendimiento y pagos atrasados.</string>
+    <string name="tor_dialog_disable_title">Deshabilitar Tor</string>
+    <string name="tor_dialog_disable_details_1">Si deshabilita esta opción, su dirección IP puede ser revelada a varios proveedores de servicios.</string>
+    <string name="tor_dialog_disable_details_2">¿Está seguro de que desea continuar?</string>
+    <string name="tor_dialog_processing">Procesando cambios…</string>
+
+    <string name="tor_disconnected_dialog_title">Sin acceso a la red Tor</string>
+    <string name="tor_disconnected_dialog_action">Solución</string>
+    <string name="tor_disconnected_dialog_details_1">Phoenix necesita acceso a Tor para funcionar correctamente.</string>
+    <string name="tor_disconnected_dialog_details_2">Asegúrate de que tu aplicación Tor Proxy VPN esté funcionando y conectada a Tor.</string>
+    <string name="tor_disconnected_dialog_details_3">Si no tienes una aplicación Tor VPN, instala una. Recomendamos Orbot.</string>
+    <string name="tor_disconnected_dialog_open_settings">Abrir la configuración de Tor</string>
+    <string name="tor_disconnected_dialog_open_orbot_page">Abrir la página de Orbot</string>
+
+    <!-- about -->
+
+    <string name="about_general_content">Phoenix es una billetera de Bitcoin que usa la red Lightning para enviar y recibir pagos.\n\nEs un software libre y de código abierto, desarrollado por <a href="https://phoenix.acinq.co">ACINQ</a> conforme a la <a href="https://www.apache.org/licenses/LICENSE-2.0.txt">licencia Apache 2.0</a>.</string>
+    <string name="about_seed_title">Protección de la clave</string>
+    <string name="about_seed_content">Esta billetera es autocustodiada, es decir que <b>tienes la custodia exclusiva de la clave semilla de la billetera, compuesta por 12 palabras</b>.\n\nEsta clave te da acceso a tu dinero. No se la reveles a nadie y ten cuidado con el phishing.</string>
+    <string name="about_rates_title">Tasas de cambio</string>
+    <string name="about_rates_content">Las tasas de cambio entre Bitcoin y dinero fíat se obtienen de varias API de terceros:\n\n- Blockchain.info\n- Coinbase.com\n- Bluelytics.com.ar\n- Yadio.io\n\nEs posible que las tasas no sean exactas. Comprueba siempre la cantidad real de Bitcoin antes de enviar un pago.</string>
+
+    <!-- introduction screens -->
+
+    <string name="intro_welcome_title">¡Te damos la bienvenida!</string>
+    <string name="intro_welcome_sub1">Con Phoenix, enviar y recibir Bitcoin es fácil y seguro.</string>
+    <string name="intro_welcome_next_button">Siguiente</string>
+
+    <string name="intro_channels_title">Bitcoin potenciado</string>
+    <string name="intro_channels_sub1">Phoenix usa canales de pago para que Bitcoin sea rápido y privado.</string>
+    <string name="intro_channels_next_button">Siguiente</string>
+
+    <string name="intro_selfcustody_title">Tu clave, tu Bitcoin</string>
+    <string name="intro_selfcustody_sub1">Phoenix es autocustodiada. Tú tomas el control.</string>
+    <string name="intro_selfcustody_sub2">Puedes restaurar la billetera en cualquier momento mediante tu clave secreta. ¡Protégela!</string>
+    <string name="intro_selfcustody_next_button">Empezar</string>
+
+    <!-- wallet info -->
+
+    <string name="walletinfo_onchain_swapin">Billetera de intercambio</string>
+    <string name="walletinfo_onchain_swapin_help">Phoenix es una billetera de Lightning. Los fondos recibidos en la cadena se transferirán automáticamente a Lightning, según tu configuración de gestión de canales.</string>
+    <string name="walletinfo_onchain_swapin_help_faq_link">Ver cómo funciona</string>
+    <string name="walletinfo_onchain_swapin_policy_view">Tocar para configurar</string>
+    <string name="walletinfo_onchain_swapin_empty">No hay intercambios en curso.</string>
+
+    <string name="walletinfo_onchain_swapin_policy_auto_details">Los fondos en la cadena se intercambian automáticamente a Lightning si la comisión pagada a los mineros es <b>inferior a %1$s</b> (se puede configurar).</string>
+    <string name="walletinfo_onchain_swapin_policy_auto_details_timeout">Los fondos que no se intercambien <b>después de %1$d meses</b> se pueden recuperar en la cadena.</string>
+    <string name="walletinfo_onchain_swapin_policy_disabled_details">La gestión automatizada de canales <b>está desactivada</b>. No se realizará el intercambio, así que los fondos permanecerán en la cadena.</string>
+
+    <string name="walletinfo_onchain_swapin_last_attempt">Error al intentar realizar el intercambio %1$s</string>
+    <string name="walletinfo_onchain_swapin_last_attempt_disabled">La gestión de canales estaba desactivada.</string>
+    <string name="walletinfo_onchain_swapin_timeout_1day">Este intercambio vencerá en un día.</string>
+    <string name="walletinfo_onchain_swapin_timeout">Este intercambio vencerá en %1$s días.</string>
+
+    <string name="walletinfo_onchain_swapin_locked_title">Tiempo de espera agotado</string>
+    <string name="walletinfo_onchain_swapin_locked_description">Estos fondos estarán disponibles dentro de %1$s días.</string>
+
+    <string name="walletinfo_onchain_swapin_refund_title">Fondos cancelados</string>
+    <string name="walletinfo_onchain_swapin_refund_description">Estos fondos no se intercambiaron a tiempo. Toque para gastar estos fondos.</string>
+
+    <string name="walletinfo_onchain_final_about">Una billetera en la cadena derivada de tu semilla.\n\nLa billetera final es adonde se envían los fondos de forma predeterminada cuando se cierren tus canales de Lightning.</string>
+
+    <!-- settings: liquidity policy for channels creation -->
+
+    <string name="liquiditypolicy_instructions">Los pagos entrantes a veces requieren transacciones en la cadena. No siempre ocurre así; solo cuando es necesario.</string>
+    <string name="liquiditypolicy_fees_estimation">Las comisiones se calculan actualmente en unos <b>%1$s</b> (≈%2$s).</string>
+    <string name="liquiditypolicy_disable_label">Gestión automatizada de canales</string>
+    <string name="liquiditypolicy_disable_desc">Los pagos entrantes que requieran operaciones en la cadena se rechazarán.</string>
+
+    <string name="liquiditypolicy_fees_base_label">Importe máximo de la comisión</string>
+    <string name="liquiditypolicy_fees_base_help">Los pagos cuyas comisiones superen este valor se rechazarán.</string>
+    <string name="liquiditypolicy_fees_base_too_low">Este valor es demasiado bajo.</string>
+    <string name="liquiditypolicy_fees_base_below_estimation">Por debajo de la comisión prevista. Algunos pagos pueden rechazarse.</string>
+
+    <string name="liquiditypolicy_advanced_menu">Opciones avanzadas</string>
+    <string name="liquiditypolicy_advanced_disable">La gestión de canales está desactivada. Se puede activar en la pantalla de configuración de la gestión de canales.</string>
+    <string name="liquiditypolicy_advanced_disclaimer_header">¡Cuidado!</string>
+    <string name="liquiditypolicy_advanced_disclaimer_message">Esta pantalla es para usuarios avanzados. No modifiques estos ajustes a menos que entiendas para qué sirven.</string>
+
+    <string name="liquiditypolicy_advanced_verifications_title">Verificaciones adicionales</string>
+    <string name="liquiditypolicy_advanced_fees_prop_label">Comprobación porcentual</string>
+    <string name="liquiditypolicy_advanced_fees_prop_help">Comprueba la comisión en relación con el importe recibido. Esta opción es útil para realizar una prueba de cordura en el caso de pagos pequeños.</string>
+    <string name="liquiditypolicy_advanced_overrides_title">Anulación de política</string>
+    <string name="liquiditypolicy_advanced_pay_to_open_label">Omitir la comprobación de comisión absoluta para Lightning</string>
+    <string name="liquiditypolicy_advanced_pay_to_open_help">Cuando se activa, los pagos entrantes de Lightning ignoran el límite absoluto de la comisión máxima. Solo se aplicará la comprobación porcentual.\n\nCuidado: si la tasa de comisión en el pool de memoria de Bitcoin es alta, los pagos entrantes de Lightning que requieran una operación en la cadena podrían resultar caros.</string>
+    <string name="liquiditypolicy_save_button">Guardar política</string>
+    <string name="liquiditypolicy_request_button">Solicitar liquidez entrante</string>
+
+    <string name="liquiditypolicy_help">Con Phoenix, puedes recibir pagos en la cadena de bloques de Bitcoin (capa 1) y en la red Lightning de Bitcoin (capa 2). \n\n - La capa de la cadena de bloques (capa 1) es más lenta y, en general, mucho más cara (requiere comisiones de minería). \n - La capa de la red Lightning (capa 2) es mucho más rápida y, en general, mucho más barata (especialmente para los pagos pequeños). \n\n Cuando recibas un pago en la capa 1, Phoenix trasladará automáticamente los fondos a la capa 2 <b>SI</b> las comisiones de minería cumplen con la política de comisiones que hayas configurado. \n\n Los pagos que te envíen en la capa 2 pueden recibirse al instante y sin comisiones. Sin embargo, en ocasiones, también es necesaria una operación en la capa 1 para gestionar el canal de pago de la capa 2. Esto puede hacerse automáticamente <b>SI</b> las comisiones de minería cumplen con la política de comisiones que hayas configurado.</string>
+
+    <!-- settings: liquidity request -->
+
+    <string name="liquidityads_no_channels_header">¡Aún no hay canales!</string>
+    <string name="liquidityads_no_channels_details">Primero debes tener fondos en la billetera para utilizar esta función.</string>
+    <string name="liquidityads_header">Planifica con antelación tu liquidez</string>
+    <string name="liquidityads_instructions">La liquidez entrante te permite evitar las comisiones por transacciones en la cadena para futuros pagos recibidos a través de Lightning.\n\nSi solicitas más liquidez ahora, puedes ahorrarte comisiones más adelante.</string>
+    <string name="liquidityads_faq_link">Más información</string>
+    <string name="liquidityads_current_liquidity">Liquidez actual</string>
+
+    <string name="liquidityads_amount_label">Solicitar liquidez</string>
+    <string name="liquidityads_estimate_button">Calcular el costo de liquidez</string>
+    <string name="liquidityads_estimating_spinner">Calculando costo…</string>
+    <string name="liquidityads_estimate_details_miner_fees">Comisión de minería</string>
+    <string name="liquidityads_estimate_details_miner_fees_help">Contribución a las comisiones de minería para la transacción subyacente en la cadena.</string>
+    <string name="liquidityads_estimate_details_service_fees">Comisión de servicio</string>
+    <string name="liquidityads_estimate_details_service_fees_help">Esta comisión se destina al servicio que proporciona la liquidez.</string>
+    <string name="liquidityads_estimate_details_duration">Duración</string>
+    <string name="liquidityads_estimate_details_duration_value">1 año</string>
+    <string name="liquidityads_estimate_details_duration_help">La capacidad adicional se conservará durante esa duración.</string>
+    <string name="liquidityads_estimate_above_25">La comisión total es superior al 25% del importe solicitado.</string>
+    <string name="liquidityads_over_balance">La comisión total supera el saldo.</string>
+
+    <string name="liquidityads_review_button">Validar</string>
+    <string name="liquidityads_disclaimer_body1">Estás solicitando una cantidad <b>inicial</b> de liquidez. La liquidez no es constante en el tiempo: a medida que reciba fondos a lo largo de Lightning, la liquidez se consumirá y se convertirá en su saldo.</string>
+    <string name="liquidityads_disclaimer_body2">Al cabo de un año, la liquidez restante no utilizada será reclamada por el servicio.</string>
+
+    <string name="liquidityads_request_button">Aceptar</string>
+    <string name="liquidityads_requesting_spinner">Procesando empalme…</string>
+
+    <string name="liquidityads_success">La liquidez se agregó correctamente.</string>
+    <string name="liquidityads_success_amount">Importe añadido: %1$s</string>
+
+    <string name="liquidityads_error_header">Error al solicitar liquidez</string>
+    <string name="liquidityads_error_channels_unavailable">Los canales no están disponibles. Vuelve a intentarlo más tarde.</string>
+    <string name="liquidityads_error_invalid_funding_amount">El importe solicitado no es válido.</string>
+
+    <!-- payment line -->
+
+    <string name="paymentline_outgoing_unconfirmed">Sin confirmar (tocar para acelerar)</string>
+
+    <!-- CPFP -->
+
+    <string name="cpfp_title">Acelerar mis transacciones.</string>
+    <string name="cpfp_instructions">Puedes aumentar la tasa de comisión de todas tus transacciones no confirmadas a fin de que los mineros tengan un incentivo para favorecer tus pagos.</string>
+    <string name="cpfp_splice_error_actual_below_user">Esta tasa de comisión es inferior a la que ya usan tus transacciones no confirmadas. Usa una tasa de comisión más alta.</string>
+
+    <!-- Lightning payment errors -->
+
+    <string name="outgoing_failuremessage_channel_closing">Los canales se están cerrando.</string>
+    <string name="outgoing_failuremessage_channel_splicing">Los canales ya están procesando un splice. Inténtelo de nuevo más tarde.</string>
+    <string name="outgoing_failuremessage_not_enough_fee">La tarifa es insuficiente.</string>
+    <string name="outgoing_failuremessage_not_enough_balance">Este pago supera su saldo.</string>
+    <string name="outgoing_failuremessage_too_big">El importe del pago es demasiado grande - intente dividirlo en varias partes.</string>
+    <string name="outgoing_failuremessage_too_small">El importe del pago es demasiado pequeño.</string>
+    <string name="outgoing_failuremessage_expiry_too_big">El vencimiento de este pago es demasiado lejano.</string>
+    <string name="outgoing_failuremessage_rejected_by_recipient">El pago ha sido rechazado por el destinatario. Es posible que esta factura en concreto ya se haya pagado.</string>
+    <string name="outgoing_failuremessage_recipient_offline">El destinatario no está conectado.</string>
+    <string name="outgoing_failuremessage_not_enough_liquidity">El pago no se ha podido retransmitir al destinatario (probablemente liquidez entrante insuficiente).</string>
+    <string name="outgoing_failuremessage_temporary_failure">Se ha producido un error en un nodo de la ruta de pago. El pago puede tener éxito si lo intentas de nuevo.</string>
+    <string name="outgoing_failuremessage_too_many_pending">Tienes demasiados pagos pendientes. Vuelva a intentarlo una vez que se hayan liquidado.</string>
+
+    <string name="outgoing_failuremessage_invalid_id">El ID del pago no es válido. Inténtelo de nuevo.</string>
+    <string name="outgoing_failuremessage_not_connected">Tu canal aún no está conectado. Espere a tener una conexión estable e inténtelo de nuevo.</string>
+    <string name="outgoing_failuremessage_channel_opening">Tu canal aún está en proceso de apertura. Espere e inténtelo de nuevo.</string>
+    <string name="outgoing_failuremessage_unsupported_features">Esta factura utiliza funciones no compatibles. Asegúrate de que estás en la última versión de Phoenix.</string>
+    <string name="outgoing_failuremessage_invalid_amount">El importe del pago no es válido.</string>
+    <string name="outgoing_failuremessage_no_available_channels">El pago no se ha podido enviar a través de sus canales existentes.</string>
+    <string name="outgoing_failuremessage_unknown">Se ha producido un error desconocido y el pago ha fallado.</string>
+    <string name="outgoing_failuremessage_restarted">La cartera se ha reiniciado mientras se procesaba el pago.</string>
+
+    <string name="outgoing_failuremessage_alreadypaid">Esta factura ya ha sido pagada.</string>
+    <string name="outgoing_failuremessage_noroutefound">El destinatario no está localizable o no tiene suficiente liquidez entrante.</string>
+
+    <!-- low feerate disclaimer -->
+
+    <string name="spliceout_low_feerate_dialog_title">¡Baja comisión!</string>
+    <string name="spliceout_low_feerate_dialog_body1">Los pagos con comisiones bajas pueden pasar días o semanas sin confirmarse.</string>
+    <string name="spliceout_low_feerate_dialog_body2">La selección de comisiones es su responsabilidad. Una vez enviado, este pago no puede ser cancelado, sólo acelerado con comisiones más altas.</string>
+    <string name="spliceout_low_feerate_dialog_body3">¿Está seguro de que desea continuar?</string>
+
+    <!-- spliceout: capacity disclaimer -->
+
+    <string name="spliceout_capacity_disclaimer_title">Tamaño del canal afectado</string>
+    <string name="spliceout_capacity_disclaimer_body1">Los fondos enviados se toman de tu lado del canal, reduciendo el tamaño del canal en la misma cantidad. Su liquidez entrante permanece sin cambios.</string>
+    <string name="spliceout_capacity_disclaimer_checkbox">No volver a mostrar ese mensaje.</string>
+
+    <!-- Spend swap-in refund -->
+
+    <string name="swapinrefund_title">Gastar un intercambio caducado</string>
+    <string name="swapinrefund_none_available_label">No hay swap-in caducado.</string>
+    <string name="swapinrefund_available_label">Fondos disponibles : <b>%1$s</b> (%2$s)</string>
+    <string name="swapinrefund_instructions_1">Utiliza esta pantalla para gastar depósitos on-chain que no hayan sido cambiados a Lightning a tiempo. Tenga en cuenta que esto no afecta en modo alguno a sus canales Lightning.</string>
+    <string name="swapinrefund_instructions_2">Asegúrese de que la dirección de destino es correcta y los gastos razonables.</string>
+    <string name="swapinrefund_estimate_button">Estimar las tasas</string>
+    <string name="swapinrefund_estimating">Estimación de tasas…</string>
+    <string name="swapinrefund_send_button">Enviar</string>
+    <string name="swapinrefund_sending">Envío de fondos…</string>
+    <string name="swapinrefund_failed">Error de transacción.</string>
+    <string name="swapinrefund_failed_address">Dirección no válida.</string>
+    <string name="swapinrefund_failed_cannot_create">No se ha podido crear la transacción de cobro. Por favor, inténtelo de nuevo.</string>
+    <string name="swapinrefund_success">Transacción publicada.</string>
+    <string name="swapinrefund_success_details">Puede encontrar la transacción a continuación. No aparecerá en su historial de pagos, así que haga una copia ahora si lo necesita.</string>
+
+    <!-- Final wallet refund -->
+
+    <string name="finalwallet_refund_title">Gastar fondos del billetero final</string>
+    <string name="finalwallet_refund_available_none">No hay fondos disponibles</string>
+    <string name="finalwallet_refund_available">Importe disponible</string>
+    <string name="finalwallet_refund_instructions">Utilice esta pantalla para gastar fondos de su billetera final. Estos fondos proceden de canales que se han cerrado en el pasado. Esto no afecta a sus canales Lightning existentes.</string>
+
+    <!-- experimental features -->
+
+    <string name="bip353_subtitle">Esta es una dirección humanamente legible para su solicitud de pago Bolt12.</string>
+    <string name="bip353_subtitle2">¿Quieres una dirección más bonita? Utilice servicios de terceros o aloje usted mismo la dirección.</string>
+
+</resources>

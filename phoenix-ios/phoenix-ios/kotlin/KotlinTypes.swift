@@ -1,0 +1,157 @@
+import Foundation
+import PhoenixShared
+
+// Making Kotlin types more readable
+//
+// Note:
+// - in the future, we're going to drop the "kmp" part
+// - e.g. "Lightning_kmpBolt11Invoice" -> "Lightning_Bolt11Invoice"
+// - but there are MANY PR's in-flight right now
+// - and this change would cause much pain for those PR's
+// - so this change will be done at a later time
+
+typealias Lightning_kmpAutomaticLiquidityPurchasePayment = Lightning_kmp_coreAutomaticLiquidityPurchasePayment
+typealias Lightning_kmpBolt11IncomingPayment = Lightning_kmp_coreBolt11IncomingPayment
+typealias Lightning_kmpBolt11Invoice = Lightning_kmp_coreBolt11Invoice
+typealias Lightning_kmpBolt12IncomingPayment = Lightning_kmp_coreBolt12IncomingPayment
+typealias Lightning_kmpBolt12Invoice = Lightning_kmp_coreBolt12Invoice
+typealias Lightning_kmpChannelCloseOutgoingPayment = Lightning_kmp_coreChannelCloseOutgoingPayment
+typealias Lightning_kmpChannelFundingResponse = Lightning_kmp_coreChannelFundingResponse
+typealias Lightning_kmpChannelManagementFees = Lightning_kmp_coreChannelManagementFees
+typealias Lightning_kmpChannelState = Lightning_kmp_coreChannelState
+typealias Lightning_kmpConnection = Lightning_kmp_coreConnection
+typealias Lightning_kmpClosing = Lightning_kmp_coreClosing
+typealias Lightning_kmpDatabases = Lightning_kmp_coreDatabases
+typealias Lightning_kmpElectrumClient = Lightning_kmp_coreElectrumClient
+typealias Lightning_kmpElectrumMiniWallet = Lightning_kmp_coreElectrumMiniWallet
+typealias Lightning_kmpElectrumSubscriptionResponse = Lightning_kmp_coreElectrumSubscriptionResponse
+typealias Lightning_kmpElectrumWatcher = Lightning_kmp_coreElectrumWatcher
+typealias Lightning_kmpFinalFailure = Lightning_kmp_coreFinalFailure
+typealias Lightning_kmpFeeratePerByte = Lightning_kmp_coreFeeratePerByte
+typealias Lightning_kmpFeeratePerKw = Lightning_kmp_coreFeeratePerKw
+typealias Lightning_kmpHeaderSubscriptionResponse = Lightning_kmp_coreHeaderSubscriptionResponse
+typealias Lightning_kmpIncomingPayment = Lightning_kmp_coreIncomingPayment
+typealias Lightning_kmpLegacyPayToOpenIncomingPayment = Lightning_kmp_coreLegacyPayToOpenIncomingPayment
+typealias Lightning_kmpLegacySwapInIncomingPayment = Lightning_kmp_coreLegacySwapInIncomingPayment
+typealias Lightning_kmpLiquidityAdsFundingRate = Lightning_kmp_coreLiquidityAdsFundingRate
+typealias Lightning_kmpLiquidityAdsPaymentDetailsFromChannelBalance = Lightning_kmp_coreLiquidityAdsPaymentDetailsFromChannelBalance
+typealias Lightning_kmpLiquidityAdsPaymentDetailsFromFutureHtlc = Lightning_kmp_coreLiquidityAdsPaymentDetailsFromFutureHtlc
+typealias Lightning_kmpLightningIncomingPayment = Lightning_kmp_coreLightningIncomingPayment
+typealias Lightning_kmpLightningOutgoingPayment = Lightning_kmp_coreLightningOutgoingPayment
+typealias Lightning_kmpLiquidityAdsLiquidityTransactionDetails = Lightning_kmp_coreLiquidityAdsLiquidityTransactionDetails
+typealias Lightning_kmpLiquidityEventsRejected = Lightning_kmp_coreLiquidityEventsRejected
+typealias Lightning_kmpLiquidityEventsSource = Lightning_kmp_coreLiquidityEventsSource
+typealias Lightning_kmpLiquidityPolicy = Lightning_kmp_coreLiquidityPolicy
+typealias Lightning_kmpLocalKeyManager = Lightning_kmp_coreLocalKeyManager
+typealias Lightning_kmpManualLiquidityPurchasePayment = Lightning_kmp_coreManualLiquidityPurchasePayment
+typealias Lightning_kmpMilliSatoshi = Lightning_kmp_coreMilliSatoshi
+typealias Lightning_kmpNativeSocketException = Lightning_kmp_coreNativeSocketException
+typealias Lightning_kmpNewChannelIncomingPayment = Lightning_kmp_coreNewChannelIncomingPayment
+typealias Lightning_kmpNodeEvents = Lightning_kmp_coreNodeEvents
+typealias Lightning_kmpNodeParams = Lightning_kmp_coreNodeParams
+typealias Lightning_kmpOfferManagerCompanion = Lightning_kmp_coreOfferManagerCompanion
+typealias Lightning_kmpOfferNotPaid = Lightning_kmp_coreOfferNotPaid
+typealias Lightning_kmpOfferPaymentMetadata = Lightning_kmp_coreOfferPaymentMetadata
+typealias Lightning_kmpOfferTypesOffer = Lightning_kmp_coreOfferTypesOffer
+typealias Lightning_kmpOnChainIncomingPayment = Lightning_kmp_coreOnChainIncomingPayment
+typealias Lightning_kmpOnChainOutgoingPayment = Lightning_kmp_coreOnChainOutgoingPayment
+typealias Lightning_kmpOutgoingPayment = Lightning_kmp_coreOutgoingPayment
+typealias Lightning_kmpPaymentRequest = Lightning_kmp_corePaymentRequest
+typealias Lightning_kmpPaymentProgress = Lightning_kmp_corePaymentProgress
+typealias Lightning_kmpPaymentNotSent = Lightning_kmp_corePaymentNotSent
+typealias Lightning_kmpPaymentSent = Lightning_kmp_corePaymentSent
+typealias Lightning_kmpPeer = Lightning_kmp_corePeer
+typealias Lightning_kmpPeerEvent = Lightning_kmp_corePeerEvent
+typealias Lightning_kmpSendPaymentResult = Lightning_kmp_coreSendPaymentResult
+typealias Lightning_kmpSensitiveTaskEvents = Lightning_kmp_coreSensitiveTaskEvents
+typealias Lightning_kmpSensitiveTaskEventsTaskIdentifier = Lightning_kmp_coreSensitiveTaskEventsTaskIdentifier
+typealias Lightning_kmpSensitiveTaskEventsTaskEnded = Lightning_kmp_coreSensitiveTaskEventsTaskEnded
+typealias Lightning_kmpSensitiveTaskEventsTaskStarted = Lightning_kmp_coreSensitiveTaskEventsTaskStarted
+typealias Lightning_kmpServerAddress = Lightning_kmp_coreServerAddress
+typealias Lightning_kmpSpliceCpfpOutgoingPayment = Lightning_kmp_coreSpliceCpfpOutgoingPayment
+typealias Lightning_kmpSpliceInIncomingPayment = Lightning_kmp_coreSpliceInIncomingPayment
+typealias Lightning_kmpSpliceOutgoingPayment = Lightning_kmp_coreSpliceOutgoingPayment
+typealias Lightning_kmpSwapInWallet = Lightning_kmp_coreSwapInWallet
+typealias Lightning_kmpTcpSocketIOException = Lightning_kmp_coreTcpSocketIOException
+typealias Lightning_kmpTcpSocketTLS = Lightning_kmp_coreTcpSocketTLS
+typealias Lightning_kmpTrampolineFees = Lightning_kmp_coreTrampolineFees
+typealias Lightning_kmpUUID = Lightning_kmp_coreUUID
+typealias Lightning_kmpWalletPayment = Lightning_kmp_coreWalletPayment
+typealias Lightning_kmpWalletState = Lightning_kmp_coreWalletState
+
+
+extension Receive {
+	typealias Model_Awaiting = ModelAwaiting
+	typealias Model_Generating = ModelGenerating
+	typealias Model_Generated = ModelGenerated
+}
+
+extension SendManager {
+	
+	typealias ParseProgress_LnurlServiceFetch = ParseProgressLnurlServiceFetch
+	typealias ParseProgress_ResolvingBip353 = ParseProgressResolvingBip353
+	
+	typealias ParseResult_BadRequest = ParseResultBadRequest
+	typealias ParseResult_Bolt11Invoice = ParseResultBolt11Invoice
+	typealias ParseResult_Bolt12Offer = ParseResultBolt12Offer
+	typealias ParseResult_Uri = ParseResultUri
+	typealias ParseResult_Lnurl = ParseResultLnurl
+	typealias ParseResult_Lnurl_Pay = ParseResultLnurlPay
+	typealias ParseResult_Lnurl_Withdraw = ParseResultLnurlWithdraw
+	typealias ParseResult_Lnurl_Auth = ParseResultLnurlAuth
+	
+	typealias BadRequestReason_AlreadyPaidInvoice = BadRequestReasonAlreadyPaidInvoice
+	typealias BadRequestReason_PaymentPending = BadRequestReasonPaymentPending
+	typealias BadRequestReason_Bip353Unresolved = BadRequestReasonBip353Unresolved
+	typealias BadRequestReason_Bip353InvalidOffer = BadRequestReasonBip353InvalidOffer
+	typealias BadRequestReason_Bip353InvalidUri = BadRequestReasonBip353InvalidUri
+	typealias BadRequestReason_Bip353NameNotFound = BadRequestReasonBip353NameNotFound
+	typealias BadRequestReason_Bip353NoDNSSEC = BadRequestReasonBip353NoDNSSEC
+	typealias BadRequestReason_ChainMismatch = BadRequestReasonChainMismatch
+	typealias BadRequestReason_Expired = BadRequestReasonExpired
+	typealias BadRequestReason_InvalidLnurl = BadRequestReasonInvalidLnurl
+	typealias BadRequestReason_ServiceError = BadRequestReasonServiceError
+	typealias BadRequestReason_UnknownFormat = BadRequestReasonUnknownFormat
+	typealias BadRequestReason_UnsupportedLnurl = BadRequestReasonUnsupportedLnurl
+	
+	typealias LnurlPay_Error = LnurlPayError
+	typealias LnurlPay_Error_RemoteError = LnurlPayErrorRemoteError
+	typealias LnurlPay_Error_BadResponseError = LnurlPayErrorBadResponseError
+	typealias LnurlPay_Error_ChainMismatch = LnurlPayErrorChainMismatch
+	typealias LnurlPay_Error_AlreadyPaidInvoice = LnurlPayErrorAlreadyPaidInvoice
+	typealias LnurlPay_Error_PaymentPending = LnurlPayErrorPaymentPending
+	
+	typealias LnurlWithdraw_Error = LnurlWithdrawError
+	typealias LnurlWithdraw_Error_RemoteError = LnurlWithdrawErrorRemoteError
+	
+	typealias LnurlAuth_Error = LnurlAuthError
+	typealias LnurlAuth_Error_ServerError = LnurlAuthErrorServerError
+	typealias LnurlAuth_Error_NetworkError = LnurlAuthErrorNetworkError
+	typealias LnurlAuth_Error_OtherError = LnurlAuthErrorOtherError
+}
+
+extension LnurlPay {
+	typealias Invoice_SuccessAction = LnurlPay.InvoiceSuccessAction
+	typealias Invoice_SuccessAction_Message = LnurlPay.InvoiceSuccessActionMessage
+	typealias Invoice_SuccessAction_Url = LnurlPay.InvoiceSuccessActionUrl
+	typealias Invoice_SuccessAction_Aes = LnurlPay.InvoiceSuccessActionAes
+	typealias Invoice_SuccessAction_Aes_Decrypted = LnurlPay.InvoiceSuccessActionAesDecrypted
+}
+
+extension LnurlError {
+	typealias RemoteFailure_Code = RemoteFailureCode
+	typealias RemoteFailure_Detailed = RemoteFailureDetailed
+	typealias RemoteFailure_Unreadable = RemoteFailureUnreadable
+	typealias RemoteFailure_CouldNotConnect = RemoteFailureCouldNotConnect
+	typealias RemoteFailure_LightningAddressError = RemoteFailureLightningAddressError
+	typealias RemoteFailure_IsWebsite = RemoteFailureIsWebsite
+
+	typealias Pay_Invoice = LnurlError.PayInvoice
+	typealias Pay_Invoice_InvalidAmount = LnurlError.PayInvoiceInvalidAmount
+	typealias Pay_Invoice_Malformed = LnurlError.PayInvoiceMalformed
+}
+
+extension LnurlAuth {
+	typealias Scheme_DEFAULT = LnurlAuth.SchemeDEFAULT_SCHEME
+	typealias Scheme_ANDROID_LEGACY = LnurlAuth.SchemeANDROID_LEGACY_SCHEME
+}

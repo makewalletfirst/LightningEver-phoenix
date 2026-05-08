@@ -60,14 +60,12 @@ class BalanceManager(
         peerManager.swapInWallet.filterNotNull().collect { wallet ->
             _swapInWallet.value = wallet
             _swapInWalletBalance.value = WalletBalance(
-                deeplyConfirmed = wallet.deeplyConfirmed.balance,
-                weaklyConfirmed = wallet.weaklyConfirmed.balance,
-                weaklyConfirmedMinBlockNeeded = wallet.weaklyConfirmed.minOfOrNull {
-                    wallet.confirmationsNeeded(it)
-                },
-                unconfirmed = wallet.unconfirmed.balance,
-                locked = wallet.lockedUntilRefund.balance,
-                readyForRefund = wallet.readyForRefund.balance
+                deeplyConfirmed = wallet.deeplyConfirmed.map { it.amount }.sum(),
+                weaklyConfirmed = wallet.weaklyConfirmed.map { it.amount }.sum(),
+                weaklyConfirmedMinBlockNeeded = wallet.weaklyConfirmed.map { wallet.confirmationsNeeded(it) }.minOrNull(),
+                unconfirmed = wallet.unconfirmed.map { it.amount }.sum(),
+                locked = wallet.lockedUntilRefund.map { it.amount }.sum(),
+                readyForRefund = wallet.readyForRefund.map { it.amount }.sum()
             )
         }
     }

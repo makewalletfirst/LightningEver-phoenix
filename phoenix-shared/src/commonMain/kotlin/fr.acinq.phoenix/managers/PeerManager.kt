@@ -34,8 +34,14 @@ import fr.acinq.phoenix.utils.extensions.nextTimeout
 import fr.acinq.lightning.logging.debug
 import fr.acinq.lightning.logging.error
 import fr.acinq.lightning.logging.info
+import fr.acinq.lightning.logging.warning
 import fr.acinq.phoenix.defaultScope
 import fr.acinq.phoenix.managers.global.FeerateManager
+import kotlin.time.Duration.Companion.seconds
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.http.*
+
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
@@ -200,6 +206,7 @@ class PeerManager(
                 socketBuilder = null,
                 scope = defaultScope()
             )
+            
             _peer.value = peer
 
             launch { monitorNodeEvents(nodeParams) }

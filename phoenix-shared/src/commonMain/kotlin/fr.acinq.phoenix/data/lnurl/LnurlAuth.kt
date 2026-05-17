@@ -17,6 +17,7 @@
 package fr.acinq.phoenix.data.lnurl
 
 import fr.acinq.bitcoin.*
+import fr.acinq.secp256k1.Secp256k1
 import fr.acinq.bitcoin.crypto.Digest
 import fr.acinq.bitcoin.crypto.Pack
 import fr.acinq.bitcoin.crypto.hmac
@@ -72,7 +73,9 @@ data class LnurlAuth(
             challenge: String,
             key: PrivateKey
         ): Pair<PublicKey, ByteVector> {
-            return key.publicKey() to Crypto.compact2der(Crypto.sign(data = ByteVector32.fromValidHex(challenge), privateKey = key))
+            val compactSig = Crypto.sign(data = ByteVector32.fromValidHex(challenge), privateKey = key)
+            val derSig = Secp256k1.compact2der(compactSig.toByteArray())
+            return key.publicKey() to derSig.byteVector()
         }
 
         /**

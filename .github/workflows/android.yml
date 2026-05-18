@@ -21,6 +21,6 @@ jobs:
           cache: 'gradle'
       - name: Publish lightning-kmp-core 1.11.5-DEBUG to MavenLocal
         working-directory: lightning-kmp
-        run: ./gradlew :lightning-kmp-core:publishToMavenLocal -x test
+        run: ./gradlew :lightning-kmp-core:publishToMavenLocal
       - name: Build Android APK
         run: ./gradlew :phoenix-android:assembleDebug -x allTests

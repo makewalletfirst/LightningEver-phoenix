@@ -35,7 +35,7 @@ BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 Bit
 | --- | --- | --- |
 | chainHash | `6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000` (BitEver mainnet) | `phoenix-shared/.../managers/NodeParamsManager.kt` |
 | LSP nodeId | `0311fb42898ef97d86e5b4e2615040edd91e1ca350cea6e573b7af080fba105e07` | 동일 |
-| LSP 주소 | `ever-chain.xyz:9735` (공개 IP, VPN 경유 가능) | 동일 |
+| LSP 주소 | `eclair.ever-chain.xyz:9735` (공개 IP, VPN 경유 가능) | 동일 |
 | Electrum | `electrs.ever-chain.xyz:50001` (TLS off) | `phoenix-shared/.../data/ElectrumServers.kt` |
 | 블록 탐색기 | `https://bitever2.ever-chain.xyz` | `phoenix-shared/.../utils/BlockchainExplorer.kt` |
 | Fee API | `https://bitever2.ever-chain.xyz/api/v1/fees/recommended` | `phoenix-shared/.../managers/global/FeerateManager.kt` |

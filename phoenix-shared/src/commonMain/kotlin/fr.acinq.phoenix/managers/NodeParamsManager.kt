@@ -85,8 +85,8 @@ class NodeParamsManager(
     companion object {
         val chain = Chain.Mainnet
         val trampolineNodeId = PublicKey.fromHex("0311fb42898ef97d86e5b4e2615040edd91e1ca350cea6e573b7af080fba105e07")
-        val trampolineNodeUri = NodeUri(trampolineNodeId, "152.67.210.39", 9735)
-        val trampolineNodeOnionUri = NodeUri(id = trampolineNodeId, "152.67.210.39", 9735)
+        val trampolineNodeUri = NodeUri(trampolineNodeId, "eclair.ever-chain.xyz", 9735)
+        val trampolineNodeOnionUri = NodeUri(id = trampolineNodeId, "eclair.ever-chain.xyz", 9735)
         const val remoteSwapInXpub = "xpub6CdAv75ix5wK7jJmFVgauzLH7JCv4wkjTvWJ68ENBXca5pk9HHAFyNYfCVwBzWjDe16qp732Hvp1CXk53NAKEPhgVJCUbkj3Mg87UQJVmiH"
         val defaultLiquidityPolicy = LiquidityPolicy.Auto(
             inboundLiquidityTarget = null, // auto inbound liquidity is disabled (it must be purchased manually)

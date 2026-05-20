@@ -18,7 +18,7 @@ android {
     namespace = "fr.acinq.phoenix.android"
     compileSdk = 36
     defaultConfig {
-        applicationId = "fr.acinq.phoenix.testnet"
+        applicationId = "fr.acinq.phoenix.lightningever"
         minSdk = 26
         targetSdk = 36
         versionCode = 115

@@ -2,7 +2,7 @@
 
 BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 BitEver 체인 + 자체 LSP에 맞춰 fork한 Android 라이트닝 지갑입니다.
 
-브랜치: `main` (운영) / `260517_FIN` (스냅샷)
+브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경)
 
 ---
 

@@ -678,14 +678,14 @@
 
     <string name="prefs_display_title">Display options</string>
     <string name="prefs_filter_name">Filter by name</string>
-    <string name="prefs_display_coin_label">Bitcoin unit</string>
-    <string name="prefs_display_coin_sat_label">Satoshi</string>
-    <string name="prefs_display_coin_sat_desc">1 sat is 0.00000001 btc</string>
+    <string name="prefs_display_coin_label">BitEver Unit</string>
+    <string name="prefs_display_coin_sat_label">Ever</string>
+    <string name="prefs_display_coin_sat_desc">1 ever is 0.00000001 bec</string>
     <string name="prefs_display_coin_bit_label">Bit</string>
-    <string name="prefs_display_coin_bit_desc">1 bit is 0.000001 btc</string>
-    <string name="prefs_display_coin_mbtc_label">Milli-Bitcoin</string>
-    <string name="prefs_display_coin_mbtc_desc">1 mbtc is 0.001 btc</string>
-    <string name="prefs_display_coin_btc_label">Bitcoin</string>
+    <string name="prefs_display_coin_bit_desc">1 bit is 0.000001 bec</string>
+    <string name="prefs_display_coin_mbtc_label">Milli-BitEver</string>
+    <string name="prefs_display_coin_mbtc_desc">1 mbec is 0.001 bec</string>
+    <string name="prefs_display_coin_btc_label">BitEver</string>
     <string name="prefs_display_fiat_label">Fiat currency</string>
     <string name="prefs_display_theme_label">Application theme</string>
     <string name="prefs_display_theme_dark_label">Dark theme</string>

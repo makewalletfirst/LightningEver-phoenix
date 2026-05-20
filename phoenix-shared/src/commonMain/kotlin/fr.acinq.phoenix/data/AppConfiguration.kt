@@ -14,7 +14,7 @@ sealed interface CurrencyUnit {
 
 @Serializable
 enum class BitcoinUnit(override val displayCode: String) : CurrencyUnit {
-    Sat("ever"), Bit("bit"), MBtc("mbtc"), Btc("btc");
+    Sat("ever"), Bit("bit"), MBtc("mbec"), Btc("bec");
 
     override fun toString(): String {
         return super.toString().lowercase()

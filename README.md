@@ -2,7 +2,7 @@
 
 BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 BitEver 체인 + 자체 LSP에 맞춰 fork한 Android 라이트닝 지갑입니다.
 
-브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경)
+브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경) / '260521OFFBOLT12' (BOLT12 오프라인 수신 완성)
 
 ---
 
@@ -185,3 +185,28 @@ splice tx confirm 후 inbound capacity 증가
 ## 라이선스
 
 ACINQ Phoenix 기반 fork. 원본 라이선스 (Apache 2.0) 승계.
+
+---
+
+## 260521OFFBOLT12 — BOLT12 오프라인 수신 완성
+
+폰 B 가 백그라운드/잠금 상태이어도 폰 A 가 BOLT12 offer 로 송금하면 자동으로 결제 도착하는 흐름이 이번 브랜치에서 완성됨.
+
+### 앱 측 변경 (이 저장소)
+
+- `phoenix-android/google-services.json` — Firebase 신규 프로젝트 `lightningever` 의 실제 google-services.json (이전 브랜치에서 stub 이었던 것 교체)
+- `phoenix-android/build.gradle.kts` — `applicationId = "fr.acinq.phoenix.lightningever"` (이전: `testnet`)
+- 두 변경 모두 폰의 FCM 토큰이 신규 Firebase 프로젝트로 발급되도록 함. Phoenix 의 `FCMService.kt` 는 그대로 (이미 `node_id_hash` + `reason` 키 처리 로직 있음)
+
+### KMP 측 변경 (lightning-kmp 저장소)
+
+`Negotiating.kt`/`Offline.kt`/`Syncing.kt` 에 mutual close `unknown closing tx` fallback 추가. NEGOTIATING 영구 멈춤 안전망.
+
+### LSP 측 변경 (eclair + eclair-plugin 저장소)
+
+- `Peer.scala` 35017/35019 FCM 토큰 파싱 + EventStream publish
+- `PeerReadyNotifier.scala` wake-up 트리거 publish
+- `NodeRelay.scala` dev-bypass 복원 + wake-up 분기 차단 (force-close 방지)
+- 신규 `fcm-push-plugin` — Firebase Cloud Messaging HTTP v1 으로 push 발사
+
+자세한 흐름 / 원리 / 사고 사례는 LightningEver 프로젝트의 `260521OFFBOLT12.md` 참조.

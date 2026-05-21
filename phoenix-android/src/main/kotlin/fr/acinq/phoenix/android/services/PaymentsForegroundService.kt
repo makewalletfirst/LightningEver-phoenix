@@ -101,6 +101,8 @@ class PaymentsForegroundService : Service() {
                             when (reason) {
                                 "IncomingPayment" -> SystemNotificationHelper.notifyPaymentMissedAppUnavailable(applicationContext, metadata)
                                 "PendingSettlement" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, metadata)
+                                // [LightningEver] L1 swap-in deposit fallback notification when seed can't be decrypted.
+                                "SwapInDeposit" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, metadata)
                                 else -> Unit
                             }
                         }

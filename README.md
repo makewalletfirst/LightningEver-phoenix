@@ -2,7 +2,7 @@
 
 BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 BitEver 체인 + 자체 LSP에 맞춰 fork한 Android 라이트닝 지갑입니다.
 
-브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경) / '260521OFFBOLT12' (BOLT12 오프라인 수신 완성)
+브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경) / '260521OFFBOLT12' (BOLT12 오프라인 수신 완성) / '260522_OFFSWAPIN' (오프라인 스왑인 입금 자동 감지)
 
 ---
 
@@ -210,3 +210,24 @@ ACINQ Phoenix 기반 fork. 원본 라이선스 (Apache 2.0) 승계.
 - 신규 `fcm-push-plugin` — Firebase Cloud Messaging HTTP v1 으로 push 발사
 
 자세한 흐름 / 원리 / 사고 사례는 LightningEver 프로젝트의 `260521OFFBOLT12.md` 참조.
+
+---
+
+## 260522_OFFSWAPIN 추가 변경 (이 브랜치)
+
+**오프라인 스왑인 입금 자동 감지** — 폰을 켜놓지 않아도 LSP 가 L1 입금을 감지하고 폰을 wake-up push 로 깨워 자동 채널 생성하는 흐름. Phoenix Android 측의 push 분기 추가.
+
+### 변경 파일
+
+- `phoenix-android/src/main/kotlin/fr/acinq/phoenix/android/services/FCMService.kt`
+  - `onMessageReceived` 의 low-priority fallback 분기에 `"SwapInDeposit"` reason 처리 추가 (`SystemNotificationHelper.notifyPendingSettlement` 재사용)
+- `phoenix-android/src/main/kotlin/fr/acinq/phoenix/android/services/PaymentsForegroundService.kt`
+  - decrypt 실패 fallback 분기에도 동일 `SwapInDeposit` reason 처리 추가
+
+### 동작
+
+HIGH priority push 의 경우 reason 무관 `startPhoenixForegroundService` → `BusinessManager.startNewBusiness` 흐름이 그대로 동작 → KMP 의 `SwapInWallet` 이 electrum 으로 swap-in UTXO 발견 → `OpenDualFundedChannel` 흐름 자동 진행 → 채널 생성. reason 별 별도 코드는 fallback 알림용.
+
+### 운영 메모
+
+LSP 측 자동화 구독이 현재 일시 비활성 상태 (BOLT12 offline force-close 재현 이슈) — Phoenix 측은 메시지를 받을 때 정상 처리할 수 있도록 준비된 상태로 commit 됨. 자세한 가이드: LightningEver 프로젝트의 `260522FCM.md`.

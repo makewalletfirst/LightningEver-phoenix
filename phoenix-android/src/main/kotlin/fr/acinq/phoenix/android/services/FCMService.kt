@@ -52,6 +52,10 @@ class FCMService : FirebaseMessagingService() {
                     when (reason) {
                         "IncomingPayment" -> SystemNotificationHelper.notifyPaymentMissedAppUnavailable(applicationContext, walletMetadata)
                         "PendingSettlement" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, walletMetadata)
+                        // [LightningEver] L1 swap-in deposit detected by LSP while wallet is offline.
+                        // Re-use the "pending settlement" notification template since the user action is similar
+                        // (open the app so the channel-open flow can start).
+                        "SwapInDeposit" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, walletMetadata)
                         else -> {}
                     }
                 }

@@ -25,7 +25,7 @@ BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 Bit
 | 항목 | 값 |
 | --- | --- |
 | 앱 표시명 | **LightningEver** |
-| 패키지명 | `fr.acinq.phoenix.testnet` (이름만 testnet, 실제는 BitEver mainnet) |
+| 패키지명 | `fr.acinq.phoenix.lightningever` (BitEver mainnet의 전용 phoenix) |
 | 앱 아이콘 | LE_logo (5 dpi tier × 3 variants = 15개 PNG) + adaptive icon (foreground inner 50% padding) |
 | 아이콘 배경색 | `#FFFFFF` (ACINQ 보라색 → 흰색) |
 

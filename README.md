@@ -1,233 +1,222 @@
-# LightningEver-bitever-phoenix
+# LightningEver-phoenix (BitEver Mobile Wallet)
 
-BitEver L1 위에서 동작하는 **LightningEver 앱** — ACINQ Phoenix를 BitEver 체인 + 자체 LSP에 맞춰 fork한 Android 라이트닝 지갑입니다.
-
-브랜치: `main` (운영) / `260517_FIN` (스냅샷) / `260519_legacy` (레거시 스왑인 수정) / '260521_TICKER' (sat 단위 ever 완벽 변경) / '260521OFFBOLT12' (BOLT12 오프라인 수신 완성) / '260522_OFFSWAPIN' (오프라인 스왑인 입금 자동 감지)
+Welcome to the **LightningEver** mobile wallet repository. This project is a specialized fork of ACINQ's **Phoenix Android** wallet, customized to run on top of the custom Layer 1 blockchain, **BitEver (BEC)**, utilizing a tailored **Eclair LSP** architecture.
 
 ---
 
-## 검증된 기능 (7가지 마일스톤)
-
-1. **L1 swap-in → 자동 채널 생성** — 외부 BEC 지갑에서 swap-in 주소로 송금 → 3 conf 후 자동 채널 활성화 + ~50M sat inbound liquidity 자동 공급
-2. **Bolt12 송금 (양측 채널 보유)** — 일반 lightning 결제, trampoline 라우팅
-3. **Bolt12 송금 (채널 없는 수신자)** — 수신자가 wallet 갓 설치 + 잔액 0이어도 OK, LSP가 OTF로 새 채널 자동 생성
-4. **외부 L1 송금 (splice-out)** — Send → bc1... 주소 입력 → splice tx로 직접 외부 L1에 전달
-5. **지정 mutual close** — Settings → Channels → Mutual close, 회수 주소 + feerate 지정
-6. **Force close** — commit tx 즉시 broadcast, 144 블록 CSV 후 자동 회수
-7. **Request Liquidity (splice-in)** — 채널에 inbound 추가 (channel reserve BYPASS 적용)
-
----
-
-## 직접 건드린 부분 (Phoenix 앱 내부)
-
-### 1. 앱 아이덴티티 / 브랜딩
-
-| 항목 | 값 |
-| --- | --- |
-| 앱 표시명 | **LightningEver** |
-| 패키지명 | `fr.acinq.phoenix.lightningever` (BitEver mainnet의 전용 phoenix) |
-| 앱 아이콘 | LE_logo (5 dpi tier × 3 variants = 15개 PNG) + adaptive icon (foreground inner 50% padding) |
-| 아이콘 배경색 | `#FFFFFF` (ACINQ 보라색 → 흰색) |
-
-### 2. 체인 / 네트워크 설정 (소스 코드 하드코딩)
-
-| 항목 | 값 | 위치 |
-| --- | --- | --- |
-| chainHash | `6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000000000` (BitEver mainnet) | `phoenix-shared/.../managers/NodeParamsManager.kt` |
-| LSP nodeId | `0311fb42898ef97d86e5b4e2615040edd91e1ca350cea6e573b7af080fba105e07` | 동일 |
-| LSP 주소 | `eclair.ever-chain.xyz:9735` (공개 IP, VPN 경유 가능) | 동일 |
-| Electrum | `electrs.ever-chain.xyz:50001` (TLS off) | `phoenix-shared/.../data/ElectrumServers.kt` |
-| 블록 탐색기 | `https://bitever2.ever-chain.xyz` | `phoenix-shared/.../utils/BlockchainExplorer.kt` |
-| Fee API | `https://bitever2.ever-chain.xyz/api/v1/fees/recommended` | `phoenix-shared/.../managers/global/FeerateManager.kt` |
-| swap-in xpub | BitEver 전용 master pubkey | NodeParamsManager.kt |
-| 채널 타입 | `simple_taproot_phoenix` (musig2 2-of-2) | KMP `NodeParams.kt` |
-| toRemoteDelayBlocks | `144` (기본 2016 → 단축) | KMP `NodeParams.kt:259` |
-
-### 3. lightning-kmp 측 동반 패치 (Phoenix가 의존)
-
-7개 musig2 nonce ordering 패치 + feerate fallback + Negotiating 상태 복원 등.
-
-자세한 내용: [makewalletfirst/LightningEver-bitever-eclair-kmp](https://github.com/makewalletfirst/LightningEver-bitever-eclair-kmp) 의 `README_BITEVER_FIN.md` 참고.
+## Table of Contents
+1. [Overview](#1-overview)
+2. [Ecosystem & Architecture](#2-ecosystem--architecture)
+3. [Key Technology Stack](#3-key-technology-stack)
+4. [Structure & Eclair's Role](#4-structure--eclairs-role)
+5. [Main Modifications & Branch Milestones](#5-main-modifications--branch-milestones)
+6. [Security Warnings & Dev Bypasses](#6-security-warnings--dev-bypasses)
+7. [Build Instructions](#7-build-instructions)
+8. [Deployment & Operations Guide](#8-deployment--operations-guide)
+9. [Feature Matrix vs. Phoenix Mainnet](#9-feature-matrix-vs-phoenix-mainnet)
 
 ---
 
-## 의존성 (간단)
+## 1. Overview
 
-- **`lightning-kmp` 1.11.5-DEBUG**: [LightningEver-bitever-eclair-kmp](https://github.com/makewalletfirst/LightningEver-bitever-eclair-kmp) branch `260517_FIN` (또는 `main`)
-  - 빌드 전 `./gradlew :lightning-kmp-core:publishToMavenLocal` 로 `~/.m2/repository/`에 publish 필수
-- **Eclair LSP**: [LightningEver-bitever-eclair](https://github.com/makewalletfirst/LightningEver-bitever-eclair) (실행 인프라, 앱 빌드와 무관)
+**LightningEver** is a complete, private, and localized Lightning Network implementation built for the **BitEver (BEC) L1 chain**. The core of this project is achieved by forking, customizing, and patching the ACINQ Phoenix ecosystem (specifically **Phoenix Android**, **lightning-kmp**, and **Eclair LSP**).
+
+All mobile transactions are routed through a single **Liquidity Service Provider (LSP)** powered by a BitEver-patched **Eclair** daemon. Mobile clients utilize a zero-reserve, fast-closing, and auto-funding mechanism designed to provide a seamless user experience even on a young custom blockchain environment.
 
 ---
 
-## 빌드 방법
+## 2. Ecosystem & Architecture
+
+The following diagram illustrates the interaction between the different components of the LightningEver ecosystem:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              BitEver (BEC) L1                               │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  • Custom Bitcoin fork (Taproot, MuSig2, P2TR, custom chainHash)            │
+│  • Independent mining and blockchain consensus                              │
+│  • bitcoind RPC: 10.8.0.6:8334, ZMQ: 28332/28333                            │
+│  • Electrs indexer: electrs.ever-chain.xyz:50001                            │
+│  • chainHash: 6fe28c0ab6f1b372c1a6a246ae63f74f931e8365e15a089c68d6190000... │
+└─────────────────────────────────────────────────────────────────────────────┘
+          ▲                              ▲                          ▲
+          │ RPC + ZMQ                    │ Electrum RPC             │ Electrum
+          │                              │                          │
+┌─────────┴───────────────┐  ┌───────────┴────────────┐  ┌──────────┴─────────┐
+│   Eclair LSP            │  │  Phoenix Android       │  │  Phoenix Android   │
+│   (BitEver fork)        │  │  = LightningEver App   │  │  = LightningEver   │
+│   ─────────────────     │◀─┤  (Phone A)             │  │  (Phone B)         │
+│   • node-id:            │  │  ─────────────────     │  │  ─────────────────│
+│     0311fb42898e...     │  │  • uses lightning-kmp  │  │  • lightning-kmp   │
+│   • IP: 152.67.210.39   │  │  • LSP peer 0311fb...  │  │  • LSP peer 03...  │
+│   • Port: 9735 (P2P)    │  │                        │  │                    │
+│   • Port: 8080 (REST)   │  │                        │  │                    │
+│   • + channel-funding   │  │                        │  │                    │
+│     plugin              │  │                        │  │                    │
+│   • SQLite DB           │  │                        │  │                    │
+└─────────────────────────┘  └────────────────────────┘  └────────────────────┘
+          │                              ▲                          ▲
+          │       Lightning P2P          │                          │
+          ├──────────────────────────────┘                          │
+          │       Lightning P2P                                     │
+          └─────────────────────────────────────────────────────────┘
+```
+
+### Core Architecture Facts
+- **No direct peer-to-peer mobile channels**: All payment and routing traffic between wallets passes through the central LSP (`0311fb42...`).
+- **External Dependencies**: 
+  - **Eclair LSP** relies on both **bitcoind JSON-RPC** (for block mining alerts, UTXO tracking, transaction broadcasts, and fee estimation) and **Electrs** (as a watcher interface).
+  - **Phoenix Android** relies **solely on Electrs** (ElectrumX protocol) for L1 tracking, swap-in scans, and fee estimations. It never communicates directly with `bitcoind`.
+
+---
+
+## 3. Key Technology Stack
+
+- **Mobile Wallet (this repository)**: Built using **Kotlin Multiplatform (KMP)** and **Jetpack Compose** for Android.
+- **Lightning Protocol Engine**: **lightning-kmp** (Kotlin Multiplatform core library by ACINQ, forked and customized).
+- **LSP Daemon**: **Eclair LSP** (Scala / JVM, customized for BEC L1 compatibility).
+- **Local Databases**: SQLite database on Eclair LSP; **SQLDelight** on Android (`phoenix.db`).
+- **External Interfaces**: JSON-RPC over HTTP (`bitcoind`), ElectrumX protocol (`Electrs`), TCP (BOLT 8 Noise XK transport for P2P network).
+- **Push Services**: Google **Firebase Cloud Messaging (FCM)** for background wake-ups.
+
+---
+
+## 4. Structure & Eclair's Role
+
+### Component Structure
+1. **BitEver L1 (External)**: Custom blockchain base.
+2. **Eclair LSP (JVM)**: Serves as the backbone routing node. Configured via `eclair.conf` and stores channel/payment data in `eclair.sqlite`. Includes a customized `channel-funding-plugin-0.13.1.jar` to auto-provision inbound liquidity.
+3. **lightning-kmp (Maven core-jvm package)**: Embedded within the Android app to execute the state machine for channel management, splicing, payments, and Bolt12 invoice creation.
+4. **Phoenix Android (Mobile client)**: The user interface layer, background services (`FCMService`, `PaymentsForegroundService`), and persistent storage.
+
+### The Role of Eclair LSP
+Eclair LSP acts as the single point of entry, trampoline router, and liquidity provider for all clients:
+- **Automatic Channel Provisioning**: Automatically funds new channels (with ~50M sat inbound capacity) upon the user's initial swap-in deposit.
+- **On-The-Fly (OTF) Channel Creation**: When a zero-balance user generates a Bolt12 offer, Eclair LSP detects incoming HTLCs, pauses relay, triggers a channel-open protocol with the receiver, and forwards the HTLC immediately into the newly established channel.
+- **Background Wake-up**: Employs FCM push notifications to wake clients up during incoming payments when they are backgrounded or offline, securing successful asynchronous deliveries.
+
+---
+
+## 5. Main Modifications & Branch Milestones
+
+### 7 Core Milestones (Verified Features)
+1. **L1 Swap-in to Auto-Channel Creation**: Depositing BEC to the wallet's swap-in address triggers automatic dual-funded channel open with ~50M sat inbound liquidity from the LSP after 3 confirmations.
+2. **Bolt12 Transacting (Both sides active)**: Allows standard Lightning payments with trampoline relay and Bolt12 offers.
+3. **Bolt12 Transacting (Receiver has no channels)**: The LSP uses OTF (On-The-Fly) funding to dynamically create channels for zero-balance, newly installed wallets receiving Bolt12 payments (> 10,000 sat).
+4. **External L1 Splice-out**: Send to a standard on-chain address directly from your active Lightning channel using a splice transaction.
+5. **Custom Mutual Close**: Users can gracefully close their channel and extract funds directly to a specified L1 address with a custom fee rate (`Settings -> Channels -> Mutual Close`).
+6. **Force Close**: Broadcasts the local commitment transaction immediately. The relative locktime (CSV) is shortened to `144` blocks (~24 hours) instead of the default `2016` blocks for faster L1 fund recovery.
+7. **Request Liquidity (Splice-in)**: Add inbound capacity dynamically via channel splice. Built-in channel reserve bypass allows zero-reserve operations.
+
+### Branch Highlights & Background Updates
+
+#### `260521OFFBOLT12` — Offline Bolt12 Reception via FCM
+Allows users to receive Bolt12 payments even when the receiving phone is locked or the app is killed.
+- **App Side**: Configured with a dedicated `google-services.json` tied to the Firebase project `lightningever` under `fr.acinq.phoenix.lightningever` application ID.
+- **KMP Side**: Fixed a `Negotiating` state lock by adding an unknown closing transaction fallback to ensure graceful recovery.
+- **LSP Side**: Uses `PeerReadyNotifier` and `fcm-push-plugin` to send a high-priority FCM wakeup push to the recipient node ID, triggering automatic peer connection and channel synchronization in the background.
+
+#### `260522_OFFSWAPIN` — Offline Swap-in Deposit Detection
+Triggers automatic channel creation for offline users who have received on-chain funds on their swap-in address.
+- **App Side**: Implemented `FCMService.kt` handler for the low-priority `"SwapInDeposit"` notification reason.
+- **Background Service**: Integrates `PaymentsForegroundService.kt` to securely handle decryption fallbacks and start the foreground service, prompting `lightning-kmp` to query Electrs, detect the UTXO, and initiate the `OpenDualFundedChannel` flow.
+
+---
+
+## 6. Security Warnings & Dev Bypasses
+
+> [!WARNING]
+> This repository is built strictly for the **BitEver Development/Test chains**. Under no circumstances should this fork be compiled or used on the Bitcoin Mainnet.
+
+To achieve continuous local testing and fast iteration on the BitEver chain, several cryptographic and consensus checks have been bypassed on the Eclair LSP and client sides:
+- **`checkRemoteSig` / `checkRemotePartialSignature` / `checkRemoteHtlcSig` (Eclair LSP)**: Bypassed to always return `true` to ease integration testing of MuSig2/Schnorr channels.
+- **Channel Reserve Bypass**: Eclair LSP bypasses the 1% channel reserve rule (`validateTx` in `InteractiveTxBuilder.scala`), allowing clients to spend up to their last satoshi (zero-reserve).
+- **`validateParamsDualFundedNonInitiator`**: Bypasses the minimum funding check (`minFunding=0`) for OTF channels, enabling zero-balance mobile clients to accept new incoming payments.
+- **MuSig2 Commit Nonces Bypass (`checkCommitNonces`)**: Ignores `MissingCommitNonce` errors for Taproot channels to prevent forced closures during peer reconnects.
+- **BitEver Node Sync Bypass**: Bypasses Eclair's initial block download and synchronization checks (`Setup.scala`), as the BitEver L1 network has low cumulative work.
+- **Feerate Fallback**: If the custom `estimatefee` RPC fails due to low block height, the system falls back to `MinimumFeeratePerKw` to avoid client initialization failures.
+
+---
+
+## 7. Build Instructions
+
+To compile the application successfully, you must compile and publish the custom `lightning-kmp` fork first.
+
+### Step 1: Build & Publish Custom `lightning-kmp`
+1. Clone the custom KMP library:
+   ```bash
+   git clone https://github.com/makewalletfirst/LightningEver-bitever-eclair-kmp.git
+   cd LightningEver-bitever-eclair-kmp
+   ```
+2. Publish it to your local Maven repository:
+   ```bash
+   ./gradlew :lightning-kmp-core:publishToMavenLocal
+   ```
+   *This outputs `lightning-kmp-core-jvm:1.11.5-DEBUG` to `~/.m2/repository/fr/acinq/lightning/`.*
+
+### Step 2: Build Phoenix Android
+1. Navigate back to this repository root:
+   ```bash
+   cd /root/md/phoenix
+   ```
+2. Assemble the debug APK:
+   ```bash
+   ./gradlew :phoenix-android:assembleDebug
+   ```
+3. Locate the completed APK:
+   ```bash
+   phoenix-android/build/outputs/apk/debug/phoenix-115-<HASH>-mainnet-debug.apk
+   ```
+
+---
+
+## 8. Deployment & Operations Guide
+
+### LSP Operation and Status Commands
+To query, monitor, and run the Eclair LSP node, use the following REST API endpoints (authenticated via basic auth, `-u :PASSWORD`):
 
 ```bash
-# 1. KMP 먼저 publish (의존 라이브러리)
-cd /path/to/lightning-kmp
-./gradlew :lightning-kmp-core:publishToMavenLocal
-# ~3분, ~/.m2/repository/fr/acinq/lightning/lightning-kmp-core-jvm/1.11.5-DEBUG/ 산출
+# 1. Get Node Info and Sync State
+curl -s -u :PASSWORD -X POST http://localhost:8080/getinfo | jq .
 
-# 2. Phoenix Android APK 빌드
-cd /path/to/phoenix
-./gradlew :phoenix-android:assembleDebug
-# 첫 빌드 ~10분, 증분 ~30초
-```
+# 2. List All Active Channels and States
+curl -s -u :PASSWORD -X POST http://localhost:8080/channels | jq '.[] | {channelId, state, nodeId}'
 
-산출물:
-```
-phoenix-android/build/outputs/apk/debug/phoenix-115-<HASH>-mainnet-debug.apk
-```
+# 3. View Details of a Specific Channel
+curl -s -u :PASSWORD -X POST http://localhost:8080/channel -d "channelId=YOUR_CHANNEL_ID_HEX" | jq .
 
-> Note: 모듈명은 `phoenix-android` (구버전 README의 `composeApp` 아님). Compose Multiplatform 마이그레이션 이전 구조.
+# 4. List Connected Peer Nodes
+curl -s -u :PASSWORD -X POST http://localhost:8080/peers | jq .
 
----
+# 5. Enable On-The-Fly Funding (Required once after restarting the LSP)
+curl -s -u :PASSWORD -X POST http://localhost:8080/enablefromfuturehtlc
 
-## CI
-
-`.github/workflows/android.yml`에서 GitHub Actions가:
-1. lightning-kmp fork repo 클론
-2. `:lightning-kmp-core:publishToMavenLocal` 실행
-3. `:phoenix-android:assembleDebug` 실행
-
-main 브랜치에 push 시 자동 빌드 검증.
-
----
-
-## 사용 흐름 (간단)
-
-### 신규 사용자
-
-```
-앱 설치 → Create new wallet → 시드 12단어 저장 → PIN 설정
-       → 자동으로 LSP(152.67.210.39:9735)에 peer 연결
-       → 폰 nodeId 생성됨
-       → (LSP 운영자에게 nodeId 알려서 peer-whitelist 등록)
-       → Receive → On-chain wallet → swap-in 주소(bc1p…) 복사
-       → 외부 BEC 지갑에서 송금 (예: 2,500,000 sat)
-       → 3 conf 후 자동 채널 활성화 (~52M sat capacity)
-```
-
-### Bolt12 송금 (양측 채널 보유)
-
-```
-수신자: Receive → Use a reusable Bolt 12 offer → lno1… 복사
-송신자: Send → lno1… 입력 → 금액 → Send
-```
-
-### Bolt12 송금 (수신자 채널 없음)
-
-```
-수신자: 갓 설치, swap-in 없이도 lno1… offer 생성 가능
-송신자: Send → lno1… 입력 → 10,000 sat 이상 → Send
-        → LSP가 OTF로 수신자에게 새 채널 자동 생성 → 잔액 도착
-```
-
-⚠️ 1,000 sat 같이 작은 금액은 mining fee 미달로 거절됨. **10,000 sat 이상** 권장.
-
-### 외부 L1 송금
-
-```
-Send → bc1... 외부 주소 → 금액 → Send (splice-out tx broadcast)
-```
-
-### 채널 정리
-
-```
-Settings → Channels → 채널 선택
-  ├─ Mutual close → 회수 주소 + feerate (정상 종료, 즉시 회수)
-  └─ Force close   → 144 블록 후 자동 회수 (UI에 Complete 떠도 CSV 대기 정상)
-```
-
-### Request Liquidity (inbound 추가)
-
-```
-Settings → Channels → Request liquidity → 금액 입력 → 확인
-splice tx confirm 후 inbound capacity 증가
+# 6. Stream Live LSP Logs
+tail -f /root/.eclair/eclair.log
 ```
 
 ---
 
-## Phoenix mainnet 대비 기능 매트릭스
+## 9. Feature Matrix vs. Phoenix Mainnet
 
-| 기능 | Phoenix mainnet | LightningEver | 비고 |
-| --- | --- | --- | --- |
-| 자동 채널 생성 | ✅ | ✅ | 동일 |
-| Bolt12 send/receive | ✅ | ✅ | 동일 |
-| Bolt12 OTF (채널 없는 수신자) | ✅ | ✅ | 동일 |
-| MPP / Trampoline | ✅ | ✅ | 동일 |
-| Splice-in/out | ✅ | ✅ | 동일 |
-| Mutual / Force close | ✅ | ✅ | force-close CSV 단축 (2016 → 144) |
-| Channel reserve | 1% | 0 (BYPASS) | zero-reserve |
-| FCM wake-up | ✅ | ✅ | 동일 |
-| simple_taproot_channels | ✅ | ✅ | `phoenix_simple_taproot_channel` 변종 |
-| 외부 LN 송금 (다른 LSP 경유) | ✅ | ❌ | BEC LSP는 외부 LN과 채널 없음 |
-| 환율 / fiat 표시 | ✅ | ⚠️ 0 표시 | BEC가 거래소에 없음 |
-| BIP-353 DNS 주소 | ✅ | ⚠️ 미사용 | BEC 도메인 인프라 없음 |
-| Liquidity Ads 마켓플레이스 | ✅ (여러 LSP) | ❌ | 단일 LSP |
-
-핵심 LN 기능은 거의 동등. 미지원 항목은 Phoenix 코드 한계가 아니라 BitEver 생태계 자체에 외부 LN/거래소/도메인 인프라가 없기 때문.
+| Feature | Phoenix Mainnet | LightningEver (BitEver) | Notes |
+| :--- | :---: | :---: | :--- |
+| **Auto Channel Opening** | ✅ | ✅ | Works identically. |
+| **Bolt12 Send & Receive** | ✅ | ✅ | Tested and verified using Bolt12 offers. |
+| **OTF Channel Funding** | ✅ | ✅ | Supported for payments above 10,000 sat. |
+| **MPP / Trampoline Routing** | ✅ | ✅ | Native support via lightning-kmp. |
+| **Splice-in / Splice-out** | ✅ | ✅ | Supported. |
+| **Mutual / Force Close** | ✅ | ✅ | Force-close CSV reduced from 2016 to 144 blocks. |
+| **Channel Reserve Requirement** | 1% | **0% (Bypassed)** | Zero-reserve enabled for smooth UX. |
+| **FCM Background Wake-up** | ✅ | ✅ | Customized via specialized Firebase project. |
+| **Simple Taproot Channels** | ✅ | ✅ | Integrated using the custom taproot scheme. |
+| **External LN Routing** | ✅ | ❌ | Closed network. LSP has no external routing peers. |
+| **Fiat Exchange Display** | ✅ | ⚠️ *0.00* | BitEver is not listed on external exchanges. |
+| **BIP-353 DNS Addresses** | ✅ | ⚠️ *Disabled* | Requires BitEver domain lookup infrastructure. |
+| **Liquidity Ads Market** | ✅ | ❌ | Single LSP architecture only. |
 
 ---
 
-## 보안 경고
+## License
 
-이 빌드는 **BitEver 테스트 체인 전용**입니다. LSP 측에 다음 BYPASS가 적용되어 있어 비트코인 mainnet에서는 절대 사용 금지:
-- musig2 partial signature 검증 BYPASS (Eclair core)
-- HTLC signature 검증 BYPASS
-- channel reserve 검사 BYPASS
-
-서명 알고리즘 자체는 비트코인과 호환 (secp256k1 + schnorr + musig2). on-chain tx의 서명은 모두 valid (BitEver bitcoind가 정상 검증해서 수락). BYPASS는 LSP가 P2P 메시지에서 받는 서명을 사전 검증하지 않는 것일 뿐, 서명 생성은 정상.
-
-자세한 분석: [LightningEver-bitever-eclair](https://github.com/makewalletfirst/LightningEver-bitever-eclair) repo 별도 문서.
-
----
-
-## 라이선스
-
-ACINQ Phoenix 기반 fork. 원본 라이선스 (Apache 2.0) 승계.
-
----
-
-## 260521OFFBOLT12 — BOLT12 오프라인 수신 완성
-
-폰 B 가 백그라운드/잠금 상태이어도 폰 A 가 BOLT12 offer 로 송금하면 자동으로 결제 도착하는 흐름이 이번 브랜치에서 완성됨.
-
-### 앱 측 변경 (이 저장소)
-
-- `phoenix-android/google-services.json` — Firebase 신규 프로젝트 `lightningever` 의 실제 google-services.json (이전 브랜치에서 stub 이었던 것 교체)
-- `phoenix-android/build.gradle.kts` — `applicationId = "fr.acinq.phoenix.lightningever"` (이전: `testnet`)
-- 두 변경 모두 폰의 FCM 토큰이 신규 Firebase 프로젝트로 발급되도록 함. Phoenix 의 `FCMService.kt` 는 그대로 (이미 `node_id_hash` + `reason` 키 처리 로직 있음)
-
-### KMP 측 변경 (lightning-kmp 저장소)
-
-`Negotiating.kt`/`Offline.kt`/`Syncing.kt` 에 mutual close `unknown closing tx` fallback 추가. NEGOTIATING 영구 멈춤 안전망.
-
-### LSP 측 변경 (eclair + eclair-plugin 저장소)
-
-- `Peer.scala` 35017/35019 FCM 토큰 파싱 + EventStream publish
-- `PeerReadyNotifier.scala` wake-up 트리거 publish
-- `NodeRelay.scala` dev-bypass 복원 + wake-up 분기 차단 (force-close 방지)
-- 신규 `fcm-push-plugin` — Firebase Cloud Messaging HTTP v1 으로 push 발사
-
-자세한 흐름 / 원리 / 사고 사례는 LightningEver 프로젝트의 `260521OFFBOLT12.md` 참조.
-
----
-
-## 260522_OFFSWAPIN 추가 변경 (이 브랜치)
-
-**오프라인 스왑인 입금 자동 감지** — 폰을 켜놓지 않아도 LSP 가 L1 입금을 감지하고 폰을 wake-up push 로 깨워 자동 채널 생성하는 흐름. Phoenix Android 측의 push 분기 추가.
-
-### 변경 파일
-
-- `phoenix-android/src/main/kotlin/fr/acinq/phoenix/android/services/FCMService.kt`
-  - `onMessageReceived` 의 low-priority fallback 분기에 `"SwapInDeposit"` reason 처리 추가 (`SystemNotificationHelper.notifyPendingSettlement` 재사용)
-- `phoenix-android/src/main/kotlin/fr/acinq/phoenix/android/services/PaymentsForegroundService.kt`
-  - decrypt 실패 fallback 분기에도 동일 `SwapInDeposit` reason 처리 추가
-
-### 동작
-
-HIGH priority push 의 경우 reason 무관 `startPhoenixForegroundService` → `BusinessManager.startNewBusiness` 흐름이 그대로 동작 → KMP 의 `SwapInWallet` 이 electrum 으로 swap-in UTXO 발견 → `OpenDualFundedChannel` 흐름 자동 진행 → 채널 생성. reason 별 별도 코드는 fallback 알림용.
-
-### 운영 메모
-
-LSP 측 자동화 구독이 현재 일시 비활성 상태 (BOLT12 offline force-close 재현 이슈) — Phoenix 측은 메시지를 받을 때 정상 처리할 수 있도록 준비된 상태로 commit 됨. 자세한 가이드: LightningEver 프로젝트의 `260522FCM.md`.
+This repository is a fork of ACINQ Phoenix Android and inherits its original **Apache License 2.0**.

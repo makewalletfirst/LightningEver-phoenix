@@ -220,6 +220,7 @@ tail -f /root/.eclair/eclair.log
 ### Modifications (2026-06-08)
 - **Scaled Inbound Liquidity Provisioning**: The auto-generated channel capacity has been modified from a hardcoded ~50M sat to a dynamically scaled capacity based on the peer's actual deposit amount (scaled at 4x the peer's funding amount, with a minimum of 1M satoshis).
 - **Out-of-Reserve Payment Protection**: Implemented pre-flight validations in the wallet's payment interface to intercept payments that would violate the 1% channel reserve rule on the LSP side, displaying an explicit error message and disabling the spend button to prevent sudden force-closures.
+- **Max HTLC In-Flight Restriction Bypass**: Increased `max-htlc-value-in-flight-percent` setting to 100% on the LSP node configuration to prevent large payments (e.g., above 500k satoshis) from being blocked during transit.
 
 ## License
 

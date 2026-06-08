@@ -74,15 +74,19 @@ fun SendToBolt11View(
     var amount by remember { mutableStateOf(requestedAmount) }
     val amountErrorMessage: String = remember(amount, peer) {
         val currentAmount = amount
-        val channelsWithCommitments = peer?.channels?.values?.filterIsInstance<fr.acinq.lightning.channel.states.ChannelStateWithCommitments>() ?: emptyList()
-        val totalLocalBalanceMsat = channelsWithCommitments.sumOf { it.commitments.latest.localCommit.spec.toLocal.toLong() }
-        val totalReserveSat = channelsWithCommitments.sumOf { it.commitments.latest.localChannelReserve.toLong() }
+        val activeChannels = peer?.channels?.values?.filter {
+            it is fr.acinq.lightning.channel.states.Normal ||
+            it is fr.acinq.lightning.channel.states.Offline ||
+            it is fr.acinq.lightning.channel.states.Syncing
+        }?.map { it as fr.acinq.lightning.channel.states.ChannelStateWithCommitments } ?: emptyList()
+        val totalLocalBalanceMsat = activeChannels.sumOf { it.commitments.latest.localCommit.spec.toLocal.toLong() }
+        val totalReserveSat = activeChannels.sumOf { it.commitments.latest.localChannelReserve.toLong() }
         val totalReserveMsat = totalReserveSat * 1000L
 
         when {
             currentAmount == null -> ""
             balance != null && currentAmount > balance -> context.getString(R.string.send_error_amount_over_balance)
-            channelsWithCommitments.isNotEmpty() && (totalLocalBalanceMsat - currentAmount.toLong() < totalReserveMsat) -> {
+            activeChannels.isNotEmpty() && (totalLocalBalanceMsat - currentAmount.toLong() < totalReserveMsat) -> {
                 context.getString(R.string.send_error_reserve_insufficient)
             }
             requestedAmount != null && currentAmount < requestedAmount -> context.getString(

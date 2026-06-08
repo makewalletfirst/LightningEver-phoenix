@@ -72,11 +72,19 @@ fun SendToBolt11View(
 
     val requestedAmount = invoice.amount
     var amount by remember { mutableStateOf(requestedAmount) }
-    val amountErrorMessage: String = remember(amount) {
+    val amountErrorMessage: String = remember(amount, peer) {
         val currentAmount = amount
+        val normalChannels = peer?.channels?.values?.filterIsInstance<fr.acinq.lightning.channel.states.Normal>() ?: emptyList()
+        val totalLocalBalanceMsat = normalChannels.sumOf { it.commitments.latest.localCommit.spec.toLocal.toLong() }
+        val totalReserveSat = normalChannels.sumOf { it.commitments.latest.localChannelReserve.toLong() }
+        val totalReserveMsat = totalReserveSat * 1000L
+
         when {
             currentAmount == null -> ""
             balance != null && currentAmount > balance -> context.getString(R.string.send_error_amount_over_balance)
+            normalChannels.isNotEmpty() && (totalLocalBalanceMsat - currentAmount.toLong() < totalReserveMsat) -> {
+                context.getString(R.string.send_error_reserve_insufficient)
+            }
             requestedAmount != null && currentAmount < requestedAmount -> context.getString(
                 R.string.send_error_amount_below_requested,
                 (requestedAmount).toPrettyString(prefBitcoinUnit, withUnit = true)

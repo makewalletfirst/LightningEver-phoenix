@@ -131,7 +131,7 @@
     <string name="receive_label_lightning_help">Tento QR kód je Lightningová faktura.\n\nLightningové platby jsou velmi rychlé a obvykle levnější, ale některé peněženky a služby je nemusí zatím podporovat.\n\nV tom případě přejeďte prstem doleva pro zobrazení běžné Bitcoinové adresy.</string>
     <string name="receive_label_bolt11">Lightning Bolt11</string>
     <string name="receive_label_bolt12">Lightning Bolt12</string>
-    <string name="receive_label_bip21">Bitcoin URI</string>
+    <string name="receive_label_bip21">BitEver URI</string>
 
     <string name="receive_bip353_title">Co je tohle?</string>
     <string name="receive_bip353_info">Tato Lightningová adresa používá moderní Bip353 standard, který pracuje s žádostmi o platbu Bolt12.\n\nPoskytuje více soukromí než Lightningová adresa založená na LNURL a dokonce si ji můžete i hostovat sami.\n\nKaždopádně je to nejnovější technologie; některé peněženky či služby tomuto formátu zatím nerozumí a nebudou schopny vám odeslat peníze.</string>

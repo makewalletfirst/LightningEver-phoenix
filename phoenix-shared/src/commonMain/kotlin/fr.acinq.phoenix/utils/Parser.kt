@@ -38,6 +38,10 @@ object Parser {
     )
 
     val bitcoinPrefixes = listOf(
+        "phoenix:bitever://",
+        "phoenix:bitever:",
+        "bitever://",
+        "bitever:",
         "phoenix:bitcoin://",
         "phoenix:bitcoin:",
         "bitcoin://",

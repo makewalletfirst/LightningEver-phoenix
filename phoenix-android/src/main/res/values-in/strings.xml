@@ -137,7 +137,7 @@
     <string name="receive_label_lightning_help">Kode QR ini adalah faktur Lightning.\n\nPembayaran Lightning sangat cepat dan biasanya lebih murah, tetapi beberapa dompet dan layanan mungkin belum mendukungnya.\n\nKalau begitu, geser ke kiri untuk mendapatkan alamat Bitcoin biasa.</string>
     <string name="receive_label_bolt11">Lightning Bolt11</string>
     <string name="receive_label_bolt12">Lightning Bolt12</string>
-    <string name="receive_label_bip21">Bitcoin URI</string>
+    <string name="receive_label_bip21">BitEver URI</string>
 
     <string name="receive_bip353_title">Apa ini?</string>
     <string name="receive_bip353_info">Alamat Lightning ini menggunakan standar Bip353 modern yang berfungsi dengan permintaan pembayaran Bolt12.\n\nMetode ini lebih menjaga privasi dibandingkan alamat Lightning berbasis LNURL, dan bahkan dapat di-hosting secara mandiri.\n\nNamun, ini adalah teknologi yang sangat mutakhir; beberapa dompet atau layanan belum memahaminya dan tidak akan dapat melakukan pembayaran kepada Anda.</string>

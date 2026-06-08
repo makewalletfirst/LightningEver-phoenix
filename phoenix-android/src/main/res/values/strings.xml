@@ -137,7 +137,7 @@
     <string name="receive_label_lightning_help">This QR code is a Lightning invoice.\n\nLightning payments are very fast and usually cheaper, but some wallets and services may not support them yet.\n\nIn that case, swipe to the left to get a regular BitEver address.</string>
     <string name="receive_label_bolt11">Lightning Bolt11</string>
     <string name="receive_label_bolt12">Lightning Bolt12</string>
-    <string name="receive_label_bip21">Bitcoin URI</string>
+    <string name="receive_label_bip21">BitEver URI</string>
 
     <string name="receive_bip353_title">What is this?</string>
     <string name="receive_bip353_info">This Lightning address uses the modern Bip353 standard that works with Bolt12 payment requests.\n\nIt is more private than LNURL-based Lightning addresses, and can even be self-hosted.\n\nHowever, it\'s is bleeding edge tech ; some wallets or services do not understand it yet and won\'t be able to pay you.</string>

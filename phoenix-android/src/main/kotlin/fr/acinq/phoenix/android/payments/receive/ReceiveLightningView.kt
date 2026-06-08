@@ -228,8 +228,8 @@ fun ColumnScope.LightningInvoiceView(
             is LightningInvoiceState.Done -> {
                 CopyShareButtons(
                     paymentRequest = when (state) {
-                        is LightningInvoiceState.Done.Bolt11 -> "bitcoin:?lightning=${state.paymentData}"
-                        is LightningInvoiceState.Done.Bolt12 -> "bitcoin:?lno=${state.paymentData}"
+                        is LightningInvoiceState.Done.Bolt11 -> "bitever:?lightning=${state.paymentData}"
+                        is LightningInvoiceState.Done.Bolt12 -> "bitever:?lno=${state.paymentData}"
                     },
                     onCopy = { showCopyDialog = true },
                     onShare = { showShareDialog = true }
@@ -319,7 +319,7 @@ private fun CopyLightningDialog(
         }
         offer?.encode()?.let {
             CopyButtonDialog(label = stringResource(id = R.string.receive_label_bolt12), value = it, icon = R.drawable.ic_zap)
-            CopyButtonDialog(label = stringResource(id = R.string.receive_label_bip21), value = "bitcoin:?lno=$it", icon = R.drawable.ic_zap)
+            CopyButtonDialog(label = stringResource(id = R.string.receive_label_bip21), value = "bitever:?lno=$it", icon = R.drawable.ic_zap)
         }
         if (!bip353Address.isNullOrBlank()) {
             CopyButtonDialog(label = stringResource(id = R.string.receive_label_bip353), value = stringResource(id = R.string.utils_bip353_with_prefix, bip353Address), icon = R.drawable.ic_arobase)
@@ -340,7 +340,7 @@ private fun ShareLightningDialog(
         Text(text = stringResource(R.string.btn_share), style = MaterialTheme.typography.h4, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
         offer?.encode()?.let {
             ShareButtonDialog(label = stringResource(id = R.string.receive_label_bolt12), value = it, icon = R.drawable.ic_zap)
-            ShareButtonDialog(label = stringResource(id = R.string.receive_label_bip21), value = "bitcoin:?lno=$it", icon = R.drawable.ic_zap)
+            ShareButtonDialog(label = stringResource(id = R.string.receive_label_bip21), value = "bitever:?lno=$it", icon = R.drawable.ic_zap)
         }
         invoice?.let {
             ShareButtonDialog(label = stringResource(id = R.string.receive_label_bolt11), value = it.write(), icon = R.drawable.ic_zap)

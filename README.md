@@ -217,6 +217,10 @@ tail -f /root/.eclair/eclair.log
 
 ---
 
+### Modifications (2026-06-08)
+- **Scaled Inbound Liquidity Provisioning**: The auto-generated channel capacity has been modified from a hardcoded ~50M sat to a dynamically scaled capacity based on the peer's actual deposit amount (scaled at 4x the peer's funding amount, with a minimum of 1M satoshis).
+- **Out-of-Reserve Payment Protection**: Implemented pre-flight validations in the wallet's payment interface to intercept payments that would violate the 1% channel reserve rule on the LSP side, displaying an explicit error message and disabling the spend button to prevent sudden force-closures.
+
 ## License
 
 This repository is a fork of ACINQ Phoenix Android and inherits its original **Apache License 2.0**.

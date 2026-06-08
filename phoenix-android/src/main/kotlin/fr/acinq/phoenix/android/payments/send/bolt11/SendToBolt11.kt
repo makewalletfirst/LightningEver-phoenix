@@ -79,14 +79,14 @@ fun SendToBolt11View(
             it !is fr.acinq.lightning.channel.states.Closed &&
             it !is fr.acinq.lightning.channel.states.Aborted
         } ?: emptyList()
-        val totalLocalBalanceMsat = activeChannels.sumOf { it.commitments.latest.localCommit.spec.toLocal.toLong() }
-        val totalReserveSat = activeChannels.sumOf { it.commitments.latest.localChannelReserve.toLong() }
+        val localBalanceMsat = balance?.toLong() ?: 0L
+        val totalReserveSat = activeChannels.sumOf { it.commitments.latest.fundingAmount.toLong() / 100 }
         val totalReserveMsat = totalReserveSat * 1000L
 
         when {
             currentAmount == null -> ""
             balance != null && currentAmount > balance -> context.getString(R.string.send_error_amount_over_balance)
-            activeChannels.isNotEmpty() && (totalLocalBalanceMsat - currentAmount.toLong() < totalReserveMsat) -> {
+            activeChannels.isNotEmpty() && (localBalanceMsat - currentAmount.toLong() < totalReserveMsat) -> {
                 context.getString(R.string.send_error_reserve_insufficient)
             }
             requestedAmount != null && currentAmount < requestedAmount -> context.getString(

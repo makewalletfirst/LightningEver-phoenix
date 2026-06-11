@@ -250,7 +250,7 @@ object BusinessManager {
     private suspend fun monitorFcmToken(business: PhoenixBusiness) {
         val token = application.globalPrefs.getFcmToken.filterNotNull().first()
         business.connectionsManager.connections.first { it.peer == Connection.ESTABLISHED }
-        delay(5000)
+        delay(500)
         log.info("registering fcm token=$token")
         business.registerFcmToken(token)
     }

@@ -95,7 +95,7 @@ class PaymentsForegroundService : Service() {
                         it.appConnectionsDaemon?.forceReconnect(AppConnectionsDaemon.ControlTarget.Peer)
                     }
                 }
-                reason == "SwapInDeposit"
+                reason == "SwapInDeposit" || reason == "ChannelStateChanged"
             }
 
             walletId == null -> {
@@ -119,6 +119,7 @@ class PaymentsForegroundService : Service() {
                                 "PendingSettlement" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, metadata)
                                 // [LightningEver] L1 swap-in deposit fallback notification when seed can't be decrypted.
                                 "SwapInDeposit" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, metadata)
+                                "ChannelStateChanged" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, metadata)
                                 else -> Unit
                             }
                         }

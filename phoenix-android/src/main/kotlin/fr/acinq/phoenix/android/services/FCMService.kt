@@ -56,6 +56,7 @@ class FCMService : FirebaseMessagingService() {
                         // Re-use the "pending settlement" notification template since the user action is similar
                         // (open the app so the channel-open flow can start).
                         "SwapInDeposit" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, walletMetadata)
+                        "ChannelStateChanged" -> SystemNotificationHelper.notifyPendingSettlement(applicationContext, walletMetadata)
                         else -> {}
                     }
                 }

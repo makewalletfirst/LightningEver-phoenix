@@ -19,6 +19,17 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: 'gradle'
+      - name: Install System Dependencies for KMP
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev libssl-dev
+      - name: Clone and Install bitcoin-kmp (KMP Dependency)
+        run: |
+          git clone https://github.com/ACINQ/bitcoin-kmp.git
+          cd bitcoin-kmp
+          git checkout v0.30.0
+          ./gradlew publishToMavenLocal -x check
+          cd ..
       - name: Publish lightning-kmp-core 1.11.5-DEBUG to MavenLocal
         working-directory: lightning-kmp
         run: ./gradlew :lightning-kmp-core:publishToMavenLocal

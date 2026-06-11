@@ -2,8 +2,10 @@ package fr.acinq.phoenix.android.services
 
 import android.app.Notification
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.os.PowerManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
@@ -42,11 +44,17 @@ class PaymentsForegroundService : Service() {
     private val log = LoggerFactory.getLogger(this::class.java)
     private val serviceScope = CoroutineScope(Dispatchers.Main.immediate + SupervisorJob())
     private lateinit var notificationManager: NotificationManagerCompat
+    private var wakeLock: PowerManager.WakeLock? = null
 
     override fun onCreate() {
         super.onCreate()
         log.debug("creating node service...")
         notificationManager = NotificationManagerCompat.from(this)
+        
+        // Initialize WakeLock
+        val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "Phoenix::PaymentsForegroundService")
+        
         log.debug("service created")
     }
 
@@ -63,6 +71,14 @@ class PaymentsForegroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         super.onStartCommand(intent, flags, startId)
         log.info("start service from intent [ intent=$intent, flag=$flags, startId=$startId ]")
+
+        // Acquire WakeLock for 3 minutes to keep CPU awake during splice/swap-in negotiation
+        wakeLock?.let {
+            if (!it.isHeld) {
+                log.info("acquiring WakeLock for 3 minutes to keep CPU awake during payment/swap-in negotiation")
+                it.acquire(3 * 60 * 1000L) // 3 minutes
+            }
+        }
 
         val reason = intent?.getStringExtra(EXTRA_REASON)
         val walletId = intent?.getStringExtra(EXTRA_NODE_ID_HASH)?.let { WalletId(it) }
@@ -153,6 +169,15 @@ class PaymentsForegroundService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
+        
+        // Release WakeLock
+        wakeLock?.let {
+            if (it.isHeld) {
+                log.info("releasing WakeLock")
+                it.release()
+            }
+        }
+        
         log.info("foreground service destroyed")
     }
 

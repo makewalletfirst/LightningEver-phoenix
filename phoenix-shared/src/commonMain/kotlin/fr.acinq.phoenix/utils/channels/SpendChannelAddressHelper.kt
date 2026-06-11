@@ -151,7 +151,7 @@ object SpendChannelAddressHelper {
             val localNonce = Musig2.generateNonce(sessionId = randomBytes32(), signingKey = Either.Left(localFundingKey), publicKeys = listOf(localFundingKey.publicKey()), message = null, extraInput = null)
                 .let { Transactions.LocalNonce(it.first, it.second) }
 
-            val sigResult = tx.partialSign(localFundingKey, remoteFundingPubKey, extraUtxos = emptyMap(), localNonce = localNonce, remoteNonce = remoteNonce)
+            val sigResult = tx.partialSign(localFundingKey, remoteFundingPubKey, extraUtxos = emptyMap(), localNonce = localNonce, publicNonces = listOf(localNonce.publicNonce, remoteNonce))
             return@withContext when (sigResult) {
                 is Either.Left -> {
                     log.error(sigResult.value) { "failed to partially sign transaction" }

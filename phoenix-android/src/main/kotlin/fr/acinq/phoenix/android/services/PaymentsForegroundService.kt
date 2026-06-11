@@ -79,7 +79,7 @@ class PaymentsForegroundService : Service() {
                         it.appConnectionsDaemon?.forceReconnect(AppConnectionsDaemon.ControlTarget.Peer)
                     }
                 }
-                false
+                reason == "SwapInDeposit"
             }
 
             walletId == null -> {

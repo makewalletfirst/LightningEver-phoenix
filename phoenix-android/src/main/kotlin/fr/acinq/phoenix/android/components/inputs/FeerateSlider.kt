@@ -58,7 +58,7 @@ fun FeerateSlider(
 ) {
     var showUnknownMempoolStateDialog by remember { mutableStateOf(false) }
     Column(modifier = modifier) {
-        // the actual value of the feerate, in sat/vbyte
+        // the actual value of the feerate, in ever/vbyte
         Text(text = stringResource(id = R.string.cpfp_feerate_value, feerate.sat), style = MaterialTheme.typography.body2)
 
         // feedback giving a speed estimate from the current state of the  mempool

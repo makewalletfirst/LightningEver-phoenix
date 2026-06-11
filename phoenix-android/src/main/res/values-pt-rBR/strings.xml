@@ -149,7 +149,7 @@
     <string name="send_spliceout_prepare_in_progress">Preparando transação…</string>
     <string name="send_spliceout_execute_in_progress">Executando emenda…</string>
     <string name="send_spliceout_complete_recap_fee">Taxa de mineração</string>
-    <string name="send_spliceout_complete_recap_fee_details">Usa uma taxa de comissão efetiva de %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Usa uma taxa de comissão efetiva de %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Total</string>
 
     <!-- scan -->
@@ -651,7 +651,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Taxa de comissão</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Preparar pagamento</string>
     <string name="cpfp_estimating">Calculando comissões…</string>

@@ -166,7 +166,7 @@
     <string name="send_spliceout_prepare_in_progress">Inatayarisha muamala…</string>
     <string name="send_spliceout_execute_in_progress">Inatekeleza splice…</string>
     <string name="send_spliceout_complete_recap_fee">Gharama ya wachimba madini</string>
-    <string name="send_spliceout_complete_recap_fee_details">Inatumia kiwango cha gharama cha %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Inatumia kiwango cha gharama cha %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Jumla</string>
 
     <!-- scan -->
@@ -720,7 +720,7 @@
     <!-- CPFP Splices -->
 
     <string name="cpfp_feerate_label">Kiwango cha ada</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Andaa malipo</string>
     <string name="cpfp_estimating">Ikikadiria ada…</string>

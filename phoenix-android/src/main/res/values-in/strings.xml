@@ -196,7 +196,7 @@
     <string name="send_spliceout_prepare_in_progress">Mempersiapkan transaksi…</string>
     <string name="send_spliceout_execute_in_progress">Melakukan penyambungan…</string>
     <string name="send_spliceout_complete_recap_fee">Biaya penambangan</string>
-    <string name="send_spliceout_complete_recap_fee_details">Menggunakan tarif efektif sebesar %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Menggunakan tarif efektif sebesar %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Total</string>
 
     <!-- scan -->
@@ -868,7 +868,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Tarif biaya</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Siapkan pembayaran</string>
     <string name="cpfp_estimating">Memperkirakan biaya…</string>

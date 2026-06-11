@@ -197,7 +197,7 @@
     <string name="send_spliceout_prepare_in_progress">Preparing transaction…</string>
     <string name="send_spliceout_execute_in_progress">Executing splice…</string>
     <string name="send_spliceout_complete_recap_fee">Miner fee</string>
-    <string name="send_spliceout_complete_recap_fee_details">Uses an effective feerate of %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Uses an effective feerate of %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Total</string>
 
     <!-- scan -->
@@ -886,7 +886,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Feerate</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Prepare payment</string>
     <string name="cpfp_estimating">Estimating fees…</string>

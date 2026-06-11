@@ -148,7 +148,7 @@
     <string name="send_spliceout_prepare_in_progress">Đang chuẩn bị giao dịch…</string>
     <string name="send_spliceout_execute_in_progress">Đang thực hiện splice…</string>
     <string name="send_spliceout_complete_recap_fee">Phí thợ đào</string>
-    <string name="send_spliceout_complete_recap_fee_details">Sử dụng một mức phí hợp lệ %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Sử dụng một mức phí hợp lệ %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Tổng số</string>
 
     <!-- scan -->
@@ -667,7 +667,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Mức phí</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Chuẩn bị khoản thanh toán</string>
     <string name="cpfp_estimating">Đang ước tính phí…</string>

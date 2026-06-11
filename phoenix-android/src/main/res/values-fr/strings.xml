@@ -183,7 +183,7 @@
     <string name="send_spliceout_prepare_in_progress">Préparation de la transaction…</string>
     <string name="send_spliceout_execute_in_progress">Exécution du splice…</string>
     <string name="send_spliceout_complete_recap_fee">Frais de minage</string>
-    <string name="send_spliceout_complete_recap_fee_details">Utilise un taux effectif de %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Utilise un taux effectif de %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Total</string>
 
     <!-- scan -->
@@ -843,7 +843,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Feerate</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Préparation du paiement</string>
     <string name="cpfp_estimating">Estimation des frais…</string>

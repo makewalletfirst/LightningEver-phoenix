@@ -157,7 +157,7 @@
     <string name="send_spliceout_prepare_in_progress">Pripravuje sa transakcia…</string>
     <string name="send_spliceout_execute_in_progress">Spúšťa sa splice…</string>
     <string name="send_spliceout_complete_recap_fee">Poplatok ťažiarovi</string>
-    <string name="send_spliceout_complete_recap_fee_details">Používa efektívnu veľkosť poplatku %1$s sat/vbyte.</string>
+    <string name="send_spliceout_complete_recap_fee_details">Používa efektívnu veľkosť poplatku %1$s ever/vbyte.</string>
     <string name="send_spliceout_complete_recap_total">Celkom</string>
 
     <!-- scan -->
@@ -708,7 +708,7 @@
     <!-- CPFP splices -->
 
     <string name="cpfp_feerate_label">Poplatky</string>
-    <string name="cpfp_feerate_value">%1$s sat/vbyte</string>
+    <string name="cpfp_feerate_value">%1$s ever/vbyte</string>
 
     <string name="cpfp_prepare_button">Pripraviť platbu</string>
     <string name="cpfp_estimating">Odhadujú sa poplatky…</string>
